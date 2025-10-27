@@ -7,25 +7,12 @@
   "id": "marcusolsson-dynamictext-panel",
   "info": {
     "author": {
-      "name": "Volkov Labs",
-      "url": "https://volkovlabs.io"
+      "name": "Grafana Labs",
+      "url": "https://grafana.com"
     },
     "description": "Data-driven text with Markdown and Handlebars support",
     "keywords": ["text", "markdown", "handlebars"],
-    "links": [
-      {
-        "name": "Documentation",
-        "url": "https://volkovlabs.io/plugins/business-text/"
-      },
-      {
-        "name": "GitHub",
-        "url": "https://github.com/volkovlabs/business-text"
-      },
-      {
-        "name": "Sponsor",
-        "url": "https://volkovlabs.io/pricing/"
-      }
-    ],
+    "links": [],
     "logos": {
       "large": "img/logo.svg",
       "small": "img/logo.svg"
