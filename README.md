@@ -1,18 +1,14 @@
 # Business Text for Grafana
 
-![Text](https://github.com/VolkovLabs/business-text/raw/main/src/img/screenshot.png)
+[![CI](https://github.com/grafana/business-text/actions/workflows/push.yml/badge.svg)](https://github.com/grafana/business-text/actions/workflows/push.yml)
+[![CD](https://github.com/grafana/business-text/actions/workflows/publish.yml/badge.svg)](https://github.com/grafana/business-text/actions/workflows/publish.yml)
+[![License](https://img.shields.io/github/license/grafana/business-text)](https://github.com/grafana/business-text/blob/main/LICENSE)
 
-![Grafana](https://img.shields.io/badge/Grafana-12-orange)
-![CI](https://github.com/volkovlabs/business-text/workflows/CI/badge.svg)
-![E2E](https://github.com/volkovlabs/business-text/workflows/E2E/badge.svg)
-[![codecov](https://codecov.io/gh/VolkovLabs/business-text/branch/main/graph/badge.svg)](https://codecov.io/gh/VolkovLabs/business-text)
-[![CodeQL](https://github.com/VolkovLabs/business-text/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/VolkovLabs/business-text/actions/workflows/codeql-analysis.yml)
-
-## Introduction
+>This project was originally contributed by [Volkov Labs](https://github.com/volkovlabs/business-text) - thanks for all your great work!
+>
+>We have republished under the same plugin ID, keeping the community signature. This means you can simply update your plugin version. A new ID would have required manual updates to your dashboards. For additional information on the changes, see the [Notices](https://github.com/grafana/business-text/blob/main/NOTICES.md).
 
 The Business Text panel plugin allows you to construct a text visualization template from the values of a dataset returned by a data source query.
-
-[![Business Text plugin for Grafana | Use HTML, Markdown, JavaScript and CSS | Community use cases](https://raw.githubusercontent.com/volkovlabs/business-text/main/img/business-text.png)](https://youtu.be/UVMysEjouNo)
 
 ## Requirements
 
@@ -31,8 +27,6 @@ For the latter, please use the following command:
 ```bash
 grafana cli plugins install marcusolsson-dynamictext-panel
 ```
-
-[![Install Business Suite plugins in Cloud, OSS, Enterprise | Open source community plugins](https://raw.githubusercontent.com/volkovlabs/.github/main/started.png)](https://youtu.be/1qYzHfPXJF8)
 
 ## Highlights
 
@@ -59,14 +53,7 @@ grafana cli plugins install marcusolsson-dynamictext-panel
 | [Tutorials](https://volkovlabs.io/plugins/business-text/tutorials/)   | Easy to follow tutorials                                      |
 | [Release Notes](https://volkovlabs.io/plugins/business-text/release/) | Stay up to date with the latest features and updates          |
 
-## Business Suite for Grafana
-
-The Business Suite is a collection of open source plugins created and actively maintained by Volkov Labs.
-
-The collection aims to solve the most frequent business tasks by providing an intuitive interface with detailed written documentation, examples, and video tutorials.
-
-[![Business Suite for Grafana](https://raw.githubusercontent.com/VolkovLabs/.github/main/business.png)](https://volkovlabs.io/plugins/)
 
 ## License
 
-Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/business-text/blob/main/LICENSE).
+Apache License Version 2.0, see [LICENSE](https://github.com/grafana/business-text/blob/main/LICENSE).
