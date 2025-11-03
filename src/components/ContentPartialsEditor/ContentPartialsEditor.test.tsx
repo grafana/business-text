@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen, within } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { DragDropContext, DropResult } from 'react-beautiful-dnd';
 
@@ -27,7 +27,7 @@ jest.mock('react-beautiful-dnd', () => ({
  */
 type Props = React.ComponentProps<typeof ContentPartialsEditor>;
 
-describe('ResourcesEditor', () => {
+describe('ContentPartialsEditor', () => {
   /**
    * Get Tested Component
    * @param props
@@ -54,8 +54,8 @@ describe('ResourcesEditor', () => {
       })
     );
 
-    expect(screen.getByTestId(TEST_IDS.partialsEditor.itemLabel('abc'))).toBeInTheDocument();
-    expect(screen.getByTestId(TEST_IDS.partialsEditor.itemLabel('aaa'))).toBeInTheDocument();
+    expect(screen.getByText('[abc] abc')).toBeInTheDocument();
+    expect(screen.getByText('[aaa] aaa')).toBeInTheDocument();
   });
 
   it('Should render component if no value', () => {
@@ -132,7 +132,7 @@ describe('ResourcesEditor', () => {
       })
     );
 
-    const itemLabel = screen.getByTestId(TEST_IDS.partialsEditor.itemLabel('aaa'));
+    const itemLabel = screen.getByText('[aaa] aaa');
 
     /**
      * Check item presence
@@ -141,17 +141,11 @@ describe('ResourcesEditor', () => {
 
     await act(() => fireEvent.click(itemLabel));
 
-    const itemContent = screen.getByTestId(TEST_IDS.partialsEditor.itemContent('aaa'));
-    /**
-     * Check content presence
-     */
-    expect(itemContent).toBeInTheDocument();
-
     /**
      * Change
      */
     await act(() =>
-      fireEvent.change(within(itemContent).getByTestId(TEST_IDS.partialsEditor.fieldUrl), {
+      fireEvent.change(screen.getByLabelText('URL'), {
         target: { value: 'aaa123' },
       })
     );
@@ -185,7 +179,7 @@ describe('ResourcesEditor', () => {
       })
     );
 
-    const itemLabel = screen.getByTestId(TEST_IDS.partialsEditor.itemLabel('aaa'));
+    const itemLabel = screen.getByText('[aaa] aaa');
 
     /**
      * Check item presence
@@ -194,17 +188,11 @@ describe('ResourcesEditor', () => {
 
     await act(() => fireEvent.click(itemLabel));
 
-    const itemContent = screen.getByTestId(TEST_IDS.partialsEditor.itemContent('aaa'));
-    /**
-     * Check content presence
-     */
-    expect(itemContent).toBeInTheDocument();
-
     /**
      * Change
      */
     await act(() =>
-      fireEvent.change(within(itemContent).getByTestId(TEST_IDS.partialsEditor.fieldName), {
+      fireEvent.change(screen.getByLabelText('Name'), {
         target: { value: 'aaa123' },
       })
     );
@@ -238,17 +226,18 @@ describe('ResourcesEditor', () => {
       })
     );
 
-    const item = screen.getByTestId(TEST_IDS.partialsEditor.itemLabel('aaa'));
+    const item = screen.getByText('[aaa] aaa');
 
     /**
      * Check item presence
      */
     expect(item).toBeInTheDocument();
 
+    const removeButtons = screen.getAllByTestId(TEST_IDS.partialsEditor.buttonRemove);
     /**
      * Remove
      */
-    await act(() => fireEvent.click(within(item).getByTestId(TEST_IDS.partialsEditor.buttonRemove)));
+    await act(() => fireEvent.click(removeButtons[1]));
 
     expect(onChange).toHaveBeenCalledWith([
       {
