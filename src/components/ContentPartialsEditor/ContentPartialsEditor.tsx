@@ -1,7 +1,6 @@
 import { StandardEditorProps } from '@grafana/data';
-import { Button, Icon, InlineField, InlineFieldRow, Input, useStyles2 } from '@grafana/ui';
-import { Collapse } from '@volkovlabs/components';
-import React, { useCallback, useState } from 'react';
+import { Button, Collapse, Icon, InlineField, InlineFieldRow, Input, Stack, useStyles2 } from '@grafana/ui';
+import React, { useCallback, useId, useState } from 'react';
 import {
   DragDropContext,
   Draggable,
@@ -49,6 +48,9 @@ export const ContentPartialsEditor: React.FC<Props> = ({ value, onChange }) => {
   const [newItemName, setNewItemName] = useState('');
 
   const [collapseState, setCollapseState] = useState<Record<string, boolean>>({});
+
+  const urlInputId = useId();
+  const nameInputId = useId();
 
   /**
    * Change Items
@@ -134,26 +136,30 @@ export const ContentPartialsEditor: React.FC<Props> = ({ value, onChange }) => {
                       className={styles.group}
                     >
                       <Collapse
-                        title={<div className={styles.groupHeader}>{`[${name}] ${url}`}</div>}
-                        headerTestId={TEST_IDS.partialsEditor.itemLabel(url)}
-                        contentTestId={TEST_IDS.partialsEditor.itemContent(url)}
-                        actions={
-                          <>
-                            <Button
-                              icon="trash-alt"
-                              variant="secondary"
-                              fill="text"
-                              size="sm"
-                              className={styles.removeButton}
-                              onClick={() => {
-                                onRemoveItem(id);
-                              }}
-                              data-testid={TEST_IDS.partialsEditor.buttonRemove}
-                            />
-                            <div className={styles.dragHandle} {...provided.dragHandleProps}>
-                              <Icon name="draggabledots" className={styles.dragIcon} />
-                            </div>
-                          </>
+                        label={
+                          <Stack flex={1} alignItems="center" justifyContent="space-between">
+                            <div className={styles.groupHeader}>{`[${name}] ${url}`}</div>
+                            <Stack alignItems="center" gap={0.5}>
+                              <Button
+                                aria-label="Remove partial"
+                                icon="trash-alt"
+                                variant="secondary"
+                                fill="text"
+                                size="sm"
+                                className={styles.removeButton}
+                                onClick={(event) => {
+                                  event.stopPropagation();
+                                  onRemoveItem(id);
+                                }}
+                                data-testid={TEST_IDS.partialsEditor.buttonRemove}
+                              />
+                              <div className={styles.dragHandle} onClick={(event) => {
+                                event.stopPropagation();
+                              }} {...provided.dragHandleProps}>
+                                <Icon name="draggabledots" className={styles.dragIcon} />
+                              </div>
+                            </Stack>
+                          </Stack>
                         }
                         isOpen={collapseState[id]}
                         onToggle={() => onToggleItem(id)}
@@ -161,6 +167,7 @@ export const ContentPartialsEditor: React.FC<Props> = ({ value, onChange }) => {
                         <InlineFieldRow>
                           <InlineField grow label="URL">
                             <Input
+                              id={urlInputId}
                               value={url}
                               onChange={(event) => {
                                 onChangeItem({
@@ -174,6 +181,7 @@ export const ContentPartialsEditor: React.FC<Props> = ({ value, onChange }) => {
                           </InlineField>
                           <InlineField grow label="Name">
                             <Input
+                              id={nameInputId}
                               value={name}
                               onChange={(event) => {
                                 onChangeItem({

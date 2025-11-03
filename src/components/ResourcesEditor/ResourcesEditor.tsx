@@ -1,7 +1,6 @@
 import { StandardEditorProps } from '@grafana/data';
-import { Button, Icon, InlineField, InlineFieldRow, Input, useStyles2 } from '@grafana/ui';
-import { Collapse } from '@volkovlabs/components';
-import React, { useCallback, useState } from 'react';
+import { Button, Collapse, Icon, InlineField, InlineFieldRow, Input, Stack, useStyles2 } from '@grafana/ui';
+import React, { useCallback, useId, useState } from 'react';
 import {
   DragDropContext,
   Draggable,
@@ -47,6 +46,8 @@ export const ResourcesEditor: React.FC<Props> = ({ value, onChange }) => {
   const [items, setItems] = useState<Resource[]>(value || []);
   const [newItem, setNewItem] = useState('');
   const [collapseState, setCollapseState] = useState<Record<string, boolean>>({});
+
+  const urlInputId = useId();
 
   /**
    * Change Items
@@ -131,32 +132,35 @@ export const ResourcesEditor: React.FC<Props> = ({ value, onChange }) => {
                       className={styles.group}
                     >
                       <Collapse
-                        title={<div className={styles.groupHeader}>{url}</div>}
-                        headerTestId={TEST_IDS.resourcesEditor.itemLabel(url)}
-                        contentTestId={TEST_IDS.resourcesEditor.itemContent(url)}
-                        actions={
-                          <>
-                            <Button
-                              icon="trash-alt"
-                              variant="secondary"
-                              fill="text"
-                              size="sm"
-                              className={styles.removeButton}
-                              onClick={() => {
-                                onRemoveItem(id);
-                              }}
-                              data-testid={TEST_IDS.resourcesEditor.buttonRemove}
-                            />
-                            <div className={styles.dragHandle} {...provided.dragHandleProps}>
-                              <Icon name="draggabledots" className={styles.dragIcon} />
-                            </div>
-                          </>
+                        label={
+                          <Stack flex={1} alignItems="center" justifyContent="space-between">
+                            <div className={styles.groupHeader}>{url}</div>
+                            <Stack gap={0.5} alignItems="center">
+                              <Button
+                                aria-label="Remove resource"
+                                icon="trash-alt"
+                                variant="secondary"
+                                fill="text"
+                                size="sm"
+                                className={styles.removeButton}
+                                onClick={(event) => {
+                                  event.stopPropagation();
+                                  onRemoveItem(id);
+                                }}
+                                data-testid={TEST_IDS.resourcesEditor.buttonRemove}
+                              />
+                              <div className={styles.dragHandle} onClick={(event) => event.stopPropagation()} {...provided.dragHandleProps}>
+                                <Icon name="draggabledots" className={styles.dragIcon} />
+                              </div>
+                            </Stack>
+                          </Stack>
                         }
                         isOpen={collapseState[id]}
                         onToggle={() => onToggleItem(id)}
                       >
                         <InlineField grow label="URL">
                           <Input
+                            id={urlInputId}
                             value={url}
                             onChange={(event) => {
                               onChangeItem({

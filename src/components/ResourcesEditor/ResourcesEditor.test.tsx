@@ -1,5 +1,5 @@
 import { config } from '@grafana/runtime';
-import { act, fireEvent, render, screen, within } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { DragDropContext, DropResult } from 'react-beautiful-dnd';
 
@@ -55,8 +55,8 @@ describe('ResourcesEditor', () => {
       })
     );
 
-    expect(screen.getByTestId(TEST_IDS.resourcesEditor.itemLabel('abc'))).toBeInTheDocument();
-    expect(screen.getByTestId(TEST_IDS.resourcesEditor.itemLabel('aaa'))).toBeInTheDocument();
+    expect(screen.getByText('abc')).toBeInTheDocument();
+    expect(screen.getByText('aaa')).toBeInTheDocument();
   });
 
   it('Should render component if no value', () => {
@@ -125,7 +125,7 @@ describe('ResourcesEditor', () => {
       })
     );
 
-    const itemLabel = screen.getByTestId(TEST_IDS.resourcesEditor.itemLabel('aaa'));
+    const itemLabel = screen.getByText('aaa');
 
     /**
      * Check item presence
@@ -134,17 +134,11 @@ describe('ResourcesEditor', () => {
 
     await act(() => fireEvent.click(itemLabel));
 
-    const itemContent = screen.getByTestId(TEST_IDS.resourcesEditor.itemContent('aaa'));
-    /**
-     * Check content presence
-     */
-    expect(itemContent).toBeInTheDocument();
-
     /**
      * Change
      */
     await act(() =>
-      fireEvent.change(within(itemContent).getByTestId(TEST_IDS.resourcesEditor.fieldUrl), {
+      fireEvent.change(screen.getByLabelText('URL'), {
         target: { value: 'aaa123' },
       })
     );
@@ -178,7 +172,7 @@ describe('ResourcesEditor', () => {
       })
     );
 
-    const item = screen.getByTestId(TEST_IDS.resourcesEditor.itemLabel('aaa'));
+    const item = screen.getByText('aaa');
 
     /**
      * Check item presence
@@ -188,7 +182,8 @@ describe('ResourcesEditor', () => {
     /**
      * Remove
      */
-    await act(() => fireEvent.click(within(item).getByTestId(TEST_IDS.resourcesEditor.buttonRemove)));
+    const removeButtons = screen.getAllByTestId(TEST_IDS.resourcesEditor.buttonRemove);
+    await act(() => fireEvent.click(removeButtons[1]));
 
     expect(onChange).toHaveBeenCalledWith([
       {
