@@ -69,20 +69,24 @@ export const CustomEditor: React.FC<Props> = ({ value, onChange, context, type =
    */
   const getStylesThemeSuggestions = useCallback(
     (entries: Array<[string, unknown]>, parentLabel = 'theme'): CodeEditorSuggestionItem[] => {
-      const properties: CodeEditorSuggestionItem[] = [];
+      const processEntries = (entries: Array<[string, unknown]>, parentLabel: string): CodeEditorSuggestionItem[] => {
+        const properties: CodeEditorSuggestionItem[] = [];
 
-      for (const [key, value] of entries) {
-        const label = `${parentLabel}.${key}`;
+        for (const [key, value] of entries) {
+          const label = `${parentLabel}.${key}`;
 
-        if (typeof value === 'string' || typeof value === 'number') {
-          properties.push({ label: `\${${label}}`, detail: key, kind: CodeEditorSuggestionItemKind.Property });
-        } else if (typeof value === 'object' && value !== null) {
-          const nestedEntries = Object.entries(value as Record<string, unknown>);
-          properties.push(...getStylesThemeSuggestions(nestedEntries, label));
+          if (typeof value === 'string' || typeof value === 'number') {
+            properties.push({ label: `\${${label}}`, detail: key, kind: CodeEditorSuggestionItemKind.Property });
+          } else if (typeof value === 'object' && value !== null) {
+            const nestedEntries = Object.entries(value as Record<string, unknown>);
+            properties.push(...processEntries(nestedEntries, label));
+          }
         }
-      }
 
-      return properties;
+        return properties;
+      };
+
+      return processEntries(entries, parentLabel);
     },
     []
   );

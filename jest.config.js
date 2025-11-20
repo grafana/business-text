@@ -15,4 +15,5 @@ module.exports = {
     'mimic-function',
     'react-calendar',
   ])],
+  watchPathIgnorePatterns: ['node_modules'],
 };

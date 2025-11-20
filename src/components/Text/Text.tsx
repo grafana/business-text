@@ -13,10 +13,10 @@ import {
 import { getAppEvents } from '@grafana/runtime';
 import { TimeZone } from '@grafana/schema';
 import { Alert, LoadingBar, useStyles2, useTheme2 } from '@grafana/ui';
-import { useDashboardRefresh } from '@volkovlabs/components';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import { TEST_IDS } from '../../constants';
+import { useDashboardRefresh } from '../../hooks';
 import { PanelOptions, RenderMode, RowItem } from '../../types';
 import { generateHtml } from '../../utils';
 import { Row } from '../Row';

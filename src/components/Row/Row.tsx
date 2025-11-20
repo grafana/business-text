@@ -10,11 +10,11 @@ import {
 import { getAppEvents, locationService } from '@grafana/runtime';
 import { TimeZone } from '@grafana/schema';
 import { useTheme2 } from '@grafana/ui';
-import { useDashboardRefresh } from '@volkovlabs/components';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { RowItem } from 'types';
 
 import { TEST_IDS } from '../../constants';
+import { useDashboardRefresh } from '../../hooks';
 import { afterRenderCodeParameters, createExecutionCode } from '../../utils';
 
 /**
