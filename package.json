@@ -27,7 +27,7 @@
     "@babel/preset-typescript": "^7.27.1",
     "@babel/register": "^7.27.1",
     "@grafana/eslint-config": "^9.0.0",
-    "@grafana/plugin-e2e": "^2.1.7",
+    "@grafana/plugin-e2e": "2.1.7",
     "@grafana/tsconfig": "^2.0.0",
     "@playwright/test": "^1.54.1",
     "@stylistic/eslint-plugin-ts": "^4.4.1",
