@@ -1,11 +1,11 @@
 ---
-tags:
-  - Business Text
-image: /img/plugins/business-text/order-all.png
-title: 'Rendering'
-description: 'Learn about the render template options and rendering order for applying templates to data frames in the Business Text panel.'
+title: Rendering
+description: Learn about the render template options and rendering order for applying templates to data frames in the Business Text panel.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 weight: 30

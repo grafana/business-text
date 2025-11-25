@@ -1,13 +1,12 @@
 ---
-tags:
-  - Business Text
-  - Release Notes
-image: /img/suite.png
-hide_table_of_contents: true
-title: 'Release Notes'
-description: 'Learn about the evolution of the Business Text panel with release notes highlighting new features, enhancements, fixes, and breaking changes.'
+title: Release Notes
+description: Learn about the evolution of the Business Text panel with release notes highlighting new features, enhancements, fixes, and breaking changes.
+keywords:
+  - business text
+  - release notes
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 weight: 70

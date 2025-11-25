@@ -1,11 +1,12 @@
 ---
-title: 'Chart.js'
-description: 'Learn how to create interactive charts using the Chart.js library in the Business Text panel.'
-weight: 2
+title: Chart.js
+description: Learn how to create interactive charts using the Chart.js library in the Business Text panel.
 labels:
   products:
+    - cloud
     - enterprise
     - oss
+weight: 2
 ---
 
 # Chart.js

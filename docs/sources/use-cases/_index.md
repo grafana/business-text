@@ -1,11 +1,11 @@
 ---
-tags:
-  - Business Text
-image: /img/plugins/business-text/external.png
-title: 'Use cases'
-description: 'Learn how to import and use external JavaScript libraries like Bootstrap, Chart.js, D3, Mermaid, and others in the Business Text panel.'
+title: Use cases
+description: Learn how to import and use external JavaScript libraries like Bootstrap, Chart.js, D3, Mermaid, and others in the Business Text panel.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 weight: 50

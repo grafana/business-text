@@ -1,11 +1,11 @@
 ---
-tags:
-  - Business Text
-image: /img/plugins/business-text/replace.png
-title: 'Context Parameters'
-description: 'Learn about the context parameters available in JavaScript code for accessing panel data, Grafana services, and user preferences.'
+title: Context Parameters
+description: Learn about the context parameters available in JavaScript code for accessing panel data, Grafana services, and user preferences.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 ---

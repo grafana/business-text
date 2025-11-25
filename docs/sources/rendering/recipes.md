@@ -1,10 +1,11 @@
 ---
-tags:
-  - Business Text
-title: 'Recipes'
-description: 'Learn how to use helpful code snippets for template usage including iteration, conditional content, and accessing specific data rows.'
+title: Recipes
+description: Learn how to use helpful code snippets for template usage including iteration, conditional content, and accessing specific data rows.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 ---

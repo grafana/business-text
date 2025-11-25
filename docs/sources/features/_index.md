@@ -1,11 +1,11 @@
 ---
-tags:
-  - Business Text
-image: /img/plugins/business-text/application.png
-title: 'Features'
-description: 'Learn about the extensive features of the Business Text panel including helpers, events, options, and variables.'
+title: Features
+description: Learn about the extensive features of the Business Text panel including helpers, events, options, and variables.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 weight: 40

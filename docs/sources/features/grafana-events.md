@@ -1,11 +1,12 @@
 ---
-tags:
-  - Business Text
-  - Events
-title: 'Grafana Events'
-description: 'Learn how to subscribe to Grafana application events and respond to user interactions using the event bus.'
+title: Grafana Events
+description: Learn how to subscribe to Grafana application events and respond to user interactions using the event bus.
+keywords:
+  - business text
+  - events
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 weight: 200

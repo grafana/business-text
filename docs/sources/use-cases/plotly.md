@@ -1,11 +1,12 @@
 ---
-title: 'Plotly'
-description: 'Learn how to create interactive 3D scatter plots and other visualizations using the Plotly graphing library in the Business Text panel.'
-weight: 9
+title: Plotly
+description: Learn how to create interactive 3D scatter plots and other visualizations using the Plotly graphing library in the Business Text panel.
 labels:
   products:
+    - cloud
     - enterprise
     - oss
+weight: 9
 ---
 
 # Plotly

@@ -1,11 +1,11 @@
 ---
-tags:
-  - Business Text
-image: /img/plugins/business-text/order-all.png
-title: 'Content'
-description: 'Learn how to use external Handlebars partials in the content parameter to create reusable template components.'
+title: Content
+description: Learn how to use external Handlebars partials in the content parameter to create reusable template components.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 ---

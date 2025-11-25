@@ -1,11 +1,11 @@
 ---
-tags:
-  - Business Text
-image: /img/plugins/business-text/json.png
-title: 'Helpers'
-description: 'Learn how to use Handlebars helpers to perform text transformations including date formatting, comparisons, and JSON manipulation.'
+title: Helpers
+description: Learn how to use Handlebars helpers to perform text transformations including date formatting, comparisons, and JSON manipulation.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 weight: 100

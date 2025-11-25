@@ -1,10 +1,11 @@
 ---
-tags:
-  - Business Text
-title: 'Content Wrapping'
-description: 'Learn how the content wrapping option controls whether rows are automatically wrapped in paragraph tags.'
+title: Content Wrapping
+description: Learn how the content wrapping option controls whether rows are automatically wrapped in paragraph tags.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 weight: 600

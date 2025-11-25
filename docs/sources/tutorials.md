@@ -1,11 +1,12 @@
 ---
-tags:
-  - Business Text
-title: 'Business Text tutorials'
+title: Business Text tutorials
 menuTitle: Tutorials
-description: 'Learn how to transform data visualizations using HTML, Markdown, JavaScript, and CSS through step-by-step video tutorials and use cases.'
+description: Learn how to transform data visualizations using HTML, Markdown, JavaScript, and CSS through step-by-step video tutorials and use cases.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 weight: 60

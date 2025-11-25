@@ -1,11 +1,12 @@
 ---
-title: 'Flowchart'
-description: 'Learn how to draw SVG flowchart diagrams from textual representations using the Flowchart.js library in the Business Text panel.'
-weight: 4
+title: Flowchart
+description: Learn how to draw SVG flowchart diagrams from textual representations using the Flowchart.js library in the Business Text panel.
 labels:
   products:
+    - cloud
     - enterprise
     - oss
+weight: 4
 ---
 
 # Flowchart

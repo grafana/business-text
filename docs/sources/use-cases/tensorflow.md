@@ -1,11 +1,12 @@
 ---
-title: 'Tensorflow'
-description: 'Learn how to integrate TensorFlow.js for machine learning capabilities in the Business Text panel.'
-weight: 11
+title: Tensorflow
+description: Learn how to integrate TensorFlow.js for machine learning capabilities in the Business Text panel.
 labels:
   products:
+    - cloud
     - enterprise
     - oss
+weight: 11
 ---
 
 # TensorFlow

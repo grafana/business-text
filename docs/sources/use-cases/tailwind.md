@@ -1,11 +1,12 @@
 ---
-title: 'Tailwind CSS'
-description: 'Learn how to apply utility-first CSS styling using the Tailwind CSS framework in the Business Text panel.'
-weight: 10
+title: Tailwind CSS
+description: Learn how to apply utility-first CSS styling using the Tailwind CSS framework in the Business Text panel.
 labels:
   products:
+    - cloud
     - enterprise
     - oss
+weight: 10
 ---
 
 # Tailwind CSS

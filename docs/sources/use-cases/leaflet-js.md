@@ -1,11 +1,12 @@
 ---
-title: 'Leaflet.js'
-description: 'Learn how to create interactive maps with GeoJSON data using the Leaflet.js library in the Business Text panel.'
-weight: 6
+title: Leaflet.js
+description: Learn how to create interactive maps with GeoJSON data using the Leaflet.js library in the Business Text panel.
 labels:
   products:
+    - cloud
     - enterprise
     - oss
+weight: 6
 ---
 
 # Leaflet.js

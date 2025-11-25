@@ -1,11 +1,11 @@
 ---
-tags:
-  - Business Text
-image: /img/plugins/business-text/features/units/panel.png
-title: 'Standard Options'
-description: 'Learn how to configure standard options like units and decimals for fields using overrides in the Business Text panel.'
+title: Standard Options
+description: Learn how to configure standard options like units and decimals for fields using overrides in the Business Text panel.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 weight: 300

@@ -1,11 +1,12 @@
 ---
-title: 'Mermaid'
-description: 'Learn how to create dynamic diagrams and charts using Markdown-defined text with the Mermaid library in the Business Text panel.'
-weight: 8
+title: Mermaid
+description: Learn how to create dynamic diagrams and charts using Markdown-defined text with the Mermaid library in the Business Text panel.
 labels:
   products:
+    - cloud
     - enterprise
     - oss
+weight: 8
 ---
 
 # Mermaid

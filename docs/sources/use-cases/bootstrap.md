@@ -1,11 +1,12 @@
 ---
-title: 'Bootstrap'
-description: 'Learn how to use the Bootstrap framework to create interactive accordions and styled components in the Business Text panel.'
-weight: 1
+title: Bootstrap
+description: Learn how to use the Bootstrap framework to create interactive accordions and styled components in the Business Text panel.
 labels:
   products:
+    - cloud
     - enterprise
     - oss
+weight: 1
 ---
 
 # Bootstrap

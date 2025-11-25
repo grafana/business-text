@@ -1,11 +1,12 @@
 ---
-title: 'Youtube video'
-description: 'Learn how to embed and display YouTube videos on your Grafana dashboard using the Business Text panel.'
-weight: 12
+title: Youtube video
+description: Learn how to embed and display YouTube videos on your Grafana dashboard using the Business Text panel.
 labels:
   products:
+    - cloud
     - enterprise
     - oss
+weight: 12
 ---
 
 # Youtube video

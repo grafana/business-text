@@ -1,11 +1,11 @@
 ---
-tags:
-  - Business Text
-image: /img/plugins/business-text/replace.png
-title: 'JavaScript Code'
-description: 'Learn how to integrate JavaScript code snippets to add custom Handlebars helpers, event handlers, and dynamic functionality.'
+title: JavaScript Code
+description: Learn how to integrate JavaScript code snippets to add custom Handlebars helpers, event handlers, and dynamic functionality.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 weight: 20

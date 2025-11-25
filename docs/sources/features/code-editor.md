@@ -1,11 +1,11 @@
 ---
-tags:
-  - Business Text
-image: /img/plugins/business-text/json.png
-title: 'Code Editor Toolbar'
-description: 'Learn how to use the Code Editor toolbar to expand, copy, paste, wrap code, and toggle the mini map for better code management.'
+title: Code Editor Toolbar
+description: Learn how to use the Code Editor toolbar to expand, copy, paste, wrap code, and toggle the mini map for better code management.
+keywords:
+  - business text
 labels:
   products:
+    - cloud
     - enterprise
     - oss
 weight: 700

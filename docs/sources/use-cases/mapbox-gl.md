@@ -1,11 +1,12 @@
 ---
-title: 'Mapbox GL'
-description: 'Learn how to build interactive 3D maps with Mapbox GL JS mapping technology in the Business Text panel.'
-weight: 7
+title: Mapbox GL
+description: Learn how to build interactive 3D maps with Mapbox GL JS mapping technology in the Business Text panel.
 labels:
   products:
+    - cloud
     - enterprise
     - oss
+weight: 7
 ---
 
 # Mapbox GL
