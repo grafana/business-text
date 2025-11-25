@@ -33,7 +33,7 @@ Start typing the `context` word in the **Before Content Rendering** or **After C
   width="70%"
 />
 
-| Parameter                                                                                                                       | Description                                                                                                                                                                                                                                          | <span style={{fontSize:'14px'}}>Before Render</span> | <span style={{fontSize:'14px'}}>After Render</span> |
+| Parameter                                                                                                                       | Description                                                                                                                                                                                                                                          | Before Render | After Render |
 | :------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------- |
 | [`context.data`](/plugins/business-text/code/panel/#contextdata)                                                                | Data from data sources. The display of one or multiple data rows from the selected data frame or from all data frames is determined by the **Render template** option. It can be one of three values: **Every Row**, **All Rows**, and **All data**. | :heavy_check_mark:                                   | :heavy_check_mark:                                  |
 | [`context.element`](/plugins/business-text/code/panel/#contextelement)                                                          | Current html element.                                                                                                                                                                                                                                |                                                      | :heavy_check_mark:                                  |
@@ -422,9 +422,7 @@ context.handlebars.registerHelper("parse", (context) => JSON.parse(context));
 
 Anonymizer is the tool we created for internal purposes of converting real production data into dummy values in order to have our dashboards demo-ready. Anonymizer is another great example of how embedded JavaScript can simplify tedious and repetitive tasks.
 
-You can find all you need in the following blog post:
-
-<BlogPost id="anonymizer-20240302" />
+You can find all you need in this [blog post](https://volkovlabs.io/blog/anonymizer-20240302/).
 
 If you are a visual style learner, you can watch the video. It covers the same ground.
 

@@ -20,9 +20,7 @@ This page contains step-by-step video tutorials that showcase new features and a
 
 ## Why Choose Business Text?
 
-Discover why the Business Text panel is a powerhouse for your business dashboards with its flexibility and robust feature set.
-
-<BlogPost id="business-text-powerhouse" />
+Discover why the Business Text panel is a powerhouse for your business dashboards with its flexibility and robust feature set in this [blog post](https://volkovlabs.io/blog/business-text-powerhouse/).
 
 ## Key Features
 
@@ -47,7 +45,7 @@ Simplify your demo dashboards with the Anonymizer feature, designed for quick an
 
 {{< youtube id="FMSEGGFbJy0" >}}
 
-<BlogPost id="anonymizer-20240302" />
+Learn how to streamline demos with the Dynamic Text Anonymizer in this [blog post](https://volkovlabs.io/blog/anonymizer-20240302/).
 
 {{< admonition type="note" >}}
 The Anonymizer was originally built for internal use and proven effective in multiple presentations.
@@ -56,12 +54,12 @@ The Anonymizer was originally built for internal use and proven effective in mul
 ### Custom Datepicker for Time Ranges
 
 Enhance time range selection in Grafana with a custom Datepicker.
-
-<BlogPost id="datapicker-20240905" />
+Learn how to create a custom Datepicker to set time range in Grafana 11 this [blog post](https://volkovlabs.io/blog/datapicker-20240905/).
 
 ### Extend Visualizations with D3.js
 
 Integrate the D3.js library to unlock advanced visualization capabilities.
+Learn how to extend visualization capabilities with D3.js in this [blog post](https://volkovlabs.io/blog/dynamic-text-d3-community-20240121/).
 
 <BlogPost id="dynamic-text-d3-community-20240121" />
 
