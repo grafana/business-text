@@ -1,6 +1,6 @@
 ---
 title: 'Flowchart'
-description: 'import Image from "@theme/Image";'
+description: 'Learn how to draw SVG flowchart diagrams from textual representations using the Flowchart.js library in the Business Text panel.'
 weight: 4
 labels:
   products:

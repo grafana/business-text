@@ -1,6 +1,6 @@
 ---
 title: 'Tailwind CSS'
-description: 'import Image from "@theme/Image";'
+description: 'Learn how to apply utility-first CSS styling using the Tailwind CSS framework in the Business Text panel.'
 weight: 10
 labels:
   products:

@@ -3,7 +3,7 @@ tags:
   - Business Text
   - Events
 title: 'Grafana Events'
-description: 'Learn about Grafana Events in Grafana'
+description: 'Learn how to subscribe to Grafana application events and respond to user interactions using the event bus.'
 labels:
   products:
     - enterprise

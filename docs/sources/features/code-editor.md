@@ -3,7 +3,7 @@ tags:
   - Business Text
 image: /img/plugins/business-text/json.png
 title: 'Code Editor Toolbar'
-description: 'Learn about Code Editor Toolbar in Grafana'
+description: 'Learn how to use the Code Editor toolbar to expand, copy, paste, wrap code, and toggle the mini map for better code management.'
 labels:
   products:
     - enterprise

@@ -1,6 +1,6 @@
 ---
 title: 'Chart.js'
-description: 'import Image from "@theme/Image";'
+description: 'Learn how to create interactive charts using the Chart.js library in the Business Text panel.'
 weight: 2
 labels:
   products:

@@ -1,6 +1,6 @@
 ---
 title: 'Mermaid'
-description: 'import Image from "@theme/Image";'
+description: 'Learn how to create dynamic diagrams and charts using Markdown-defined text with the Mermaid library in the Business Text panel.'
 weight: 8
 labels:
   products:

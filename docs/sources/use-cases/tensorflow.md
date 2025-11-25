@@ -1,6 +1,6 @@
 ---
 title: 'Tensorflow'
-description: 'import Image from "@theme/Image";'
+description: 'Learn how to integrate TensorFlow.js for machine learning capabilities in the Business Text panel.'
 weight: 11
 labels:
   products:

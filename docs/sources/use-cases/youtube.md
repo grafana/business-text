@@ -1,6 +1,6 @@
 ---
 title: 'Youtube video'
-description: 'import Image from "@theme/Image";'
+description: 'Learn how to embed and display YouTube videos on your Grafana dashboard using the Business Text panel.'
 weight: 12
 labels:
   products:

@@ -2,7 +2,7 @@
 tags:
   - Business Text
 title: 'Recipes'
-description: 'Learn about Recipes in Grafana'
+description: 'Learn how to use helpful code snippets for template usage including iteration, conditional content, and accessing specific data rows.'
 labels:
   products:
     - enterprise

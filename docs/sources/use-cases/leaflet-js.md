@@ -1,6 +1,6 @@
 ---
 title: 'Leaflet.js'
-description: 'import Image from "@theme/Image";'
+description: 'Learn how to create interactive maps with GeoJSON data using the Leaflet.js library in the Business Text panel.'
 weight: 6
 labels:
   products:

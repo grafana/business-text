@@ -3,7 +3,7 @@ tags:
   - Business Text
 image: /img/plugins/business-text/json.png
 title: 'Helpers'
-description: 'Learn about Helpers in Grafana'
+description: 'Learn how to use Handlebars helpers to perform text transformations including date formatting, comparisons, and JSON manipulation.'
 labels:
   products:
     - enterprise

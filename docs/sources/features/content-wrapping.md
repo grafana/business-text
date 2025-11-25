@@ -2,7 +2,7 @@
 tags:
   - Business Text
 title: 'Content Wrapping'
-description: 'Learn about Content Wrapping in Grafana'
+description: 'Learn how the content wrapping option controls whether rows are automatically wrapped in paragraph tags.'
 labels:
   products:
     - enterprise

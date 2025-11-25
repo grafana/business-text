@@ -3,7 +3,7 @@ tags:
   - Business Text
 image: /img/plugins/business-text/order-all.png
 title: 'Content'
-description: 'Learn about Content in Grafana'
+description: 'Learn how to use external Handlebars partials in the content parameter to create reusable template components.'
 labels:
   products:
     - enterprise

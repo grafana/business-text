@@ -3,7 +3,7 @@ tags:
   - Business Text
 image: /img/plugins/business-text/styles.png
 title: 'Styles'
-description: 'Learn about Styles in Grafana'
+description: 'Learn how to apply CSS styling using inline, internal, or external methods with support for dashboard variables and syntax highlighting.'
 labels:
   products:
     - enterprise

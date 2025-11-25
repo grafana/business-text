@@ -3,7 +3,7 @@ tags:
   - Business Text
   - Variables
 title: 'Variables'
-description: 'Learn about Variables in Grafana'
+description: 'Learn how to use Grafana dashboard variables in templates, JavaScript code, and CSS styles with dedicated helpers.'
 labels:
   products:
     - enterprise

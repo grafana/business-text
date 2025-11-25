@@ -3,7 +3,7 @@ tags:
   - Business Text
 image: /img/plugins/business-text/order-all.png
 title: 'Rendering'
-description: 'Learn about Rendering in Grafana'
+description: 'Learn about the render template options and rendering order for applying templates to data frames in the Business Text panel.'
 labels:
   products:
     - enterprise

@@ -4,7 +4,7 @@ tags:
 image: /img/plugins/business-text/screenshot.png
 hide_table_of_contents: true
 title: 'Business Text'
-description: 'Learn about Business Text in Grafana'
+description: 'Learn how to convert plain text and table data into visually appealing information cards using Markdown, Handlebars, CSS, and JavaScript.'
 labels:
   products:
     - enterprise

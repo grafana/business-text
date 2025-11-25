@@ -3,7 +3,7 @@ tags:
   - Business Text
 image: /img/plugins/business-text/replace.png
 title: 'Context Parameters'
-description: 'Learn about Context Parameters in Grafana'
+description: 'Learn about the context parameters available in JavaScript code for accessing panel data, Grafana services, and user preferences.'
 labels:
   products:
     - enterprise

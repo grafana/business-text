@@ -1,6 +1,6 @@
 ---
 title: 'Mapbox GL'
-description: 'import Image from "@theme/Image";'
+description: 'Learn how to build interactive 3D maps with Mapbox GL JS mapping technology in the Business Text panel.'
 weight: 7
 labels:
   products:

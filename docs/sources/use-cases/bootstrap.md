@@ -1,6 +1,6 @@
 ---
 title: 'Bootstrap'
-description: 'import Image from "@theme/Image";'
+description: 'Learn how to use the Bootstrap framework to create interactive accordions and styled components in the Business Text panel.'
 weight: 1
 labels:
   products:

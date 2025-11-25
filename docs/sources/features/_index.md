@@ -3,7 +3,7 @@ tags:
   - Business Text
 image: /img/plugins/business-text/application.png
 title: 'Features'
-description: 'Learn about Features in Grafana'
+description: 'Learn about the extensive features of the Business Text panel including helpers, events, options, and variables.'
 labels:
   products:
     - enterprise

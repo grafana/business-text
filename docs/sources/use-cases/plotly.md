@@ -1,6 +1,6 @@
 ---
 title: 'Plotly'
-description: 'import Image from "@theme/Image";'
+description: 'Learn how to create interactive 3D scatter plots and other visualizations using the Plotly graphing library in the Business Text panel.'
 weight: 9
 labels:
   products:

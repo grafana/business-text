@@ -3,7 +3,7 @@ tags:
   - Business Text
 image: /img/plugins/business-text/external.png
 title: 'Status field'
-description: 'Learn about Status field in Grafana'
+description: 'Learn how to use the status field to dynamically set background or foreground colors based on threshold ranges.'
 labels:
   products:
     - enterprise

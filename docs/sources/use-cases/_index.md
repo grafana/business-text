@@ -3,7 +3,7 @@ tags:
   - Business Text
 image: /img/plugins/business-text/external.png
 title: 'Use cases'
-description: 'Learn about Use cases in Grafana'
+description: 'Learn how to import and use external JavaScript libraries like Bootstrap, Chart.js, D3, Mermaid, and others in the Business Text panel.'
 labels:
   products:
     - enterprise

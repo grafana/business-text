@@ -3,7 +3,7 @@ tags:
   - Business Text
 image: /img/plugins/business-text/replace.png
 title: 'JavaScript Code'
-description: 'Learn about JavaScript Code in Grafana'
+description: 'Learn how to integrate JavaScript code snippets to add custom Handlebars helpers, event handlers, and dynamic functionality.'
 labels:
   products:
     - enterprise
