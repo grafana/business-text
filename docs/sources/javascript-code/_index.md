@@ -183,10 +183,9 @@ context.handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolve
 
 If the table does not fit into the allocated panel area, you can add automatic scrolling using JavaScript with an adjustable interval.
 
-<Image
-  title="Automatic scrolling of a table using the Business Text panel."
-  src="/img/plugins/business-text/scroll.gif"
-/>
+{{< video-embed src="" >}}
+
+<!-- Convert this: https://volkovlabs.io/img/plugins/business-text/scroll.gif -->
 
 ### Content
 

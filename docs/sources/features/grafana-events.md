@@ -44,10 +44,9 @@ return () => {
 
 ## EventBus example
 
-<Image
-  title="The Business Text panel displays the Time Series chart hovered values."
-  src="/img/plugins/business-text/event-bus.gif"
-/>
+{{< video-embed src="" >}}
+
+<!-- Convert this: https://volkovlabs.io/img/plugins/business-text/event-bus.gif -->
 
 Below is the Business Text panel configuration.
 
