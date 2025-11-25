@@ -23,7 +23,7 @@ You can import the external JavaScript libraries in both parameters: **Before co
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/before.png" class="border" alt="Use import in the Before content rendering option." >}}
 
-The Business Text panel enables the loading of additional JavaScript using external URLs like CDN (Content Delivery Network). Use that functionality to execute JavaScript functions in the [JavaScript Code](/plugins/business-text/code) editor.
+The Business Text panel enables the loading of additional JavaScript using external URLs like CDN (Content Delivery Network). Use that functionality to execute JavaScript functions in the [JavaScript Code](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/javascript-code/) editor.
 
 ## Public folder
 
@@ -42,14 +42,14 @@ Use **All rows** or **All data** template to execute template only once. With **
 
 | Solution                                                 | Description                                                                                   |
 | -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [Bootstrap](/plugins/business-text/external/bootstrap)   | The most popular HTML, CSS, and JS library in the world                                       |
-| [Chart.js](/plugins/business-text/external/chart-js)     | Chart.js is one of the popular open source charting libraries                                 |
-| [D3](/plugins/business-text/external/d3)                 | D3 is a free, open-source JavaScript library for visualizing data                             |
-| [Flowchart](/plugins/business-text/external/flowchart)   | Draws simple SVG flow chart diagrams from textual representation of the diagram               |
-| [Leaflet.js](/plugins/business-text/external/leaflet)    | A JavaScript library for interactive maps                                                     |
-| [MapBox GL](/plugins/business-text/external/mapbox-gl)   | JavaScript library for building web maps and applications with Mapbox's mapping technology    |
-| [Mermaid](/plugins/business-text/external/mermaid)       | JavaScript-based diagramming and charting tool that dynamically creates and modifies diagrams |
-| [Plotly](/plugins/business-text/external/plotly)         | Open Source Graphing Libraries                                                                |
-| [Tailwind CSS](/plugins/business-text/external/tailwind) | A utility-first CSS framework                                                                 |
-| [TensorFlow](/plugins/business-text/external/tensorflow) | Library for machine learning in JavaScript                                                    |
-| [Youtube Video](/plugins/business-text/external/youtube) | YouTube player component                                                                      |
+| [Bootstrap](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/bootstrap/)   | The most popular HTML, CSS, and JS library in the world                                       |
+| [Chart.js](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/chart-js/)     | Chart.js is one of the popular open source charting libraries                                 |
+| [D3](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/d3/)                 | D3 is a free, open-source JavaScript library for visualizing data                             |
+| [Flowchart](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/flowchart/)   | Draws simple SVG flow chart diagrams from textual representation of the diagram               |
+| [Leaflet.js](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/leaflet-js/)    | A JavaScript library for interactive maps                                                     |
+| [MapBox GL](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/mapbox-gl/)   | JavaScript library for building web maps and applications with Mapbox's mapping technology    |
+| [Mermaid](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/mermaid/)       | JavaScript-based diagramming and charting tool that dynamically creates and modifies diagrams |
+| [Plotly](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/plotly/)         | Open Source Graphing Libraries                                                                |
+| [Tailwind CSS](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/tailwind/) | A utility-first CSS framework                                                                 |
+| [TensorFlow](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/tensorflow/) | Library for machine learning in JavaScript                                                    |
+| [Youtube Video](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/youtube/) | YouTube player component                                                                      |

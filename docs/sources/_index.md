@@ -49,7 +49,7 @@ grafana cli plugins install marcusolsson-dynamictext-panel
 
 ## Highlights
 
-- Provides an in-panel code editor with automatic JavaScript code formatting. Use it to add your JavaScript code and to [import external JavaScript libraries](/plugins/business-text/external/)
+- Provides an in-panel code editor with automatic JavaScript code formatting. Use it to add your JavaScript code and to [import external JavaScript libraries](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/)
 - Supports [Markdown](https://commonmark.org/help/) and [Handlebars](https://handlebarsjs.com/guide/expressions.html#basic-usage).
 - Renders [markdown-it](https://github.com/markdown-it/markdown-it) into HTML elements.
   - Supports the highlighting of code syntax using A11Y styles.
@@ -70,20 +70,18 @@ The video reviews the major latest release including the data flow, predefined h
 
 {{< youtube id="UVMysEjouNo" >}}
 
-We have many other tutorials that you can find helpful. You can review all related to this plugin tutorials [here](/plugins/business-text/tutorials).
+We have many other tutorials that you can find helpful. You can review all related to this plugin tutorials [here](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/tutorials/).
 
 ## Documentation
 
 | Section                  | Description                                                   |
 | ------------------------ | ------------------------------------------------------------- |
-| [Rendering](content)     | Explains how to create a visualization template for your data |
-| [Features](features)     | Explains the plugin's features                                |
-| [Use cases](external)    | Demonstrates interesting Community use cases                  |
-| [Tutorials](tutorials)   | Easy to follow tutorials                                      |
-| [Release Notes](release) | Stay up to date with the latest features and updates          |
+| [Rendering](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/rendering/)     | Explains how to create a visualization template for your data |
+| [Features](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/features/)     | Explains the plugin's features                                |
+| [Use cases](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/)    | Demonstrates interesting Community use cases                  |
+| [Tutorials](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/tutorials/)   | Easy to follow tutorials                                      |
+| [Release notes](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/release/) | Stay up to date with the latest features and updates          |
 
 ## License
 
-Apache License Version 2.0, see [LICENSE](https://github.com/volkovlabs/business-text/blob/main/LICENSE).
-
-
+Apache License Version 2.0, see [LICENSE](https://github.com/grafana/business-text/blob/main/LICENSE).

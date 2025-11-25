@@ -17,10 +17,10 @@ The Business Text panel provides an extensive set of features.
 
 | Section                         | Description                                                                             |
 | ------------------------------- | --------------------------------------------------------------------------------------- |
-| [Helpers](../helpers)           | Explains how to use helpers and perform basic text transformations within your template |
-| [Grafana Events](../eventbus)   | Explains how to react to Grafana events                                                 |
-| [Standard Options](../standard) | Explains how to use the **Standard options**                                            |
-| [Status field](../status)       | Explains how to use the status field configuration                                      |
-| [Variables](../variables)       | Explains how to use variables                                                           |
-| [Content Wrapping](../wrap)     | Explains the Content Wrapping option                                                    |
-| [Expandable editors](../expandable)  | Explains the Expandable editors                                                    |
+| [Helpers](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/features/helpers/) | Explains how to use helpers and perform basic text transformations within your template |
+| [Grafana events](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/features/grafana-events/)   | Explains how to react to Grafana events                                                 |
+| [Standard options](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/features/standard-options/) | Explains how to use the **Standard options**                                            |
+| [Status field](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/features/status-field/)       | Explains how to use the status field configuration                                      |
+| [Variables](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/features/variables)       | Explains how to use variables                                                           |
+| [Content wrapping](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/features/content-wrapping/)     | Explains the Content Wrapping option                                                    |
+| [Code Editor toolbar](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/features/code-editor/)  | Explains the Expandable editors                                                    |

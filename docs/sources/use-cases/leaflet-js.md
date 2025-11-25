@@ -23,7 +23,7 @@ The map on the dashboard from this example looks like in the illustration below.
 
 ## Data to copy
 
-In this example, we use the [Business Input Data Source](/plugins/business-input/).
+In this example, we use the [Business Input Data Source](https://volkovlabs.io/plugins/business-input/).
 
 ```js
 {

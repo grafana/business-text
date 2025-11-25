@@ -137,7 +137,7 @@ tr td {
 
 ## External method example
 
-For the external method example, refer to the [Leaflet.js interactive maps](/plugins/business-text/external/leaflet).
+For the external method example, refer to the [Leaflet.js interactive maps](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/leaflet-js/).
 
 ## Override
 
@@ -152,6 +152,8 @@ You can see all the defined styles in the source code.
 />
 
 </details>
+
+<!-- clean up above -->
 
 ### Padding and margins
 
@@ -183,3 +185,5 @@ We included the Accessibility (A11Y) syntax highlighting style for light and dar
 />
 
 </details>
+
+<!-- clean up above -->

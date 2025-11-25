@@ -27,7 +27,7 @@ The Business Text panel supports the **All data** template starting from version
 The **Render Template** option instructs the Business Text plugin on how to apply your template to the fetched data frame.
 
 - **Every row**. The template applies to every row returned by your query. Your template is rendered as many times as rows are fetched.
-- **All rows**. The query results from selected data frame are passed as a `data` field to the **Content** template. Your template is rendered once. To work with query results as a whole, you can use [#each built-in helper](../recipes/#iterate-through-all-fields-in-each-record) to iterate through records.
+- **All rows**. The query results from selected data frame are passed as a `data` field to the **Content** template. Your template is rendered once. To work with query results as a whole, you can use [#each built-in helper](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/rendering/recipes/#iterate-through-all-fields-in-each-record) to iterate through records.
 - **All data**. The query results from all data frames are passed as a `data` field to the Content template. Your template is rendered once.
 
 | Render Template | Description                          |
@@ -40,7 +40,7 @@ Below you can find some examples to illustrate further.
 
 ### Every row
 
-For instance, your data source returns a four-column table as follows. To mimic that in the example below, the [Business Input data source](/plugins/business-input/) is used.
+For instance, your data source returns a four-column table as follows. To mimic that in the example below, the [Business Input data source](https://volkovlabs.io/plugins/business-input/) is used.
 
 ```md
 | app  | description                  | cluster | tier     |
@@ -64,7 +64,7 @@ Link: <a href="https://{{cluster}}.example.com/{{app}}">https://{{cluster}}.exam
 
 ### All rows
 
-For instance, your data source returns a table with multiple rows as follows. To mimic that in the example below, the [Business Input data source](/plugins/business-input/) is used.
+For instance, your data source returns a table with multiple rows as follows. To mimic that in the example below, the [Business Input data source](https://volkovlabs.io/plugins/business-input/) is used.
 
 ```md
 | title | author        | year |
@@ -181,7 +181,7 @@ where `htmlValue` is
 
 The default content is displayed if the connected data source returns no data. You can use it to provide users with instructions on what to do or who to contact when the query returns an empty result.
 
-Even though your data source returns no data, you can still use the available [helpers](/plugins/business-text/helpers).
+Even though your data source returns no data, you can still use the available [helpers](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/features/helpers/).
 
 ### HTML sanitization
 

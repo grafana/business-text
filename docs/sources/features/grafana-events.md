@@ -22,7 +22,7 @@ Grafana uses an event bus to publish application events to notify different part
 
 ## Predefined Events
 
-A full list of events is available in our [Grafana Crash Course](/grafana/developer/eventbus).
+A full list of events is available in our [Grafana Crash Course](https://volkovlabs.io/grafana/developer/eventbus/).
 
 ## Subscribe to events
 
