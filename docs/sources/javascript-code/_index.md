@@ -15,7 +15,7 @@ weight: 20
 
 The Business Text panel supports the integration of JavaScript code snippets that can add Handlebars helpers and event handlers.
 
-<Youtube id="lJqk5Gobec4" title="JavaScript code in Business Text panel." />
+{{< youtube id="lJqk5Gobec4" >}}
 
 ## Parameters
 
@@ -428,7 +428,4 @@ You can find all you need in the following blog post:
 
 If you are a visual style learner, you can watch the video. It covers the same ground.
 
-<Youtube
-  id="FMSEGGFbJy0"
-  title="Convert dashboard values on the fly for demo purposes."
-/>
+{{< youtube id="FMSEGGFbJy0" >}}

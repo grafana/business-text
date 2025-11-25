@@ -30,10 +30,7 @@ Discover why the Business Text panel is a powerhouse for your business dashboard
 
 The latest major release introduces enhanced data flow, predefined helpers, and integration with external JavaScript libraries.
 
-<Youtube
-  id="UVMysEjouNo"
-  title="The Business Text panel for Grafana. Main features overview in 5.0.0"
-/>
+{{< youtube id="UVMysEjouNo" >}}
 
 ### Supported Technologies
 
@@ -48,10 +45,7 @@ The latest major release introduces enhanced data flow, predefined helpers, and 
 
 Simplify your demo dashboards with the Anonymizer feature, designed for quick and reliable configuration.
 
-<Youtube
-  id="FMSEGGFbJy0"
-  title="Convert dashboard values on the fly for demo purposes."
-/>
+{{< youtube id="FMSEGGFbJy0" >}}
 
 <BlogPost id="anonymizer-20240302" />
 
@@ -79,10 +73,7 @@ External library support was added to expand the plugin’s versatility.
 
 Combine Business Text, Business Forms, and Business Charts for a complete Grafana solution.
 
-<Youtube
-  id="wPr4gZYzUVA"
-  title="Dynamic Text, Data Manipulation and Apache ECharts plugins."
-/>
+{{< youtube id="wPr4gZYzUVA" >}}
 
 ## Historical Guides
 
@@ -90,22 +81,16 @@ Combine Business Text, Business Forms, and Business Charts for a complete Grafan
 
 Explore the core features of Business Text 2.0.0 with community use cases.
 
-<Youtube
-  id="AcQi-6GCrNU"
-  title="Use HTML, Markdown, JavaScript and CSS. Community use cases."
-/>
+{{< youtube id="AcQi-6GCrNU" >}}
 
 ### JavaScript in Dynamic Text
 
 See how JavaScript integration revolutionized the plugin.
 
-<Youtube id="lJqk5Gobec4" title="JavaScript code in Dynamic Text panel." />
+{{< youtube id="lJqk5Gobec4" >}}
 
 ### Getting Started with Version 1.9.0
 
 The original guide for transforming table data into vibrant visualizations.
 
-<Youtube
-  id="MpNZ4Yl-p0U"
-  title="Markdown, HTML, and Handlebars for transforming data visualizations."
-/>
+{{< youtube id="MpNZ4Yl-p0U" >}}

@@ -39,10 +39,7 @@ By working with the Business Text plugin you construct a text visualization temp
 
 You can install the Business Text panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or using the Grafana command line tool.
 
-<Youtube
-  id="1qYzHfPXJF8"
-  title="Install Business Suite plugins in Cloud, OSS, Enterprise. Getting started with the Business Suite."
-/>
+{{< youtube id="1qYzHfPXJF8" >}}
 
 For the latter, please use the following command:
 
@@ -74,10 +71,7 @@ grafana cli plugins install marcusolsson-dynamictext-panel
 
 The video reviews the major latest release including the data flow, predefined helpers and numerous examples of the external JavaScript libraries.
 
-<Youtube
-  id="UVMysEjouNo"
-  title="The Business Text panel for Grafana. Main features overview in 5.0.0"
-/>
+{{< youtube id="UVMysEjouNo" >}}
 
 We have many other tutorials that you can find helpful. You can review all related to this plugin tutorials [here](/plugins/business-text/tutorials).
 
