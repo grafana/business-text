@@ -36,11 +36,9 @@ https://esm.sh/raphael
 
 ## After Content Ready
 
-:::warning Version mismatch
-
+{{< admonition type="warning" >}}
 Plug-in libraries may change their versions and the code in the example may not work or cause an error.
-
-:::
+{{< /admonition >}}
 
 Use the following for the **JavaScript**->**After Content Ready**:
 
