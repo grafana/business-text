@@ -1,0 +1,39 @@
+---
+tags:
+  - Business Text
+image: /img/plugins/business-text/external.png
+title: 'Status field'
+description: 'Learn about Status field in Grafana'
+labels:
+  products:
+    - enterprise
+    - oss
+weight: 400
+---
+import Image from "@theme/Image";
+
+# Status field
+
+:::info Version
+
+The Business Text panel supports the status field starting from version 4.1.0.
+:::
+
+You can use the `statusColor` variable to set a background or foreground color of any HTML element.
+
+<Image
+  title="Status field allows you to dynamically set a background or foreground color."
+  src="/img/plugins/business-text/status.png"
+/>
+
+## Threshold
+
+Colors are defined based on the threshold ranges for the selected status field.
+
+## Example
+
+```handlebars
+<div style="background-color: {{statusColor}}">
+  {{A-series}}
+</div>
+```

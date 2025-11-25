@@ -1,0 +1,67 @@
+---
+tags:
+  - Business Text
+title: 'Recipes'
+description: 'Learn about Recipes in Grafana'
+labels:
+  products:
+    - enterprise
+    - oss
+---
+# Recipes
+
+This page includes helpful snippets for usage in your templates.
+
+## Initial context
+
+Displays the initial context within which the template is executed.
+
+````handlebars
+```json
+{{{json @root}}}
+```
+````
+
+Please take a look at the [documentation](https://handlebarsjs.com/api-reference/data-variables.html#root) for Handlebars variables.
+
+## Iterate through all fields in each record
+
+The **Render template** toggle should be set as `All rows` in the plugin options.
+
+```handlebars
+{{#each data}}
+  {{#each this}} {{@key}}: {{this}} {{/each}}
+{{/each}}
+```
+
+## Conditional content
+
+This snippet shows how to display different content based on specific conditions.
+
+```handlebars
+{{#if (eq app "auth")}}
+  This is the auth app.
+{{else}}
+  This is not an auth app.
+{{/if}}
+```
+
+## Specific row in the data
+
+To reference a specific row in the returned dataset, set the **Render template** toggle as `All rows`.
+
+```handlebars
+{{data.4.title}}
+```
+
+### Handlebars variables
+
+This snippet shows how to iterate through an array of data and display the title of the third item of the array with the `@index` variable.
+
+```handlebars
+{{#each data}}
+  {{#if (eq @index 3)}}
+    {{title}}
+  {{/if}}
+{{/each}}
+```

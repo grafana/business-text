@@ -1,0 +1,115 @@
+---
+tags:
+  - Business Text
+title: 'Business Text tutorials'
+menuTitle: Tutorials
+description: 'Learn about Business Text tutorials in Grafana'
+labels:
+  products:
+    - enterprise
+    - oss
+weight: 60
+---
+import BlogPost from "@theme/BlogPost";
+import TabItem from "@theme/TabItem";
+import Tabs from "@theme/Tabs";
+import Tutorials from "../../_tutorials.mdx";
+import Youtube from "@theme/Youtube";
+
+# Business Text tutorials
+
+The Business Text panel for Grafana is a versatile plugin that transforms your data visualizations using HTML, Markdown, JavaScript, and CSS. This documentation section covers its key features, use cases, and implementation guides.
+
+<Tutorials />
+
+## Why Choose Business Text?
+
+Discover why the Business Text panel is a powerhouse for your business dashboards with its flexibility and robust feature set.
+
+<BlogPost id="business-text-powerhouse" />
+
+## Key Features
+
+### Version 5.0.0 Highlights
+
+The latest major release introduces enhanced data flow, predefined helpers, and integration with external JavaScript libraries.
+
+<Youtube
+  id="UVMysEjouNo"
+  title="The Business Text panel for Grafana. Main features overview in 5.0.0"
+/>
+
+### Supported Technologies
+
+- **HTML**: Structure your content with standard HTML tags for maximum flexibility.
+- **Markdown**: Use Markdown for simple, readable text formatting.
+- **JavaScript**: Add dynamic functionality with custom JavaScript code.
+- **CSS**: Style your visualizations with custom CSS.
+
+## Tutorials and Use Cases
+
+### Streamline Demos with Dynamic Text
+
+Simplify your demo dashboards with the Anonymizer feature, designed for quick and reliable configuration.
+
+<Youtube
+  id="FMSEGGFbJy0"
+  title="Convert dashboard values on the fly for demo purposes."
+/>
+
+<BlogPost id="anonymizer-20240302" />
+
+:::info
+The Anonymizer was originally built for internal use and proven effective in multiple presentations.
+:::
+
+### Custom Datepicker for Time Ranges
+
+Enhance time range selection in Grafana with a custom Datepicker.
+
+<BlogPost id="datapicker-20240905" />
+
+### Extend Visualizations with D3.js
+
+Integrate the D3.js library to unlock advanced visualization capabilities.
+
+<BlogPost id="dynamic-text-d3-community-20240121" />
+
+:::info
+External library support was added to expand the plugin’s versatility.
+:::
+
+### The Magic JavaScript Trio
+
+Combine Business Text, Business Forms, and Business Charts for a complete Grafana solution.
+
+<Youtube
+  id="wPr4gZYzUVA"
+  title="Dynamic Text, Data Manipulation and Apache ECharts plugins."
+/>
+
+## Historical Guides
+
+### Version 2.0.0 Features
+
+Explore the core features of Business Text 2.0.0 with community use cases.
+
+<Youtube
+  id="AcQi-6GCrNU"
+  title="Use HTML, Markdown, JavaScript and CSS. Community use cases."
+/>
+
+### JavaScript in Dynamic Text
+
+See how JavaScript integration revolutionized the plugin.
+
+<Youtube id="lJqk5Gobec4" title="JavaScript code in Dynamic Text panel." />
+
+### Getting Started with Version 1.9.0
+
+The original guide for transforming table data into vibrant visualizations.
+
+<Youtube
+  id="MpNZ4Yl-p0U"
+  title="Markdown, HTML, and Handlebars for transforming data visualizations."
+/>

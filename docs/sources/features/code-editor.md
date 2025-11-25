@@ -1,0 +1,50 @@
+---
+tags:
+  - Business Text
+image: /img/plugins/business-text/json.png
+title: 'Code Editor Toolbar'
+description: 'Learn about Code Editor Toolbar in Grafana'
+labels:
+  products:
+    - enterprise
+    - oss
+weight: 700
+---
+import Image from "@theme/Image";
+
+# Code Editor Toolbar
+
+:::info Version
+
+The Business Text panel supports the Code Editor toolbar starting from version 5.3.0. Additional buttons were added in 5.4.0.
+
+:::
+
+## Expand the editor
+
+For a better user experience, use the expand the editor area button.
+
+<Image
+  title="Expand the code area button."
+  src="/img/blog/2024-08-26-dynamictext-panel-5.3.0/button.png"
+  width="20%"
+/>
+
+You can find this button in all areas where you might need to have an extensive piece of code.
+
+<Image
+  title="Use the expand the code area button to open your code in a separate window."
+  src="/img/plugins/business-text/window.png"
+/>
+
+## Additional buttons
+
+- **Copy code**. Copies the highlighted code in the memory buffer.
+- **Paste code**. Pastes the content of the memory buffer.
+- **Wrap code on new lines**. Fits the text into the visible area on the screen.
+- **Show/Hide mini map**. Shows/hides the far right area depicting the code at scale.
+
+<Image
+  title="More buttons to facilitate work with the code."
+  src="/img/plugins/business-text/more-buttons.png"
+/>
