@@ -25,10 +25,7 @@ https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css
 Grafana's edit mode might prevent displaying bootstrap framework. Save and check the result on the dashboard.
 {{< /admonition >}}
 
-<Image
-  title="Bootstrap accordion displayed using the Business Text panel."
-  src="/img/plugins/business-text/bootstrap.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/bootstrap.png" class="border" alt="Bootstrap accordion displayed using the Business Text panel." >}}
 
 ## Code to copy
 

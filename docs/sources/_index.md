@@ -62,10 +62,7 @@ grafana cli plugins install marcusolsson-dynamictext-panel
 - Supports adding CSS styles with dashboard variables.
 - Supports internationalization using custom helpers.
 
-<Image
-  title="The Business Text panel for Grafana."
-  src="/img/plugins/business-text/screenshot.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/screenshot.png" class="border" alt="The Business Text panel for Grafana." >}}
 
 ## Tutorial
 

@@ -19,10 +19,7 @@ The Business Text panel supports the status field starting from version 4.1.0.
 
 You can use the `statusColor` variable to set a background or foreground color of any HTML element.
 
-<Image
-  title="Status field allows you to dynamically set a background or foreground color."
-  src="/img/plugins/business-text/status.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/status.png" class="border" alt="Status field allows you to dynamically set a background or foreground color." >}}
 
 ## Threshold
 

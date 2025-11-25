@@ -27,11 +27,7 @@ Starting from release 4.3.0, we provide access to the panel data `panelData` and
 
 Start typing the `context` word in the **Before Content Rendering** or **After Content Ready** boxes and see the latest list of all available features.
 
-<Image
-  title="Simplified access to the panel data and selected data frame and some other features."
-  src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/context.png"
-  width="70%"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/context.png" class="border" alt="Simplified access to the panel data and selected data frame and some other features." >}}
 
 | Parameter                                                                                                                       | Description                                                                                                                                                                                                                                          | Before Render | After Render |
 | :------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------- |
@@ -83,10 +79,7 @@ context.handlebars.registerHelper("replace", (context, pattern, replacement) =>
 );
 ```
 
-<Image
-  title="A custom helper to replace data in the returned data."
-  src="/img/plugins/business-text/replace.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/replace.png" class="border" alt="A custom helper to replace data in the returned data." >}}
 
 ## Event Handler
 
@@ -106,10 +99,7 @@ myFunc = () => {
 };
 ```
 
-<Image
-  title="JavaScript handler for button onclick event."
-  src="/img/plugins/business-text/event-handler.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/event-handler.png" class="border" alt="JavaScript handler for button onclick event." >}}
 
 ## Internationalization
 
@@ -161,10 +151,7 @@ context.handlebars.registerHelper(
 
 You can display the selected dashboard, browser's time zone, and time ranges in Grafana.
 
-<Image
-  title="The Business Text panel allows displaying an updated time zone and time ranges in Grafana."
-  src="/img/plugins/business-text/time.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/time.png" class="border" alt="The Business Text panel allows displaying an updated time zone and time ranges in Grafana." >}}
 
 ### Content
 
@@ -319,10 +306,7 @@ console.log(bonjour.toUpperCase())
 
 The Business Text plugin submits REST API requests.
 
-<Image
-  title="The Business Text plugin submits REST API request."
-  src="/img/plugins/business-text/rest.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/rest.png" class="border" alt="The Business Text plugin submits REST API request." >}}
 
 ### Content
 
@@ -391,10 +375,7 @@ The community member [havedill](https://github.com/havedill) [asked](https://git
 
 We believe the solution might be helpful for many, so here is how you can do it.
 
-<Image
-  title="."
-  src="/img/blog/2024-01-12-dynamictext-panel-4.3.0/json-parsing.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/json-parsing.png" class="border" alt="." >}}
 
 ### JSON example
 

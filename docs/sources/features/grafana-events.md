@@ -51,10 +51,7 @@ return () => {
 
 Below is the Business Text panel configuration.
 
-<Image
-  title="The Business Text panel in edit mode."
-  src="/img/plugins/business-text/eb-edit.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/eb-edit.png" class="border" alt="The Business Text panel in edit mode." >}}
 
 **Content** to copy
 

@@ -19,10 +19,7 @@ Simply, import two external libraries and then write your code addressing the Fl
 
 ## Example
 
-<Image
-  title="Delivering Flowchart libraries to a Grafana dashboard using the Business Text plugin."
-  src="/img/plugins/business-text/flow.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/flow.png" class="border" alt="Delivering Flowchart libraries to a Grafana dashboard using the Business Text plugin." >}}
 
 Use the following external library
 

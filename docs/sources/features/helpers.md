@@ -106,19 +106,13 @@ Presents an object (JSON) or an array as a formatted string. Markdown supports t
 <!-- result: as string  -->
 ````
 
-<Image
-  title="Visualize a formatted JSON object."
-  src="/img/plugins/business-text/json.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/json.png" class="border" alt="Visualize a formatted JSON object." >}}
 
 ### Transformation
 
 The `JSON` helper expects an object or an array to display it as a formatted string. If the data source returns a string it should be transformed to a JSON object using the `Convert field type` transformation.
 
-<Image
-  title="Transform a JSON string into an object."
-  src="/img/plugins/business-text/json-transformation.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/json-transformation.png" class="border" alt="Transform a JSON string into an object." >}}
 
 ## `{{split}}`
 
@@ -132,10 +126,7 @@ Splits a string into an array using a given separator.
 <!-- result: ['a','b','c']  -->
 ```
 
-<Image
-  title="Examples of splitting a string into an array."
-  src="/img/plugins/business-text/split.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/split.png" class="border" alt="Examples of splitting a string into an array." >}}
 
 ## `{{toFixed}}`
 

@@ -13,10 +13,7 @@ weight: 12
 
 This idea comes from the [GitHub issue](https://github.com/VolkovLabs/business-text/issues/261) opened by [Raphealtony](https://github.com/Raphealtony). The Business Text plugin can be used to display YouTube videos on your Grafana dashboard.
 
-<Image
-  title="How to configure the Business Text plugin to display a YouTube video."
-  src="/img/plugins/business-text/yt-edit.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/yt-edit.png" class="border" alt="How to configure the Business Text plugin to display a YouTube video." >}}
 
 Use the following external library
 

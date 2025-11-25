@@ -13,10 +13,7 @@ weight: 10
 
 Thank you [Raghavendra Samant](https://github.com/samant-rags) for exploring a utility-first framework [Tailwind CSS](https://tailwindcss.com). Using Tailwind in the Business Text panel differs slightly from the previous examples.
 
-<Image
-  title="The Business Text panel with Tailwind styles on the dashboard."
-  src="/img/plugins/business-text/tailwind-panel.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/tailwind-panel.png" class="border" alt="The Business Text panel with Tailwind styles on the dashboard." >}}
 
 To prevent CORS issues we recommend adding Tailwind script to the Grafana's public folder `/usr/share/grafana/public/yourFileName.js`.
 
@@ -26,10 +23,7 @@ The file can contain the import function and use Tailwind, or it can load code f
 
 Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload it to `/usr/share/grafana/public/` in the Docker container. We used the latest version `https://cdn.tailwindcss.com/3.4.4`.
 
-<Image
-  title="A Tailwind script uploaded to the Docker container."
-  src="/img/plugins/business-text/tailwind-file-example.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/tailwind-file-example.png" class="border" alt="A Tailwind script uploaded to the Docker container." >}}
 
 ## Content
 
@@ -57,10 +51,7 @@ Use the following for the **JavaScript**->**After Content Ready**:
 import("/public/tailwind.js");
 ```
 
-<Image
-  title="The Business Text panel with imported Tailwind CSS."
-  src="/img/plugins/business-text/tailwind-panel-edit-mode.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/tailwind-panel-edit-mode.png" class="border" alt="The Business Text panel with imported Tailwind CSS." >}}
 
 ## Load Tailwind from CDN
 

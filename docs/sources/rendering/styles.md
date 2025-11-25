@@ -22,10 +22,7 @@ You can impose style using one, all, or any combination of the following:
   - On any external Grafana instance `https://GRAFANA-URL/public/grafanaCSS.css`
   - Or on local Grafana instance `/public/grafanaCSS.css`
 
-<Image
-  title="The Business Text panel supports all usual styling methods."
-  src="/img/plugins/business-text/style-methods.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/style-methods.png" class="border" alt="The Business Text panel supports all usual styling methods." >}}
 
 ## Dashboard variables
 
@@ -62,19 +59,13 @@ b.name {
 }
 ```
 
-<Image
-  title="Using internal CSS for bold text in a table."
-  src="/img/plugins/business-text/styles.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/styles.png" class="border" alt="Using internal CSS for bold text in a table." >}}
 
 ## Internal method example 2
 
 Here I have a simple, yet amazing styling approach. For instance, you can display the status of your devices/servers as green or red dots in a table.
 
-<Image
-  title="Simple, yet stylish way to display unit status."
-  src="/img/plugins/business-text/dots.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/dots.png" class="border" alt="Simple, yet stylish way to display unit status." >}}
 
 To have this on your dashboard, copy the **Content** and **CSS Styles** parameters from below.
 
@@ -177,10 +168,7 @@ To display content without padding and margins, you need to override the parent 
 
 The code syntax highlighting is based on the `highlight.js` library, which supports key programming languages.
 
-<Image
-  title="Random Walk data displayed with the highlighting and without margins or paddings."
-  src="/img/plugins/business-text/json.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/json.png" class="border" alt="Random Walk data displayed with the highlighting and without margins or paddings." >}}
 
 ### Styling
 

@@ -21,18 +21,11 @@ The Business Text panel supports the Code Editor toolbar starting from version 5
 
 For a better user experience, use the expand the editor area button.
 
-<Image
-  title="Expand the code area button."
-  src="/img/blog/2024-08-26-dynamictext-panel-5.3.0/button.png"
-  width="20%"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/button.png" class="border" alt="Expand the code area button." >}}
 
 You can find this button in all areas where you might need to have an extensive piece of code.
 
-<Image
-  title="Use the expand the code area button to open your code in a separate window."
-  src="/img/plugins/business-text/window.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/window.png" class="border" alt="Use the expand the code area button to open your code in a separate window." >}}
 
 ## Additional buttons
 
@@ -41,7 +34,4 @@ You can find this button in all areas where you might need to have an extensive 
 - **Wrap code on new lines**. Fits the text into the visible area on the screen.
 - **Show/Hide mini map**. Shows/hides the far right area depicting the code at scale.
 
-<Image
-  title="More buttons to facilitate work with the code."
-  src="/img/plugins/business-text/more-buttons.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/more-buttons.png" class="border" alt="More buttons to facilitate work with the code." >}}

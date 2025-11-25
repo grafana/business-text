@@ -20,17 +20,11 @@ The **Content**->**Wrap automatically in paragraphs** option:
 
 The example below shows the **Content** that does not contain any spaces. In that event, the **Content**->**Wrap automatically in paragraphs** parameter is irrelevant and both **Enabled** and **Disabled** modes generate the same output.
 
-<Image
-  title="No spaces in the Content, the wrap parameter is irrelevant. The dashboard looks as expected for both, Enabled and Disabled, modes."
-  src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/no-empty-lines.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/no-empty-lines.png" class="border" alt="No spaces in the Content, the wrap parameter is irrelevant. The dashboard looks as expected for both, Enabled and Disabled, modes." >}}
 
 The example below shows the **Content** that contains one empty line and how the form is interpreted with **Enabled** and **Dispaled** modes.
 
-<Image
-  title="The wrap option effect on the Content with space in it."
-  src="/img/blog/2023-11-21-dynamictext-panel-4.2.0/yes-empty-lines.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/yes-empty-lines.png" class="border" alt="The wrap option effect on the Content with space in it." >}}
 
 The code used in the examples above:
 

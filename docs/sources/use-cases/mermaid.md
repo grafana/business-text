@@ -19,17 +19,11 @@ Previously we maintained two Business text (old name Dynamic Text) plugin builds
 The main reason being the Mermaid Library size. After we added the External Resources feature, the need to maintain two builds has vanished. Now, anyone who needs the Mermaid library can simply import it as an external resource.
 {{< /admonition >}}
 
-<Image
-  title="Mermaid diagrams displayed using the Business Text panel."
-  src="/img/plugins/business-text/diagram.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/diagram.png" class="border" alt="Mermaid diagrams displayed using the Business Text panel." >}}
 
 ## Example
 
-<Image
-  title="Mermaid diagrams example."
-  src="/img/plugins/business-text/mer.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/mer.png" class="border" alt="Mermaid diagrams example." >}}
 
 Use the following external library
 

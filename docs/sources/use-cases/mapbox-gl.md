@@ -15,10 +15,7 @@ This is another great example of external resource usage in the Business Text Pl
 
 Follow the below outlined steps to display [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/example/3d-buildings/) on your Grafana dashboard.
 
-<Image
-  title="The Mapbox map displayed using Business Text on the dashboard."
-  src="/img/plugins/business-text/mapboxgl.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/mapboxgl.png" class="border" alt="The Mapbox map displayed using Business Text on the dashboard." >}}
 
 ## Content
 

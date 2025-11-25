@@ -21,10 +21,7 @@ The Business Text panel supports the JavaScript libraries import in the **Before
 
 You can import the external JavaScript libraries in both parameters: **Before content rendering** and **After content ready**.
 
-<Image
-  title="Use import in the Before content rendering option."
-  src="/img/blog/2024-08-26-dynamictext-panel-5.3.0/before.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/before.png" class="border" alt="Use import in the Before content rendering option." >}}
 
 The Business Text panel enables the loading of additional JavaScript using external URLs like CDN (Content Delivery Network). Use that functionality to execute JavaScript functions in the [JavaScript Code](/plugins/business-text/code) editor.
 

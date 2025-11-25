@@ -23,10 +23,7 @@ https://esm.sh/plotly.js-dist-min
 Grafana's edit mode might prevent displaying Plotly charts. Save and check the result on the dashboard.
 {{< /admonition >}}
 
-<Image
-  title="Plotly chart displayed using the Business Text panel."
-  src="/img/plugins/business-text/plotly.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/plotly.png" class="border" alt="Plotly chart displayed using the Business Text panel." >}}
 
 ## Code to copy
 
@@ -136,9 +133,6 @@ import("https://esm.sh/plotly.js-dist-min@2.35.2").then(
 For example, the link `https://esm.sh/plotly.js-dist-min` returns the latest stable version.
 The code was written when the module returns version 2.35.2. Changing the module version caused an error.
 
-<Image
-  title="Example of console error on version difference."
-  src="/img/plugins/business-text/v-function-error.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/v-function-error.png" class="border" alt="Example of console error on version difference." >}}
 
 You should change the version to `https://esm.sh/plotly.js-dist-min@2.35.2`, or check the new version of the module and update the code.

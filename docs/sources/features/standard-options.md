@@ -22,16 +22,10 @@ The Business Text panel supports the following **Standard options**:
 - **Unit**,
 - **Decimals**.
 
-<Image
-  title="The Business Text supports Units and Decimals defined in the Standard options and Overrides."
-  src="/img/plugins/business-text/features/units/panel.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/panel.png" class="border" alt="The Business Text supports Units and Decimals defined in the Standard options and Overrides." >}}
 
 ## Overrides
 
 The **Unit** and **Decimals** can be set for a specific field or data frame using **Overrides**.
 
-<Image
-  title="Override unit for fields with name Value."
-  src="/img/plugins/business-text/features/units/override.png"
-/>
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/override.png" class="border" alt="Override unit for fields with name Value." >}}
