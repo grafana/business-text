@@ -13,11 +13,9 @@ weight: 700
 
 # Code Editor Toolbar
 
-:::info Version
-
+{{< admonition type="note" >}}
 The Business Text panel supports the Code Editor toolbar starting from version 5.3.0. Additional buttons were added in 5.4.0.
-
-:::
+{{< /admonition >}}
 
 ## Expand the editor
 

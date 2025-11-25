@@ -14,11 +14,9 @@ weight: 200
 
 # Grafana Events
 
-:::info Version
-
+{{< admonition type="note" >}}
 The Business Text panel supports the event bus starting from version 4.0.0.
-
-:::
+{{< /admonition >}}
 
 Grafana uses an event bus to publish application events to notify different parts of Grafana when the user interacts with it. The Business Text panel can respond to these interactions by subscribing to one or more events.
 

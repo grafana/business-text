@@ -13,10 +13,9 @@ weight: 400
 
 # Status field
 
-:::info Version
-
+{{< admonition type="note" >}}
 The Business Text panel supports the status field starting from version 4.1.0.
-:::
+{{< /admonition >}}
 
 You can use the `statusColor` variable to set a background or foreground color of any HTML element.
 

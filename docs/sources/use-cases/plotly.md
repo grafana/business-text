@@ -19,11 +19,9 @@ Use the following external Plotly's chart library:
 https://esm.sh/plotly.js-dist-min
 ```
 
-:::info
-
+{{< admonition type="note" >}}
 Grafana's edit mode might prevent displaying Plotly charts. Save and check the result on the dashboard.
-
-:::
+{{< /admonition >}}
 
 <Image
   title="Plotly chart displayed using the Business Text panel."

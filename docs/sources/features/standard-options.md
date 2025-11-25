@@ -13,10 +13,9 @@ weight: 300
 
 # Standard Options
 
-:::info Version
-
+{{< admonition type="note" >}}
 The Business Text panel supports the **Standard options** and **Overrides** starting from version 5.0.0.
-:::
+{{< /admonition >}}
 
 The Business Text panel supports the following **Standard options**:
 

@@ -19,11 +19,9 @@ The Business Text panel supports the integration of JavaScript code snippets tha
 
 ## Parameters
 
-:::info Version
-
+{{< admonition type="note" >}}
 The Business Text panel supports `context` starting from version 4.3.0.
-
-:::
+{{< /admonition >}}
 
 Starting from release 4.3.0, we provide access to the panel data `panelData` and selected data frame `data` via a new object `context`.
 
@@ -61,11 +59,9 @@ You can add a custom Handlebars helper to replace the field's value according to
 {{replace Test "Pattern" "Replaced"}}
 ```
 
-:::info After Content Render
-
+{{< admonition type="note" >}}
 Handlebars are not available in the After Content Render.
-
-:::
+{{< /admonition >}}
 
 Handlebars should be created in the **Before content Render**, because they are used during the rendering process to convert Handlebars -> Markdown -> HTML.
 

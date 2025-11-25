@@ -151,11 +151,9 @@ Formats the given number using a fixed-point notation.
 
 ## `{{startsWith}}`
 
-:::info Version
-
+{{< admonition type="note" >}}
 The Business Text panel supports this starting from version 4.2.0.
-
-:::
+{{< /admonition >}}
 
 Returns true if the variable starts with a specified value.
 Example:
@@ -171,11 +169,9 @@ Example:
 
 ## `{{endsWith}}`
 
-:::info Version
-
+{{< admonition type="note" >}}
 The Business Text panel supports this starting from version 4.2.0.
-
-:::
+{{< /admonition >}}
 
 Returns true if the variable ends with a specified value.
 Example:
@@ -191,11 +187,9 @@ Example:
 
 ## `{{match}}`
 
-:::info Version
-
+{{< admonition type="note" >}}
 The Business Text panel supports this starting from version 4.2.0.
-
-:::
+{{< /admonition >}}
 
 Returns true if the variable matches with a specified value.
 Example:
@@ -224,11 +218,9 @@ if hostname = ["server1", "server2", "server3"] then result: ["server1",
 
 ## Helper `{{variableValue}}`
 
-:::info Version
-
+{{< admonition type="note" >}}
 The Business Text panel supports this starting from version 4.3.0.
-
-:::
+{{< /admonition >}}
 
 This helper works with all [Grafana variable formats](https://grafana.com/docs/grafana/latest/dashboards/variables/variable-syntax/).
 Below is an example of the `queryparam` type.

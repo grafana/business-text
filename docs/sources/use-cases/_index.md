@@ -13,13 +13,11 @@ weight: 50
 
 # Use cases
 
-:::info Version
-
+{{< admonition type="note" >}}
 Since in Grafana 11, the functionality of external JavaScript resources is deprecated, we removed the **External Resource**->**Scripts** parameter. You can import the JavaScript library directly in the code.
 
 The Business Text panel supports the JavaScript libraries import in the **Before content rendering** starting from version 5.3.0.
-
-:::
+{{< /admonition >}}
 
 You can import the external JavaScript libraries in both parameters: **Before content rendering** and **After content ready**.
 
@@ -41,11 +39,9 @@ To prevent the loading of third-party URLs, you can store CSS and JS files in th
 
 Below, you can find a collection of breathtaking use cases, the perfect examples of using external JavaScript libraries in the Business Text plugin.
 
-:::info Render template parameter
-
+{{< admonition type="note" >}}
 Use **All rows** or **All data** template to execute template only once. With **Every row**, the **Content** will be applied to every row of retrieved data. Even though the data frames of the specified data source are not used, still the plugin runs the code as many times as the number of rows is retrieved.
-
-:::
+{{< /admonition >}}
 
 | Solution                                                 | Description                                                                                   |
 | -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |

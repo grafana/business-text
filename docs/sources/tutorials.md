@@ -55,9 +55,9 @@ Simplify your demo dashboards with the Anonymizer feature, designed for quick an
 
 <BlogPost id="anonymizer-20240302" />
 
-:::info
+{{< admonition type="note" >}}
 The Anonymizer was originally built for internal use and proven effective in multiple presentations.
-:::
+{{< /admonition >}}
 
 ### Custom Datepicker for Time Ranges
 
@@ -71,9 +71,9 @@ Integrate the D3.js library to unlock advanced visualization capabilities.
 
 <BlogPost id="dynamic-text-d3-community-20240121" />
 
-:::info
+{{< admonition type="note" >}}
 External library support was added to expand the plugin’s versatility.
-:::
+{{< /admonition >}}
 
 ### The Magic JavaScript Trio
 

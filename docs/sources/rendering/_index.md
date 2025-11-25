@@ -18,11 +18,9 @@ The first is **Render Template** and the second is rendering order.
 
 ## Render Template
 
-:::info All data
-
+{{< admonition type="note" >}}
 The Business Text panel supports the **All data** template starting from version 4.3.0.
-
-:::
+{{< /admonition >}}
 
 <Image
   title="Select one of the three available options for the Render Template parameter."

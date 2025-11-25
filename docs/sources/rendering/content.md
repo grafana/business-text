@@ -12,11 +12,9 @@ labels:
 
 # Content
 
-:::info Version
-
+{{< admonition type="note" >}}
 The Business Text panel supports the partials feature starting from version 5.3.0.
-
-:::
+{{< /admonition >}}
 
 In addition to external CSS files and JavaScript libraries, you can use external [handlebars partials](https://handlebarsjs.com/guide/partials.html) in the **Content** parameter.
 

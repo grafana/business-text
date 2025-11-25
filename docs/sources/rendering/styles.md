@@ -31,11 +31,9 @@ You can impose style using one, all, or any combination of the following:
 
 Dashboard variables are replaced automatically in all CSS style methods.
 
-:::info Version
-
+{{< admonition type="note" >}}
 The Business Text panel supports dashboard variables starting from version 3.0.0 and dashboard variables in CSS styles starting from version 4.0.0.
-
-:::
+{{< /admonition >}}
 
 ## Internal method example 1
 

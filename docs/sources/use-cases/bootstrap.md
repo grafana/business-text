@@ -21,11 +21,9 @@ https://esm.sh/bootstrap@5.0.2
 https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css
 ```
 
-:::info
-
+{{< admonition type="note" >}}
 Grafana's edit mode might prevent displaying bootstrap framework. Save and check the result on the dashboard.
-
-:::
+{{< /admonition >}}
 
 <Image
   title="Bootstrap accordion displayed using the Business Text panel."
