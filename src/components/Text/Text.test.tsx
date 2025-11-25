@@ -6,7 +6,7 @@ import { DEFAULT_OPTIONS, TEST_IDS } from '../../constants';
 import { RenderMode } from '../../types';
 import { Text } from './Text';
 import { getAppEvents } from '@grafana/runtime';
-import { useDashboardRefresh } from '@volkovlabs/components';
+import { useDashboardRefresh } from '../../hooks';
 /**
  * Mock @grafana/runtime
  */
@@ -19,8 +19,8 @@ jest.mock('@grafana/runtime', () => ({
   getAppEvents: jest.fn().mockImplementation(() => appEvents),
 }));
 
-jest.mock('@volkovlabs/components', () => ({
-  ...jest.requireActual('@volkovlabs/components'),
+jest.mock('../../hooks', () => ({
+  ...jest.requireActual('../../hooks'),
   useDashboardRefresh: jest.fn(),
 }));
 
