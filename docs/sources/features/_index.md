@@ -10,6 +10,7 @@ labels:
     - oss
 weight: 40
 ---
+
 # Features
 
 The Business Text panel provides an extensive set of features.

@@ -8,6 +8,7 @@ labels:
     - enterprise
     - oss
 ---
+
 # Recipes
 
 This page includes helpful snippets for usage in your templates.

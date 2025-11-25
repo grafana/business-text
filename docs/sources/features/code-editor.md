@@ -10,7 +10,6 @@ labels:
     - oss
 weight: 700
 ---
-import Image from "@theme/Image";
 
 # Code Editor Toolbar
 

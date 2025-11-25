@@ -10,9 +10,6 @@ labels:
     - oss
 weight: 20
 ---
-import Image from "@theme/Image";
-import Youtube from "@theme/Youtube";
-import BlogPost from "@theme/BlogPost";
 
 # JavaScript Code
 

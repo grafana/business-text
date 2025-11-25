@@ -10,17 +10,12 @@ labels:
     - oss
 weight: 60
 ---
-import BlogPost from "@theme/BlogPost";
-import TabItem from "@theme/TabItem";
-import Tabs from "@theme/Tabs";
-import Tutorials from "../../_tutorials.mdx";
-import Youtube from "@theme/Youtube";
 
 # Business Text tutorials
 
 The Business Text panel for Grafana is a versatile plugin that transforms your data visualizations using HTML, Markdown, JavaScript, and CSS. This documentation section covers its key features, use cases, and implementation guides.
 
-<Tutorials />
+This page contains step-by-step video tutorials that showcase new features and address common challenges. These tutorials help you get the most out of Business Suite.
 
 ## Why Choose Business Text?
 

@@ -11,11 +11,6 @@ labels:
     - oss
 weight: 10
 ---
-import Feedback from "../_feedback.mdx";
-import GettingStarted from "./_getting_started.mdx";
-import Image from "@theme/Image";
-import Tutorial from "./_tutorial.mdx";
-import Youtube from "@theme/Youtube";
 
 # Business Text
 
@@ -58,7 +53,7 @@ grafana cli plugins install marcusolsson-dynamictext-panel
 
 ## Highlights
 
-- Uses Monaco Code Editor with automatic JavaScript code formatting. Use it to add your JavaScript code and to [import external JavaScript libraries](/plugins/business-text/external/)
+- Provides an in-panel code editor with automatic JavaScript code formatting. Use it to add your JavaScript code and to [import external JavaScript libraries](/plugins/business-text/external/)
 - Supports [Markdown](https://commonmark.org/help/) and [Handlebars](https://handlebarsjs.com/guide/expressions.html#basic-usage).
 - Renders [markdown-it](https://github.com/markdown-it/markdown-it) into HTML elements.
   - Supports the highlighting of code syntax using A11Y styles.

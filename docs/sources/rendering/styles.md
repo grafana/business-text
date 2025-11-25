@@ -9,8 +9,6 @@ labels:
     - enterprise
     - oss
 ---
-import Code from "@theme/Code";
-import Image from "@theme/Image";
 
 # Styles
 

@@ -9,7 +9,6 @@ labels:
     - oss
 weight: 600
 ---
-import Image from "@theme/Image";
 
 # Content Wrapping
 

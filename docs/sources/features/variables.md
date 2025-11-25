@@ -10,7 +10,6 @@ labels:
     - oss
 weight: 500
 ---
-import Image from "@theme/Image";
 
 # Variables
 
