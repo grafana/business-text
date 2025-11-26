@@ -12,7 +12,12 @@
     },
     "description": "Data-driven text with Markdown and Handlebars support",
     "keywords": ["text", "markdown", "handlebars"],
-    "links": [],
+    "links": [
+      {
+        "name": "Documentation",
+        "url": "https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/"
+      }
+    ],
     "logos": {
       "large": "img/logo.svg",
       "small": "img/logo.svg"

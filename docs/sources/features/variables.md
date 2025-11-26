@@ -14,7 +14,7 @@ weight: 500
 
 # Variables
 
-The Business Text panel provides [helpers](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/features/helpers/#helper-variablevalue) to support variables. You can use variables in the JavaScript code and CSS styles.
+The Business Text panel provides [helpers](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/features/helpers/#helper-variablevalue) to support variables. You can use variables in the JavaScript code and CSS styles.
 
 We thoroughly explained these three types of variables in our [Grafana Crash Course](https://volkovlabs.io/grafana/variables/).
 

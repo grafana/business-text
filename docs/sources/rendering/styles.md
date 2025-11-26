@@ -137,7 +137,7 @@ tr td {
 
 ## External method example
 
-For the external method example, refer to the [Leaflet.js interactive maps](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/use-cases/leaflet-js/).
+For the external method example, refer to the [Leaflet.js interactive maps](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/leaflet-js/).
 
 ## Override
 

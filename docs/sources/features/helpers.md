@@ -15,7 +15,7 @@ weight: 100
 
 Helpers, sometimes called handlebars, are functions that allow you to perform basic text transformations within your template.
 
-In the **JavaScript->before rendering content** option a user can register [custom handlebars](https://grafana.com/docs/plugins/marcusolsson_dynamictext_panel/<PLUGINS_VERSION>/javascript-code/#custom-handlebars-helper).
+In the **JavaScript->before rendering content** option a user can register [custom handlebars](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/#custom-handlebars-helper).
 
 The Business Text panel has plenty of predefined handlebars that are registered automatically and ready to use:
 
