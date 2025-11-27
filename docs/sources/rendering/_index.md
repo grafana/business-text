@@ -22,7 +22,7 @@ The first is **Render Template** and the second is rendering order.
 The Business Text panel supports the **All data** template starting from version 4.3.0.
 {{< /admonition >}}
 
-{{< figure src="/media/docs/grafana/panels-visualizations/business-text/alldata.png" class="border" alt="Select one of the three available options for the Render Template parameter." >}}
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/alldata.png" max-width="70%" class="border" alt="Select one of the three available options for the Render Template parameter." >}}
 
 The **Render Template** option instructs the Business Text plugin on how to apply your template to the fetched data frame.
 

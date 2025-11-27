@@ -27,7 +27,7 @@ Starting from release 4.3.0, we provide access to the panel data `panelData` and
 
 Start typing the `context` word in the **Before Content Rendering** or **After Content Ready** boxes and see the latest list of all available features.
 
-{{< figure src="/media/docs/grafana/panels-visualizations/business-text/context.png" class="border" alt="Simplified access to the panel data and selected data frame and some other features." >}}
+{{< figure src="/media/docs/grafana/panels-visualizations/business-text/context.png" max-width="70%" class="border" alt="Simplified access to the panel data and selected data frame and some other features." >}}
 
 | Parameter                                                                                                                       | Description                                                                                                                                                                                                                                          | Before Render | After Render |
 | :------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------- |

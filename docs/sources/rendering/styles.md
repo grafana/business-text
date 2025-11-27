@@ -153,8 +153,6 @@ You can see all the defined styles in the source code.
 
 </details>
 
-<!-- clean up above -->
-
 ### Padding and margins
 
 To display content without padding and margins, you need to override the parent CSS style.
