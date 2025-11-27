@@ -13,19 +13,19 @@ weight: 10
 
 # Business Text
 
-The Business Text panel is a Grafana visualization plugin that you can use to convert plain text and table data into visually appealing, easy-to-read information cards. For that, the offered arsenal includes:
+The Business Text panel is a Grafana visualization plugin that converts plain text and table data into visually appealing, easy-to-read information cards. The plugin offers the following features:
 
-- Access to variables (dashboard and global),
-- Markdown,
-- Handlebars,
-- Helpers (predefined and your own),
+- Access to variables (dashboard and global)
+- Markdown
+- Handlebars
+- Helpers (predefined and custom)
 - CSS styles
-- JavaScript.
+- JavaScript
 
-By working with the Business Text plugin you construct a text visualization template:
+When working with the Business Text plugin, you construct a text visualization template by:
 
-- using the above-mentioned features and
-- indicating the spots where the fetched data frame elements should be placed.
+- Using the features listed above.
+- Indicating where to place fetched data frame elements.
 
 ## Requirements
 
@@ -41,7 +41,7 @@ You can install the Business Text panel from the [Grafana Plugins catalog](https
 
 {{< youtube id="1qYzHfPXJF8" >}}
 
-For the latter, please use the following command:
+Alternatively, use the Grafana command-line tool with the following command:
 
 ```sh
 grafana cli plugins install marcusolsson-dynamictext-panel
@@ -49,16 +49,16 @@ grafana cli plugins install marcusolsson-dynamictext-panel
 
 ## Highlights
 
-- Provides an in-panel code editor with automatic JavaScript code formatting. Use it to add your JavaScript code and to [import external JavaScript libraries](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/)
+- Provides an in-panel code editor with automatic JavaScript code formatting. Use it to add your JavaScript code and to [import external JavaScript libraries](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/).
 - Supports [Markdown](https://commonmark.org/help/) and [Handlebars](https://handlebarsjs.com/guide/expressions.html#basic-usage).
 - Renders [markdown-it](https://github.com/markdown-it/markdown-it) into HTML elements.
-  - Supports the highlighting of code syntax using A11Y styles.
+  - Supports code syntax highlighting using A11Y styles.
 - Provides code sanitization:
-  - HTML inside templates is sanitized using [XSS](https://jsxss.com/en/index.html).
-  - Can be disabled in the Grafana configuration through the `disable_sanitize_html` parameter.
+  - Sanitizes HTML inside templates using [XSS](https://jsxss.com/en/index.html).
+  - You can disable this in the Grafana configuration through the `disable_sanitize_html` parameter.
 - Supports display of nested objects using the `{{json object}}` Handlebars helper.
 - Supports display of time global variables (`__to` and `__from`) as seconds, ISO timestamps, or formatted using the `dayjs` library.
-- Supports adding the Handlebars helpers and event handlers.
+- Supports adding Handlebars helpers and event handlers.
 - Supports adding CSS styles with dashboard variables.
 - Supports internationalization using custom helpers.
 
@@ -66,21 +66,21 @@ grafana cli plugins install marcusolsson-dynamictext-panel
 
 ## Tutorial
 
-The video reviews the major latest release including the data flow, predefined helpers and numerous examples of the external JavaScript libraries.
+The following video reviews the major latest release, including the data flow, predefined helpers, and numerous examples of external JavaScript libraries.
 
 {{< youtube id="UVMysEjouNo" >}}
 
-Review all the other helpful [tutorials related to this plugin](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/tutorials/).
+For more information, see [tutorials related to this plugin](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/tutorials/).
 
 ## Documentation
 
 | Section                  | Description                                                   |
 | ------------------------ | ------------------------------------------------------------- |
-| [Rendering](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/rendering/)     | Explains how to create a visualization template for your data |
-| [Features](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/features/)     | Explains the plugin's features                                |
-| [Use cases](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/)    | Demonstrates interesting Community use cases                  |
-| [Tutorials](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/tutorials/)   | Easy to follow tutorials                                      |
-| [Release notes](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/release/) | Stay up to date with the latest features and updates          |
+| [Rendering](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/rendering/)     | Explains how to create a visualization template for your data. |
+| [Features](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/features/)     | Explains the plugin's features.                                |
+| [Use cases](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/)    | Demonstrates interesting Community use cases.                  |
+| [Tutorials](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/tutorials/)   | Provides easy-to-follow tutorials.                             |
+| [Release notes](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/release/) | Stay up to date with the latest features and updates.          |
 
 ## License
 

@@ -19,7 +19,7 @@ The Business Text panel supports the Code Editor toolbar starting from version 5
 
 ## Expand the editor
 
-For a better user experience, use the expand the editor area button.
+For a better user experience, use the expand editor button.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/button.png" max-width="20%" class="border" alt="Expand the code area button." >}}
 
@@ -29,9 +29,9 @@ You can find this button in all areas where you might need to have an extensive 
 
 ## Additional buttons
 
-- **Copy code**. Copies the highlighted code in the memory buffer.
-- **Paste code**. Pastes the content of the memory buffer.
-- **Wrap code on new lines**. Fits the text into the visible area on the screen.
-- **Show/Hide mini map**. Shows/hides the far right area depicting the code at scale.
+- **Copy code**: Copies the highlighted code to the memory buffer.
+- **Paste code**: Pastes the content from the memory buffer.
+- **Wrap code on new lines**: Fits the text into the visible area on the screen.
+- **Show/Hide mini map**: Shows or hides the far right area depicting the code at scale.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/more-buttons.png" max-width="70%" class="border" alt="More buttons to facilitate work with the code." >}}

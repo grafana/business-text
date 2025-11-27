@@ -1,5 +1,5 @@
 ---
-title: Youtube video
+title: YouTube video
 description: Learn how to embed and display YouTube videos on your Grafana dashboard using the Business Text panel.
 labels:
   products:
@@ -9,9 +9,9 @@ labels:
 weight: 12
 ---
 
-# Youtube video
+# YouTube video
 
-This idea comes from the [GitHub issue](https://github.com/VolkovLabs/business-text/issues/261) opened by [Raphealtony](https://github.com/Raphealtony). The Business Text plugin can be used to display YouTube videos on your Grafana dashboard.
+This idea comes from a [GitHub issue](https://github.com/VolkovLabs/business-text/issues/261) opened by [Raphealtony](https://github.com/Raphealtony). You can use the Business Text plugin to display YouTube videos on your Grafana dashboard.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/yt-edit.png" class="border" alt="How to configure the Business Text plugin to display a YouTube video." >}}
 

@@ -11,11 +11,11 @@ weight: 4
 
 # Flowchart
 
-Thank you [Josiah Solomon](https://github.com/yosiasz) for exploring an epic [Flowchart](https://flowchart.js.org) return to Grafana!
+Thank you to [Josiah Solomon](https://github.com/yosiasz) for exploring an epic [Flowchart](https://flowchart.js.org) return to Grafana!
 
-Below you can find how the beloved by many Flowchart libraries can be implemented using the Business Text plugin.
+The following sections describe how to implement Flowchart libraries using the Business Text plugin.
 
-Simply, import two external libraries and then write your code addressing the Flowchart libraries directly.
+Import two external libraries and then write your code to address the Flowchart libraries directly.
 
 ## Example
 

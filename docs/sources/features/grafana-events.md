@@ -18,15 +18,15 @@ weight: 200
 The Business Text panel supports the event bus starting from version 4.0.0.
 {{< /admonition >}}
 
-Grafana uses an event bus to publish application events to notify different parts of Grafana when the user interacts with it. The Business Text panel can respond to these interactions by subscribing to one or more events.
+Grafana uses an event bus to publish application events that notify different parts of Grafana when users interact with it. The Business Text panel can respond to these interactions by subscribing to one or more events.
 
 ## Predefined events
 
-A full list of events is available in the [Grafana Crash Course](https://volkovlabs.io/grafana/developer/eventbus/).
+For a complete list of events, refer to the [Grafana Crash Course](https://volkovlabs.io/grafana/developer/eventbus/).
 
 ## Subscribe to events
 
-To avoid memory leaks, all events must be unsubscribed.
+To avoid memory leaks, unsubscribe from all events.
 
 ```js
 const subscription = context.grafana.eventBus.subscribe(
@@ -46,7 +46,7 @@ return () => {
 
 {{< video-embed src="/media/docs/grafana/panels-visualizations/business-text/event-bus.mp4" >}}
 
-Below is the Business Text panel configuration.
+The following sections show the Business Text panel configuration.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/eb-edit.png" class="border" alt="The Business Text panel in edit mode." >}}
 

@@ -11,7 +11,7 @@ weight: 2
 
 # Chart.js
 
-Chart.js is one of the popular open source charting libraries. The Business Text plugin makes using chart.js in Grafana possible!
+Chart.js is a popular open-source charting library. The Business Text plugin enables using Chart.js in Grafana.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/chartjs-examples.png" class="border" alt="Chart.js diagrams displayed using the Business Text panel." >}}
 

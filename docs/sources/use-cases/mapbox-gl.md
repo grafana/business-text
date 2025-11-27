@@ -11,9 +11,9 @@ weight: 7
 
 # Mapbox GL
 
-This is another great example of external resource usage in the Business Text Plugin. The idea comes from [Josiah Solomon](https://github.com/yosiasz).
+This example demonstrates external resource usage in the Business Text plugin. The idea comes from [Josiah Solomon](https://github.com/yosiasz).
 
-Follow the below outlined steps to display [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/example/3d-buildings/) on your Grafana dashboard.
+Follow the outlined steps to display [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/example/3d-buildings/) on your Grafana dashboard.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/mapboxgl.png" class="border" alt="The Mapbox map displayed using Business Text on the dashboard." >}}
 

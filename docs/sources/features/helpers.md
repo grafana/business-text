@@ -13,11 +13,11 @@ weight: 100
 
 # Helpers
 
-Helpers, sometimes called handlebars, are functions that allow you to perform basic text transformations within your template.
+Helpers (also called handlebars) are functions that let you perform basic text transformations within your template.
 
-In the **JavaScript > before rendering content** option a user can register [custom handlebars](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/#custom-handlebars-helper).
+In the **JavaScript > before rendering content** option, you can register [custom handlebars](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/#custom-handlebars-helper).
 
-The Business Text panel has plenty of predefined handlebars that are registered automatically and ready to use:
+The Business Text panel includes many predefined handlebars that are registered automatically and ready to use:
 
 | Handlebar                              | Description                                                           |
 | -------------------------------------- | --------------------------------------------------------------------- |
@@ -52,9 +52,9 @@ Checks if a given value exists within an array.
 
 ## `{{date}}`
 
-Formats the timestamp in a given field using a date format. Uses [helper-date](https://github.com/helpers/helper-date).
+Formats the timestamp in a given field using a date format. Uses the [helper-date](https://github.com/helpers/helper-date) library.
 
-The field value must be a Unix timestamp or any of the formats supported by the [date.js library](https://date.js.org/).
+The field value must be a Unix timestamp or any format supported by the [date.js library](https://date.js.org/).
 
 ```handlebars
 <!-- Time: 1598791377556 -->
@@ -110,7 +110,7 @@ Presents an object (JSON) or an array as a formatted string. Markdown supports t
 
 ### Transformation
 
-The `JSON` helper expects an object or an array to display it as a formatted string. If the data source returns a string it should be transformed to a JSON object using the `Convert field type` transformation.
+The `JSON` helper expects an object or an array to display as a formatted string. If the data source returns a string, transform it to a JSON object using the `Convert field type` transformation.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/json-transformation.png" class="border" alt="Transform a JSON string into an object." >}}
 
@@ -146,7 +146,8 @@ Formats the given number using a fixed-point notation.
 The Business Text panel supports this starting from version 4.2.0.
 {{< /admonition >}}
 
-Returns true if the variable starts with a specified value.
+Returns `true` if the variable starts with a specified value.
+
 Example:
 
 ```md
@@ -164,7 +165,8 @@ Example:
 The Business Text panel supports this starting from version 4.2.0.
 {{< /admonition >}}
 
-Returns true if the variable ends with a specified value.
+Returns `true` if the variable ends with a specified value.
+
 Example:
 
 ```md
@@ -182,7 +184,8 @@ Example:
 The Business Text panel supports this starting from version 4.2.0.
 {{< /admonition >}}
 
-Returns true if the variable matches with a specified value.
+Returns `true` if the variable matches a specified value.
+
 Example:
 
 ```md
@@ -196,16 +199,15 @@ Example:
 
 ## Helper `{{variable}}`
 
-This helper works only with one format of Grafana dashboard variables - array.
+This helper works only with one format of Grafana dashboard variables: array.
 
-It returns a string array including the currently selected values for a certain variable.
+It returns a string array that includes the currently selected values for a specified variable.
 
 ```handlebars
 {{variable "hostname"}}
-
-if hostname = ["server1", "server2", "server3"] then result: ["server1",
-"server2", "server3"]
 ```
+
+If `hostname = ["server1", "server2", "server3"]`, then the result is `["server1", "server2", "server3"]`.
 
 ## Helper `{{variableValue}}`
 
@@ -214,14 +216,15 @@ The Business Text panel supports this starting from version 4.3.0.
 {{< /admonition >}}
 
 This helper works with all [Grafana variable formats](https://grafana.com/docs/grafana/latest/dashboards/variables/variable-syntax/).
-Below is an example of the `queryparam` type.
+
+The following example demonstrates the `queryparam` type.
 
 ```handlebars
 <a href="/d/abc?{{variableValue '${example:queryparam}'}}">Link</a>
 ```
 
-If example equal to `["value1", "value2"]` then result:
+If `example` equals `["value1", "value2"]`, then the result is:
 
-```
+```html
 <a href="/d/abc?var-example=value1&var-example=value2">Link</a>
 ```

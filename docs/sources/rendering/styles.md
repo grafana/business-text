@@ -16,13 +16,13 @@ Apply CSS styling using inline, internal, or external methods with support for d
 
 ## Methods to include CSS
 
-You can impose style using one, all, or any combination of the following:
+You can apply styles using one, all, or any combination of the following methods:
 
-- Inline. Specify CSS commands right in the **Content**.
-- Internal. Specify CSS in the **Style editor** with convenient CSS syntax highlighting.
-- External. Import an external CSS file. To prevent the loading of third-party URLs, you can store CSS files in the public folder on your Grafana instance:
-  - On any external Grafana instance `https://GRAFANA-URL/public/grafanaCSS.css`
-  - Or on local Grafana instance `/public/grafanaCSS.css`
+- **Inline**: Specify CSS commands directly in the **Content**.
+- **Internal**: Specify CSS in the **Style editor** with CSS syntax highlighting.
+- **External**: Import an external CSS file. To prevent loading third-party URLs, store CSS files in the public folder on your Grafana instance:
+  - For an external Grafana instance: `https://GRAFANA-URL/public/grafanaCSS.css`
+  - For a local Grafana instance: `/public/grafanaCSS.css`
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/style-methods.png" class="border" alt="The Business Text panel supports all usual styling methods." >}}
 
@@ -34,7 +34,7 @@ Dashboard variables are replaced automatically in all CSS style methods.
 The Business Text panel supports dashboard variables starting from version 3.0.0 and dashboard variables in CSS styles starting from version 4.0.0.
 {{< /admonition >}}
 
-## Internal method example 1
+## Internal method: Example 1
 
 You can define your styles and use them in a template (**Content**, **Default Content**).
 
@@ -63,13 +63,13 @@ b.name {
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/styles.png" class="border" alt="Using internal CSS for bold text in a table." >}}
 
-## Internal method example 2
+## Internal method: Example 2
 
-Here I have a simple, yet amazing styling approach. For instance, you can display the status of your devices/servers as green or red dots in a table.
+This example demonstrates a simple styling approach. You can display the status of your devices or servers as green or red dots in a table.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/dots.png" class="border" alt="Simple, yet stylish way to display unit status." >}}
 
-To have this on your dashboard, copy the **Content** and **CSS Styles** parameters from below.
+To display this on your dashboard, copy the **Content** and **CSS Styles** parameters from the following sections.
 
 ### Content
 
@@ -137,7 +137,7 @@ tr td {
 }
 ```
 
-## External method example
+## External method: Example
 
 For the external method example, refer to the [Leaflet.js interactive maps](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/leaflet-js/).
 

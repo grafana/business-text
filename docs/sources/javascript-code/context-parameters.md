@@ -14,7 +14,7 @@ labels:
 
 ## `context.data`
 
-Data from data sources. The display of one or multiple data rows from the selected data frame or from all data frames is determined by the **Render template** option. It can be one of three values: **Every Row**, **All Rows**, and **All data**.
+Provides access to data from data sources. The display of one or multiple data rows from the selected data frame or from all data frames is determined by the **Render template** option, which can have one of three values: **Every Row**, **All Rows**, or **All data**.
 
 ### Usage
 
@@ -30,7 +30,7 @@ const data = context.data;
 
 ## `context.dataFrame`
 
-Selected Data Frame for **Every Row**, **All Rows** templates.
+Provides access to the selected data frame for **Every Row** and **All Rows** templates.
 
 ### Usage
 
@@ -46,7 +46,7 @@ const frame = context.dataFrame;
 
 ## `context.element`
 
-Current HTML element.
+Provides access to the current HTML element.
 
 ### Usage
 
@@ -64,7 +64,7 @@ const element = context.element;
 
 ### `grafana.eventBus`
 
-Publish and subscribe to application events.
+Enables publishing and subscribing to application events.
 
 #### Usage
 
@@ -116,7 +116,7 @@ context.handlebars.registerHelper(
 
 ### `grafana.getUserPreference(key)`
 
-Get user preference value by key
+Gets the user preference value by key.
 
 #### Usage
 
@@ -146,7 +146,7 @@ myFuncGetValue = () => {
 
 ### `grafana.locationService`
 
-The `locationService` works with the browser location and history.
+Provides access to the `locationService`, which works with the browser location and history.
 
 #### Usage
 
@@ -180,8 +180,8 @@ context.grafana.notifyError(["Error Title", `Show error message`]);
 
 #### Arguments
 
-- `header` _string_. Error title
-- `message` _string_. Error message
+- `header` (string): Error title.
+- `message` (string): Error message.
 
 ### `grafana.notifySuccess([header, message])`
 
@@ -201,12 +201,12 @@ context.grafana.notifySuccess(["Success Title", `Success message`]);
 
 #### Arguments
 
-- `header` _string_. Success title
-- `message` _string_. Success message
+- `header` (string): Success title.
+- `message` (string): Success message.
 
 ### `grafana.refresh()`
 
-Function to refresh dashboard panels using application events.
+Refreshes dashboard panels using application events.
 
 _Added in: v5.7.0_
 
@@ -218,7 +218,7 @@ context.grafana.refresh();
 
 ### `grafana.replaceVariables()`
 
-The `replaceVariables()` function to interpolate variables.
+Interpolates variables using the `replaceVariables()` function.
 
 #### Usage
 
@@ -235,7 +235,7 @@ console.log(bonjour.toUpperCase());
 
 ### `grafana.setUserPreference(key,data)`
 
-Set user preference value by key
+Sets the user preference value by key.
 
 #### Usage
 
@@ -264,13 +264,12 @@ myFuncSetValue = () => {
 
 #### Arguments
 
-- `key` _string_.
-
-- `data` _unknown_
+- `key` (string): The preference key.
+- `data` (unknown): The preference data.
 
 ### `grafana.theme`
 
-Contains grafana Theme object.
+Contains the Grafana theme object.
 
 #### Usage
 
@@ -287,7 +286,7 @@ console.log(theme);
 
 ### `grafana.timeRange`
 
-Time range of the current dashboard.
+Returns the time range of the current dashboard.
 
 #### Usage
 
@@ -304,7 +303,7 @@ console.log(timeRange);
 
 ### `grafana.timeZone`
 
-Time zone of the current dashboard.
+Returns the time zone of the current dashboard.
 
 #### Usage
 
@@ -323,7 +322,7 @@ console.log(timeZone);
 
 ### `panel.handlebars`
 
-Handlebars library.
+Provides access to the Handlebars library.
 
 #### Usage
 
@@ -341,7 +340,7 @@ context.handlebars.registerHelper("unique", (context, key) => {
 
 ### `panel.panelData`
 
-Panel data.
+Provides access to panel data.
 
 #### Usage
 

@@ -23,9 +23,9 @@ The Business Text panel supports the integration of JavaScript code snippets tha
 The Business Text panel supports `context` starting from version 4.3.0.
 {{< /admonition >}}
 
-Starting from release 4.3.0, you can access the panel data `panelData` and selected data frame `data` by way of a new object `context`.
+Starting from version 4.3.0, you can access the panel data (`panelData`) and selected data frame (`data`) through a new `context` object.
 
-Start typing the `context` word in the **Before Content Rendering** or **After Content Ready** boxes and see the latest list of all available features.
+Start typing `context` in the **Before Content Rendering** or **After Content Ready** boxes to see the latest list of all available features.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/context.png" max-width="70%" class="border" alt="Simplified access to the panel data and selected data frame and some other features." >}}
 
@@ -56,22 +56,22 @@ You can add a custom Handlebars helper to replace the field's value according to
 ```
 
 {{< admonition type="note" >}}
-Handlebars are not available in the After Content Render.
+Handlebars are not available in **After Content Render**.
 {{< /admonition >}}
 
-Handlebars should be created in the **Before content Render**, because they are used during the rendering process to convert Handlebars > Markdown > HTML.
+Create handlebars in **Before content Render** because they are used during the rendering process to convert Handlebars > Markdown > HTML.
 
-The **After Content Render** works with already created HTML elements and handlebars are not available at this point.
+The **After Content Render** works with already-created HTML elements, and handlebars are not available at this point.
 
 ### JavaScript code
 
-This code snippet registers a function with the `replace` helper that takes three arguments:
+This code snippet registers a function with the `replace` helper that accepts three arguments:
 
-1. `context` is an object that contains the data for the template.
-2. `pattern` is the text to be searched for.
-3. `replacement` is the text to be used to replace the pattern.
+1. `context`: An object that contains the data for the template.
+2. `pattern`: The text to search for.
+3. `replacement`: The text to use to replace the pattern.
 
-Then, this code calls this function and passes the `pattern` and `replacement` arguments to it.
+This code calls the function and passes the `pattern` and `replacement` arguments to it.
 
 ```js
 context.handlebars.registerHelper("replace", (context, pattern, replacement) =>
@@ -91,7 +91,7 @@ To respond to a button click, you can add a custom event handler.
 
 ### JavaScript code
 
-This code snippet defines a function called `myFunc`. The function takes no arguments and returns no value. The body of the function calls the `alert()` function to display the text "Bonjour!" in a dialog box.
+This code snippet defines a function called `myFunc`. The function accepts no arguments and returns no value. The function body calls the `alert()` function to display "Bonjour!" in a dialog box.
 
 ```js
 myFunc = () => {
@@ -103,13 +103,13 @@ myFunc = () => {
 
 ## Internationalization
 
-Grafana 9 and up offers internationalization, which most of the plugins do not yet have full access to.
+Grafana 9 and later versions offer internationalization, but most plugins do not yet have full access to this feature.
 
-Meanwhile, you can use the `getLocale()` method to get a value for the chosen locale and display terms from a defined dictionary.
+You can use the `getLocale()` method to get a value for the chosen locale and display terms from a defined dictionary.
 
 ### Content
 
-This code snippet uses the `translate` helper to translate the text "Hello" to the current language. Text translation will be performed if the `translate` helper is defined, otherwise the text "Hello" will be displayed.
+This code snippet uses the `translate` helper to translate the text "Hello" to the current language. Text translation occurs if the `translate` helper is defined. Otherwise, the text "Hello" displays.
 
 ```handlebars
 {{translate "Hello"}}
@@ -149,7 +149,7 @@ context.handlebars.registerHelper(
 
 ## Time zone and range
 
-You can display the selected dashboard, browser's time zone, and time ranges in Grafana.
+You can display the selected dashboard time zone, browser's time zone, and time ranges in Grafana.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/time.png" class="border" alt="The Business Text panel allows displaying an updated time zone and time ranges in Grafana." >}}
 
@@ -181,7 +181,7 @@ context.handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolve
 
 ## Automatic scrolling
 
-If the table does not fit into the allocated panel area, you can add automatic scrolling using JavaScript with an adjustable interval.
+If the table does not fit in the allocated panel area, you can add automatic scrolling using JavaScript with an adjustable interval.
 
 {{< video-embed src="/media/docs/grafana/panels-visualizations/business-text/scroll.mp4" >}}
 

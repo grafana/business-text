@@ -11,17 +11,17 @@ weight: 10
 
 # Tailwind CSS
 
-Thank you [Raghavendra Samant](https://github.com/samant-rags) for exploring a utility-first framework [Tailwind CSS](https://tailwindcss.com). Using Tailwind in the Business Text panel differs slightly from the previous examples.
+Thank you to [Raghavendra Samant](https://github.com/samant-rags) for exploring the utility-first framework [Tailwind CSS](https://tailwindcss.com)! Using Tailwind in the Business Text panel differs slightly from previous examples.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/tailwind-panel.png" class="border" alt="The Business Text panel with Tailwind styles on the dashboard." >}}
 
-To prevent CORS issues, use Tailwind script to the Grafana's public folder `/usr/share/grafana/public/yourFileName.js`.
+To prevent CORS issues, add the Tailwind script to Grafana's public folder `/usr/share/grafana/public/yourFileName.js`.
 
 The file can contain the import function and use Tailwind, or it can load code from `cdn.tailwindcss.com`.
 
-## CDN based code
+## CDN-based code
 
-Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload it to `/usr/share/grafana/public/` in the Docker container. The following examples uses the latest version `https://cdn.tailwindcss.com/3.4.4`.
+Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload it to `/usr/share/grafana/public/` in the Docker container. The following example uses the latest version: `https://cdn.tailwindcss.com/3.4.4`.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/tailwind-file-example.png" class="border" alt="A Tailwind script uploaded to the Docker container." >}}
 

@@ -14,12 +14,12 @@ weight: 50
 # Use cases
 
 {{< admonition type="note" >}}
-Since in Grafana 11, the functionality of external JavaScript resources is deprecated, the **External Resource > Scripts** parameter has been removed. You can import the JavaScript library directly in the code.
+In Grafana 11, the functionality of external JavaScript resources is deprecated, and the **External Resource > Scripts** parameter has been removed. You can import JavaScript libraries directly in the code.
 
-The Business Text panel supports the JavaScript libraries import in the **Before content rendering** starting from version 5.3.0.
+The Business Text panel supports JavaScript library imports in **Before content rendering** starting from version 5.3.0.
 {{< /admonition >}}
 
-You can import the external JavaScript libraries in both parameters: **Before content rendering** and **After content ready**.
+You can import external JavaScript libraries in both the **Before content rendering** and **After content ready** parameters.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/before.png" class="border" alt="Use import in the Before content rendering option." >}}
 
@@ -27,17 +27,17 @@ The Business Text panel enables the loading of additional JavaScript using exter
 
 ## Public folder
 
-To prevent the loading of third-party URLs, you can store CSS and JS files in the public folder on a Grafana instance.
+To prevent loading third-party URLs, store CSS and JavaScript files in the public folder on a Grafana instance.
 
-- To load from external Grafana instance use `https://GRAFANA-URL/public/grafanaCSS.css`.
-- From local Grafana instance use `/public/grafanaCSS.css`.
+- To load from an external Grafana instance, use `https://GRAFANA-URL/public/grafanaCSS.css`.
+- To load from a local Grafana instance, use `/public/grafanaCSS.css`.
 
 ## External JavaScript resources
 
 Below, you can find a collection of breathtaking use cases, the perfect examples of using external JavaScript libraries in the Business Text plugin.
 
 {{< admonition type="note" >}}
-Use **All rows** or **All data** template to execute template only once. With **Every row**, the **Content** will be applied to every row of retrieved data. Even though the data frames of the specified data source are not used, still the plugin runs the code as many times as the number of rows is retrieved.
+Use the **All rows** or **All data** template to execute the template only once. With **Every row**, the **Content** applies to every row of retrieved data. Even though the data frames of the specified data source are not used, the plugin runs the code for each retrieved row.
 {{< /admonition >}}
 
 | Solution                                                 | Description                                                                                   |

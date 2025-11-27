@@ -11,13 +11,13 @@ weight: 6
 
 # Leaflet.js
 
-This is another great example of external resource usage in the Business Text Plugin. The idea comes from [BlinderMiri](https://github.com/BlinderMiri) and [Josiah Solomon](https://github.com/yosiasz).
+This example demonstrates external resource usage in the Business Text plugin. The idea comes from [BlinderMiri](https://github.com/BlinderMiri) and [Josiah Solomon](https://github.com/yosiasz).
 
-Follow the below outlined steps to display Leaflet.js maps on your Grafana dashboard.
+Follow the outlined steps to display Leaflet.js maps on your Grafana dashboard.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/leaflet-edit.png" class="border" alt="How to configure the Business Text plugin to display Leaflet.js maps." >}}
 
-The map on the dashboard from this example looks like in the illustration below.
+The following illustration shows the map on the dashboard from this example.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/leaflet-display.png" class="border" alt="The Leaflet.js map on the dashboard." >}}
 

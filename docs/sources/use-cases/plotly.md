@@ -11,7 +11,7 @@ weight: 9
 
 # Plotly
 
-Thanks to community member [Josiah Solomon](https://github.com/yosiasz) for the provided solution.
+Thanks to community member [Josiah Solomon](https://github.com/yosiasz) for providing this solution!
 
 Use the following external Plotly's chart library:
 

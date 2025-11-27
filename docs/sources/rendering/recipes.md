@@ -16,7 +16,7 @@ This page includes helpful snippets for usage in your templates.
 
 ## Initial context
 
-Displays the initial context within which the template is executed.
+Displays the initial context in which the template executes.
 
 ````handlebars
 ```json
@@ -24,11 +24,11 @@ Displays the initial context within which the template is executed.
 ```
 ````
 
-Please take a look at the [documentation](https://handlebarsjs.com/api-reference/data-variables.html#root) for Handlebars variables.
+For more information, refer to the [Handlebars variables documentation](https://handlebarsjs.com/api-reference/data-variables.html#root).
 
 ## Iterate through all fields in each record
 
-The **Render template** toggle should be set as `All rows` in the plugin options.
+Set the **Render template** toggle to `All rows` in the plugin options.
 
 ```handlebars
 {{#each data}}
@@ -48,9 +48,9 @@ This snippet shows how to display different content based on specific conditions
 {{/if}}
 ```
 
-## Specific row in the data
+## Reference a specific row in the data
 
-To reference a specific row in the returned dataset, set the **Render template** toggle as `All rows`.
+To reference a specific row in the returned dataset, set the **Render template** toggle to `All rows`.
 
 ```handlebars
 {{data.4.title}}
@@ -58,7 +58,7 @@ To reference a specific row in the returned dataset, set the **Render template**
 
 ### Handlebars variables
 
-This snippet shows how to iterate through an array of data and display the title of the third item of the array with the `@index` variable.
+This snippet demonstrates how to iterate through an array of data and display the title of the third item using the `@index` variable.
 
 ```handlebars
 {{#each data}}

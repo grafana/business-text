@@ -22,7 +22,7 @@ https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css
 ```
 
 {{< admonition type="note" >}}
-Grafana's edit mode might prevent displaying bootstrap framework. Save and check the result on the dashboard.
+Grafana edit mode might prevent displaying the Bootstrap framework. Save your changes and check the result on the dashboard.
 {{< /admonition >}}
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/bootstrap.png" class="border" alt="Bootstrap accordion displayed using the Business Text panel." >}}

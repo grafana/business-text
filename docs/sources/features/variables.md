@@ -14,11 +14,11 @@ weight: 500
 
 # Variables
 
-The Business Text panel provides [helpers](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/features/helpers/#helper-variablevalue) to support variables. You can use variables in the JavaScript code and CSS styles.
+The Business Text panel provides [helpers](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/features/helpers/#helper-variablevalue) to support variables. You can use variables in JavaScript code and CSS styles.
 
-The [Grafana Crash Course](https://volkovlabs.io/grafana/variables/) thoroughly explains these three types of variable.
+The [Grafana Crash Course](https://volkovlabs.io/grafana/variables/) provides a thorough explanation of these three variable types.
 
-## Check if a user is an admin
+## Check whether a user is an admin
 
 To access nested variables, use curly brackets.
 
@@ -30,9 +30,9 @@ To access nested variables, use curly brackets.
 {{/if}}
 ```
 
-## Markdown list from variable
+## Markdown list from a variable
 
-Create a list from the multi select variable.
+Create a list from a multi-select variable.
 
 ```Handlebars
 {{#each (variable "hostname")}}
@@ -44,7 +44,7 @@ Create a list from the multi select variable.
 
 Use the `lookup` helper to create dynamic templates based on dashboard variables.
 
-The following template creates a key-value pair from every selected value in the `props` dashboard variable.
+The following template creates a key-value pair from each selected value in the `props` dashboard variable.
 
 ```Handlebars
 book:
@@ -55,24 +55,24 @@ book:
 
 ## JavaScript code
 
-### Get variable value
+### Get a variable value
 
-Use the `context.grafana.replaceVariables()` function to replace dashboard variables in the JavaScript Code.
+Use the `context.grafana.replaceVariables()` function to replace dashboard variables in the JavaScript code.
 
 ```js
 const bonjour = context.grafana.replaceVariables("${variable}");
 console.log(bonjour.toUpperCase());
 ```
 
-### Set variable value
+### Set a variable value
 
-Prefix `var-` is required to set dashboard variable.
+The `var-` prefix is required to set a dashboard variable.
 
 ```js
 context.grafana.locationService.partial({ "var-variableName": ".*" });
 ```
 
-Time range values `from` and `to` should be set as is.
+Set the time range values `from` and `to` as follows:
 
 ```js
 context.grafana.locationService.partial({ from: start, to: end });
