@@ -28,22 +28,6 @@ context.data;
 const data = context.data;
 ```
 
-## `context.element`
-
-Current HTML element.
-
-### Usage
-
-```javascript
-context.element;
-```
-
-### Example
-
-```javascript
-const element = context.element;
-```
-
 ## `context.dataFrame`
 
 Selected Data Frame for **Every Row**, **All Rows** templates.
@@ -60,48 +44,20 @@ context.dataFrame;
 const frame = context.dataFrame;
 ```
 
-## Panel
+## `context.element`
 
-### `panel.handlebars`
+Current HTML element.
 
-Handlebars library.
-
-#### Usage
+### Usage
 
 ```javascript
-context.handlebars;
+context.element;
 ```
 
-#### Example
+### Example
 
 ```javascript
-context.handlebars.registerHelper("unique", (context, key) => {
-  return [...new Set(context.map((item) => item[key]))];
-});
-```
-
-### `panel.panelData`
-
-Panel data.
-
-#### Usage
-
-```javascript
-context.panelData;
-```
-
-#### Example
-
-```javascript
-const dashboardTimeZone = context.panelData.timeZone;
-const dashboardTimeRange = context.panelData.timeRange;
-
-context.handlebars.registerHelper("tz", () => dashboardTimeZone);
-context.handlebars.registerHelper("range", () => dashboardTimeRange);
-context.handlebars.registerHelper(
-  "browser",
-  () => Intl.DateTimeFormat().resolvedOptions().timeZone
-);
+const element = context.element;
 ```
 
 ## Grafana
@@ -158,6 +114,36 @@ context.handlebars.registerHelper(
 );
 ```
 
+### `grafana.getUserPreference(key)`
+
+Get user preference value by key
+
+#### Usage
+
+```javascript
+context.grafana.getUserPreference("key");
+```
+
+#### Example
+
+```HTML
+<button onclick="myFuncGetValue()">Get Value and show message</button>
+```
+
+Before Content Rendering
+
+```javascript
+myFuncGetValue = () => {
+  context.grafana.getUserPreference("testKey").then((value) => {
+    context.grafana.notifySuccess(["USER STORAGE: ", JSON.stringify(value)]);
+  });
+};
+```
+
+#### Arguments
+
+- `key` _string_.
+
 ### `grafana.locationService`
 
 The `locationService` works with the browser location and history.
@@ -174,57 +160,6 @@ context.grafana.locationService;
 context.grafana.locationService.reload();
 
 const history = context.grafana.locationService.history;
-```
-
-### `grafana.replaceVariables()`
-
-The `replaceVariables()` function to interpolate variables.
-
-#### Usage
-
-```javascript
-context.grafana.replaceVariables();
-```
-
-#### Example
-
-```javascript
-const bonjour = context.grafana.replaceVariables("${variable}");
-console.log(bonjour.toUpperCase());
-```
-
-### `grafana.timeRange`
-
-Time range of the current dashboard.
-
-#### Usage
-
-```javascript
-context.grafana.timeRange;
-```
-
-#### Example
-
-```javascript
-const timeRange = context.grafana.timeRange;
-console.log(timeRange);
-```
-
-### `grafana.timeZone`
-
-Time zone of the current dashboard.
-
-#### Usage
-
-```javascript
-context.grafana.timeZone;
-```
-
-#### Example
-
-```javascript
-const timeZone = context.grafana.timeZone;
-console.log(timeZone);
 ```
 
 ### `grafana.notifyError([header, message])`
@@ -269,23 +204,6 @@ context.grafana.notifySuccess(["Success Title", `Success message`]);
 - `header` _string_. Success title
 - `message` _string_. Success message
 
-### `grafana.theme`
-
-Contains grafana Theme object.
-
-#### Usage
-
-```javascript
-context.grafana.theme;
-```
-
-#### Example
-
-```javascript
-const theme = context.grafana.theme;
-console.log(theme);
-```
-
 ### `grafana.refresh()`
 
 Function to refresh dashboard panels using application events.
@@ -298,35 +216,22 @@ _Added in: v5.7.0_
 context.grafana.refresh();
 ```
 
-### `grafana.getUserPreference(key)`
+### `grafana.replaceVariables()`
 
-Get user preference value by key
+The `replaceVariables()` function to interpolate variables.
 
 #### Usage
 
 ```javascript
-context.grafana.getUserPreference("key");
+context.grafana.replaceVariables();
 ```
 
 #### Example
 
-```HTML
-<button onclick="myFuncGetValue()">Get Value and show message</button>
-```
-
-Before Content Rendering
-
 ```javascript
-myFuncGetValue = () => {
-  context.grafana.getUserPreference("testKey").then((value) => {
-    context.grafana.notifySuccess(["USER STORAGE: ", JSON.stringify(value)]);
-  });
-};
+const bonjour = context.grafana.replaceVariables("${variable}");
+console.log(bonjour.toUpperCase());
 ```
-
-#### Arguments
-
-- `key` _string_.
 
 ### `grafana.setUserPreference(key,data)`
 
@@ -362,3 +267,98 @@ myFuncSetValue = () => {
 - `key` _string_.
 
 - `data` _unknown_
+
+### `grafana.theme`
+
+Contains grafana Theme object.
+
+#### Usage
+
+```javascript
+context.grafana.theme;
+```
+
+#### Example
+
+```javascript
+const theme = context.grafana.theme;
+console.log(theme);
+```
+
+### `grafana.timeRange`
+
+Time range of the current dashboard.
+
+#### Usage
+
+```javascript
+context.grafana.timeRange;
+```
+
+#### Example
+
+```javascript
+const timeRange = context.grafana.timeRange;
+console.log(timeRange);
+```
+
+### `grafana.timeZone`
+
+Time zone of the current dashboard.
+
+#### Usage
+
+```javascript
+context.grafana.timeZone;
+```
+
+#### Example
+
+```javascript
+const timeZone = context.grafana.timeZone;
+console.log(timeZone);
+```
+
+## Panel
+
+### `panel.handlebars`
+
+Handlebars library.
+
+#### Usage
+
+```javascript
+context.handlebars;
+```
+
+#### Example
+
+```javascript
+context.handlebars.registerHelper("unique", (context, key) => {
+  return [...new Set(context.map((item) => item[key]))];
+});
+```
+
+### `panel.panelData`
+
+Panel data.
+
+#### Usage
+
+```javascript
+context.panelData;
+```
+
+#### Example
+
+```javascript
+const dashboardTimeZone = context.panelData.timeZone;
+const dashboardTimeRange = context.panelData.timeRange;
+
+context.handlebars.registerHelper("tz", () => dashboardTimeZone);
+context.handlebars.registerHelper("range", () => dashboardTimeRange);
+context.handlebars.registerHelper(
+  "browser",
+  () => Intl.DateTimeFormat().resolvedOptions().timeZone
+);
+```

@@ -32,20 +32,20 @@ Start typing the `context` word in the **Before Content Rendering** or **After C
 | Parameter | Description | Before Render | After Render |
 | --- | --- | --- | --- |
 | [`context.data`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#contextdata) | Data from data sources. The display of one or multiple data rows from the selected data frame or from all data frames is determined by the **Render template** option. It can be one of three values: **Every Row**, **All Rows**, and **All data**. | Yes | Yes |
-| [`context.element`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#contextelement) | Current html element. | | Yes |
 | [`context.dataFrame`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#contextdataframe) | Selected Data Frame for **Every Row**, **All Rows** templates. | Yes | Yes |
-| [`context.handlebars`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#panelhandlebars) | Handlebars library. | Yes | Yes |
-| [`context.panelData`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#panelpaneldata) | Panel data. | Yes | Yes |
+| [`context.element`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#contextelement) | Current html element. | | Yes |
 | [`context.grafana.eventBus`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanaeventbus) | Publish and subscribe to application events. | Yes | Yes |
 | [`context.grafana.getLocale()`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanagetlocale) | Returns the user's locale: 'en', 'fr', 'es', and so on. | Yes | Yes |
 | [`context.grafana.locationService`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanalocationservice) | The `locationService` works with the browser location and history. | Yes | Yes |
-| [`context.grafana.replaceVariables()`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanareplacevariables) | The `replaceVariables()` function to interpolate variables. | Yes | Yes |
-| [`context.grafana.timeRange`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanatimerange) | Time range of the current dashboard. | Yes | Yes |
-| [`context.grafana.timeZone`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanatimezone) | Time zone of the current dashboard. | Yes | Yes |
 | [`context.grafana.notifyError(['Header', 'Message'])`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafananotifyerrorheader-message) | Displays an error. | Yes | Yes |
 | [`context.grafana.notifySuccess(['Header', 'Message'])`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafananotifysuccessheader-message) | Displays a success notification. | Yes | Yes |
-| [`context.grafana.theme`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanatheme) | Contains grafana theme object. | Yes | Yes |
 | [`context.grafana.refresh()`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanarefresh) | Function to refresh dashboard panels using application events. | Yes | Yes |
+| [`context.grafana.replaceVariables()`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanareplacevariables) | The `replaceVariables()` function to interpolate variables. | Yes | Yes |
+| [`context.grafana.theme`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanatheme) | Contains grafana theme object. | Yes | Yes |
+| [`context.grafana.timeRange`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanatimerange) | Time range of the current dashboard. | Yes | Yes |
+| [`context.grafana.timeZone`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#grafanatimezone) | Time zone of the current dashboard. | Yes | Yes |
+| [`context.panel.handlebars`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#panelhandlebars) | Handlebars library. | Yes | Yes |
+| [`context.panel.panelData`](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/javascript-code/context-parameters/#panelpaneldata) | Panel data. | Yes | Yes |
 
 ## Custom Handlebars helper
 
