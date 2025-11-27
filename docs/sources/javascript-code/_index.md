@@ -183,9 +183,7 @@ context.handlebars.registerHelper('browser', () => Intl.DateTimeFormat().resolve
 
 If the table does not fit into the allocated panel area, you can add automatic scrolling using JavaScript with an adjustable interval.
 
-{{< video-embed src="" >}}
-
-<!-- Convert this: https://volkovlabs.io/img/plugins/business-text/scroll.gif -->
+{{< video-embed src="/media/docs/grafana/panels-visualizations/business-text/scroll.mp4" >}}
 
 ### Content
 

@@ -44,9 +44,7 @@ return () => {
 
 ## EventBus example
 
-{{< video-embed src="" >}}
-
-<!-- Convert this: https://volkovlabs.io/img/plugins/business-text/event-bus.gif -->
+{{< video-embed src="/media/docs/grafana/panels-visualizations/business-text/event-bus.mp4" >}}
 
 Below is the Business Text panel configuration.
 
