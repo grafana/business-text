@@ -34,7 +34,7 @@ https://youtube.com/iframe_api
 Plug-in libraries may change their versions and the code in the example may not work or cause an error.
 {{< /admonition >}}
 
-Use the following for the **JavaScript**->**After Content Ready**:
+Use the following for the **JavaScript > After Content Ready**:
 
 ```js
 import("https://esm.sh/youtube-player").then(({ default: YouTubePlayer }) => {

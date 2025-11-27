@@ -29,7 +29,7 @@ Follow the below outlined steps to display [Mapbox GL JS](https://docs.mapbox.co
 Plug-in libraries may change their versions and the code in the example may not work or cause an error.
 {{< /admonition >}}
 
-Use the following for the **JavaScript**->**After Content Ready**:
+Use the following for the **JavaScript > After Content Ready**:
 
 ```js
 import("https://cdn.jsdelivr.net/npm/mapbox-gl@3.5.1/+esm").then(

@@ -1,5 +1,5 @@
 ---
-title: Code Editor Toolbar
+title: Code Editor toolbar
 description: Learn how to use the Code Editor toolbar to expand, copy, paste, wrap code, and toggle the mini map for better code management.
 keywords:
   - business text
@@ -11,7 +11,7 @@ labels:
 weight: 700
 ---
 
-# Code Editor Toolbar
+# Code Editor toolbar
 
 {{< admonition type="note" >}}
 The Business Text panel supports the Code Editor toolbar starting from version 5.3.0. Additional buttons were added in 5.4.0.

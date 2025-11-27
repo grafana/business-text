@@ -11,7 +11,7 @@ weight: 4
 
 # Flowchart
 
-Thank you [Josiah Solomon](https://github.com/yosiasz) for exploring an epic [Flowchart](https://flowchart.js.org) return to Grafana! We are happy to share your example with the world.
+Thank you [Josiah Solomon](https://github.com/yosiasz) for exploring an epic [Flowchart](https://flowchart.js.org) return to Grafana!
 
 Below you can find how the beloved by many Flowchart libraries can be implemented using the Business Text plugin.
 
@@ -23,7 +23,7 @@ Simply, import two external libraries and then write your code addressing the Fl
 
 Use the following external library
 
-```
+```text
 https://esm.sh/flowchart.js
 https://esm.sh/raphael
 ```
@@ -40,7 +40,7 @@ https://esm.sh/raphael
 Plug-in libraries may change their versions and the code in the example may not work or cause an error.
 {{< /admonition >}}
 
-Use the following for the **JavaScript**->**After Content Ready**:
+Use the following for the **JavaScript > After Content Ready**:
 
 ```js
 import("https://esm.sh/flowchart.js").then(async (flowchart) => {

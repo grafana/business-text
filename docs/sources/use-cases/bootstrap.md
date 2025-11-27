@@ -11,7 +11,7 @@ weight: 1
 
 # Bootstrap
 
-Thanks to our community member [Josiah Solomon](https://github.com/yosiasz) for the provided solution.
+Thanks to community member [Josiah Solomon](https://github.com/yosiasz) for the provided solution.
 
 Use the following external Bootstrap and CSS libraries:
 
@@ -57,7 +57,7 @@ Into the **Content** or **Default Content**:
         default, until the collapse plugin adds the appropriate classes that we
         use to style each element. These classes control the overall appearance,
         as well as the showing and hiding via CSS transitions. You can modify
-        any of this with custom CSS or overriding our default variables. It's
+        any of this with custom CSS or overriding default variables. It's
         also worth noting that just about any HTML can go within the
         <code>.accordion-body</code>, though the transition does limit overflow.
       </div>
@@ -87,7 +87,7 @@ Into the **Content** or **Default Content**:
         by default, until the collapse plugin adds the appropriate classes that
         we use to style each element. These classes control the overall
         appearance, as well as the showing and hiding via CSS transitions. You
-        can modify any of this with custom CSS or overriding our default
+        can modify any of this with custom CSS or overriding default
         variables. It's also worth noting that just about any HTML can go within
         the <code>.accordion-body</code>, though the transition does limit
         overflow.
@@ -118,7 +118,7 @@ Into the **Content** or **Default Content**:
         by default, until the collapse plugin adds the appropriate classes that
         we use to style each element. These classes control the overall
         appearance, as well as the showing and hiding via CSS transitions. You
-        can modify any of this with custom CSS or overriding our default
+        can modify any of this with custom CSS or overriding default
         variables. It's also worth noting that just about any HTML can go within
         the <code>.accordion-body</code>, though the transition does limit
         overflow.
@@ -130,7 +130,7 @@ Into the **Content** or **Default Content**:
 
 ## After Content Ready
 
-Into the **JavaScript**->**After Content Ready**:
+Into the **JavaScript > After Content Ready**:
 
 ```js
 import("https://esm.sh/bootstrap@5.0.2");

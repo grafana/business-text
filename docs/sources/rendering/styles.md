@@ -12,6 +12,8 @@ labels:
 
 # Styles
 
+Apply CSS styling using inline, internal, or external methods with support for dashboard variables and syntax highlighting.
+
 ## Methods to include CSS
 
 You can impose style using one, all, or any combination of the following:
@@ -69,7 +71,7 @@ Here I have a simple, yet amazing styling approach. For instance, you can displa
 
 To have this on your dashboard, copy the **Content** and **CSS Styles** parameters from below.
 
-#### Content
+### Content
 
 ```html
 <table>
@@ -105,7 +107,7 @@ To have this on your dashboard, copy the **Content** and **CSS Styles** paramete
 </table>
 ```
 
-#### CSS Styles
+### CSS Styles
 
 ```css
 .dot_iO {
@@ -244,7 +246,7 @@ To display content without padding and margins, you need to override the parent 
 }
 ```
 
-## Code Syntax Highlight
+## Code syntax highlight
 
 The code syntax highlighting is based on the `highlight.js` library, which supports key programming languages.
 
@@ -252,7 +254,7 @@ The code syntax highlighting is based on the `highlight.js` library, which suppo
 
 ### Styling
 
-We included the Accessibility (A11Y) syntax highlighting style for light and dark themes. You can override it in the styles editor by copying one of the styles from the [project source files](https://github.com/highlightjs/highlight.js/tree/main/src/styles).
+The Accessibility (A11Y) syntax highlighting style for light and dark themes is included. You can override it in the styles editor by copying one of the styles from the [project source files](https://github.com/highlightjs/highlight.js/tree/main/src/styles).
 
 ```css
 

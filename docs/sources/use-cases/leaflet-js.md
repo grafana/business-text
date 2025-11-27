@@ -23,7 +23,7 @@ The map on the dashboard from this example looks like in the illustration below.
 
 ## Data to copy
 
-In this example, we use the [Business Input Data Source](https://volkovlabs.io/plugins/business-input/).
+This example uses the [Business Input Data Source](https://volkovlabs.io/plugins/business-input/).
 
 ```js
 {
@@ -53,7 +53,7 @@ In this example, we use the [Business Input Data Source](https://volkovlabs.io/p
 Plug-in libraries may change their versions and the code in the example may not work or cause an error.
 {{< /admonition >}}
 
-Use the following for the **JavaScript**->**After Content Ready**:
+Use the following for the **JavaScript > After Content Ready**:
 
 ```js
 // This data is coming from the data source.

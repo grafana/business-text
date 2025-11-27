@@ -1,5 +1,5 @@
 ---
-title: Context Parameters
+title: Context parameters
 description: Learn about the context parameters available in JavaScript code for accessing panel data, Grafana services, and user preferences.
 keywords:
   - business text
@@ -10,51 +10,51 @@ labels:
     - oss
 ---
 
-# Context Parameters
+# Context parameters
 
-## context.data
+## `context.data`
 
 Data from data sources. The display of one or multiple data rows from the selected data frame or from all data frames is determined by the **Render template** option. It can be one of three values: **Every Row**, **All Rows**, and **All data**.
 
-#### Usage
+### Usage
 
 ```javascript
 context.data;
 ```
 
-#### Example
+### Example
 
 ```javascript
 const data = context.data;
 ```
 
-## context.element
+## `context.element`
 
 Current HTML element.
 
-#### Usage
+### Usage
 
 ```javascript
 context.element;
 ```
 
-#### Example
+### Example
 
 ```javascript
 const element = context.element;
 ```
 
-## context.dataFrame
+## `context.dataFrame`
 
 Selected Data Frame for **Every Row**, **All Rows** templates.
 
-#### Usage
+### Usage
 
 ```javascript
 context.dataFrame;
 ```
 
-#### Example
+### Example
 
 ```javascript
 const frame = context.dataFrame;
@@ -62,7 +62,7 @@ const frame = context.dataFrame;
 
 ## Panel
 
-### panel.handlebars
+### `panel.handlebars`
 
 Handlebars library.
 
@@ -80,7 +80,7 @@ context.handlebars.registerHelper("unique", (context, key) => {
 });
 ```
 
-### panel.panelData
+### `panel.panelData`
 
 Panel data.
 
@@ -106,7 +106,7 @@ context.handlebars.registerHelper(
 
 ## Grafana
 
-### grafana.eventBus
+### `grafana.eventBus`
 
 Publish and subscribe to application events.
 
@@ -124,7 +124,7 @@ const subscriber = eventBus.getStream(RefreshEvent).subscribe(() => {
 });
 ```
 
-### grafana.getLocale()
+### `grafana.getLocale()`
 
 Returns the user's locale: 'en', 'fr', 'es', and so on.
 
@@ -158,7 +158,7 @@ context.handlebars.registerHelper(
 );
 ```
 
-### grafana.locationService
+### `grafana.locationService`
 
 The `locationService` works with the browser location and history.
 
@@ -176,7 +176,7 @@ context.grafana.locationService.reload();
 const history = context.grafana.locationService.history;
 ```
 
-### grafana.replaceVariables()
+### `grafana.replaceVariables()`
 
 The `replaceVariables()` function to interpolate variables.
 
@@ -193,7 +193,7 @@ const bonjour = context.grafana.replaceVariables("${variable}");
 console.log(bonjour.toUpperCase());
 ```
 
-### grafana.timeRange
+### `grafana.timeRange`
 
 Time range of the current dashboard.
 
@@ -210,7 +210,7 @@ const timeRange = context.grafana.timeRange;
 console.log(timeRange);
 ```
 
-### grafana.timeZone
+### `grafana.timeZone`
 
 Time zone of the current dashboard.
 
@@ -227,7 +227,7 @@ const timeZone = context.grafana.timeZone;
 console.log(timeZone);
 ```
 
-### grafana.notifyError([header, message])
+### `grafana.notifyError([header, message])`
 
 Displays an error notification.
 
@@ -248,7 +248,7 @@ context.grafana.notifyError(["Error Title", `Show error message`]);
 - `header` _string_. Error title
 - `message` _string_. Error message
 
-### grafana.notifySuccess([header, message])
+### `grafana.notifySuccess([header, message])`
 
 Displays a success notification.
 
@@ -269,7 +269,7 @@ context.grafana.notifySuccess(["Success Title", `Success message`]);
 - `header` _string_. Success title
 - `message` _string_. Success message
 
-### grafana.theme
+### `grafana.theme`
 
 Contains grafana Theme object.
 
@@ -286,7 +286,7 @@ const theme = context.grafana.theme;
 console.log(theme);
 ```
 
-### grafana.refresh()
+### `grafana.refresh()`
 
 Function to refresh dashboard panels using application events.
 
@@ -298,7 +298,7 @@ _Added in: v5.7.0_
 context.grafana.refresh();
 ```
 
-### grafana.getUserPreference(key)
+### `grafana.getUserPreference(key)`
 
 Get user preference value by key
 
@@ -328,7 +328,7 @@ myFuncGetValue = () => {
 
 - `key` _string_.
 
-### grafana.setUserPreference(key,data)
+### `grafana.setUserPreference(key,data)`
 
 Set user preference value by key
 

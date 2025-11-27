@@ -15,13 +15,13 @@ Thank you [Raghavendra Samant](https://github.com/samant-rags) for exploring a u
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/tailwind-panel.png" class="border" alt="The Business Text panel with Tailwind styles on the dashboard." >}}
 
-To prevent CORS issues we recommend adding Tailwind script to the Grafana's public folder `/usr/share/grafana/public/yourFileName.js`.
+To prevent CORS issues, use Tailwind script to the Grafana's public folder `/usr/share/grafana/public/yourFileName.js`.
 
 The file can contain the import function and use Tailwind, or it can load code from `cdn.tailwindcss.com`.
 
 ## CDN based code
 
-Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload it to `/usr/share/grafana/public/` in the Docker container. We used the latest version `https://cdn.tailwindcss.com/3.4.4`.
+Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload it to `/usr/share/grafana/public/` in the Docker container. The following examples uses the latest version `https://cdn.tailwindcss.com/3.4.4`.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/tailwind-file-example.png" class="border" alt="A Tailwind script uploaded to the Docker container." >}}
 
@@ -45,7 +45,7 @@ Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload 
 
 ## After Content Ready
 
-Use the following for the **JavaScript**->**After Content Ready**:
+Use the following for the **JavaScript > After Content Ready**:
 
 ```js
 import("/public/tailwind.js");
@@ -92,7 +92,7 @@ export default loadTailwindFromCDN;
 
 ## After Content Ready
 
-Use the following for the **JavaScript**->**After Content Ready**:
+Use the following for the **JavaScript > After Content Ready**:
 
 ```js
 import("/public/loadTailwindFromCDN.js").then(

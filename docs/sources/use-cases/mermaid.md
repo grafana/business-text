@@ -14,9 +14,9 @@ weight: 8
 Mermaid is a popular JavaScript-based diagramming and charting tool that dynamically creates and modifies diagrams using Markdown-defined text definitions.
 
 {{< admonition type="note" >}}
-Previously we maintained two Business text (old name Dynamic Text) plugin builds. One with embedded Mermaid Library and the other without.
+Previously there were two Business text (old name Dynamic Text) plugin builds being maintained. One with embedded Mermaid Library and the other without.
 
-The main reason being the Mermaid Library size. After we added the External Resources feature, the need to maintain two builds has vanished. Now, anyone who needs the Mermaid library can simply import it as an external resource.
+The main reason being the Mermaid Library size. After the addition of the External Resources feature, the need to maintain two builds has vanished. Now, anyone who needs the Mermaid library can simply import it as an external resource.
 {{< /admonition >}}
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/diagram.png" class="border" alt="Mermaid diagrams displayed using the Business Text panel." >}}
@@ -50,7 +50,7 @@ Use the following for the **Content** (when your data source is set to return so
 Plug-in libraries may change their versions and the code in the example may not work or cause an error.
 {{< /admonition >}}
 
-Use the following for the **JavaScript**->**After Content Ready**:
+Use the following for the **JavaScript > After Content Ready**:
 
 ```js
 import("https://esm.sh/mermaid").then(({ default: mermaid }) => {

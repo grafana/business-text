@@ -127,17 +127,17 @@ You can reference it using the following code:
 {{/each}}
 ```
 
-## Rendering Order
+## Rendering order
 
 Below are two schemas of the rendering order in the Business text plugin. They represent the same thing.
 
 The first is oriented toward the general public and the second is targeted to answer developers' questions.
 
-### For Users
+### For users
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/order-all.png" class="border" alt="The rendering order for users." >}}
 
-### For Developers
+### For developers
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/order-dev.png" class="border" alt="The rendering order for developers." >}}
 

@@ -14,7 +14,7 @@ weight: 50
 # Use cases
 
 {{< admonition type="note" >}}
-Since in Grafana 11, the functionality of external JavaScript resources is deprecated, we removed the **External Resource**->**Scripts** parameter. You can import the JavaScript library directly in the code.
+Since in Grafana 11, the functionality of external JavaScript resources is deprecated, the **External Resource > Scripts** parameter has been removed. You can import the JavaScript library directly in the code.
 
 The Business Text panel supports the JavaScript libraries import in the **Before content rendering** starting from version 5.3.0.
 {{< /admonition >}}

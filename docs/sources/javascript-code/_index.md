@@ -23,7 +23,7 @@ The Business Text panel supports the integration of JavaScript code snippets tha
 The Business Text panel supports `context` starting from version 4.3.0.
 {{< /admonition >}}
 
-Starting from release 4.3.0, we provide access to the panel data `panelData` and selected data frame `data` via a new object `context`.
+Starting from release 4.3.0, you can access the panel data `panelData` and selected data frame `data` by way of a new object `context`.
 
 Start typing the `context` word in the **Before Content Rendering** or **After Content Ready** boxes and see the latest list of all available features.
 
@@ -59,19 +59,19 @@ You can add a custom Handlebars helper to replace the field's value according to
 Handlebars are not available in the After Content Render.
 {{< /admonition >}}
 
-Handlebars should be created in the **Before content Render**, because they are used during the rendering process to convert Handlebars -> Markdown -> HTML.
+Handlebars should be created in the **Before content Render**, because they are used during the rendering process to convert Handlebars > Markdown > HTML.
 
 The **After Content Render** works with already created HTML elements and handlebars are not available at this point.
 
-### JavaScript Code
+### JavaScript code
 
-Here we register a function with the `replace` helper that takes three arguments:
+This code snippet registers a function with the `replace` helper that takes three arguments:
 
 1. `context` is an object that contains the data for the template.
 2. `pattern` is the text to be searched for.
 3. `replacement` is the text to be used to replace the pattern.
 
-Then we call this function and pass the `pattern` and `replacement` arguments to it.
+Then, this code calls this function and passes the `pattern` and `replacement` arguments to it.
 
 ```js
 context.handlebars.registerHelper("replace", (context, pattern, replacement) =>
@@ -81,7 +81,7 @@ context.handlebars.registerHelper("replace", (context, pattern, replacement) =>
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/replace.png" class="border" alt="A custom helper to replace data in the returned data." >}}
 
-## Event Handler
+## Event handler
 
 To respond to a button click, you can add a custom event handler.
 
@@ -89,7 +89,7 @@ To respond to a button click, you can add a custom event handler.
 <button onclick="myFunc()">{{test}}</button>
 ```
 
-### JavaScript Code
+### JavaScript code
 
 This code snippet defines a function called `myFunc`. The function takes no arguments and returns no value. The body of the function calls the `alert()` function to display the text "Bonjour!" in a dialog box.
 
@@ -123,7 +123,7 @@ This code snippet uses the `translate` helper to show the translation of a defau
 {{translate "Default"}}
 ```
 
-### JavaScript Code
+### JavaScript code
 
 ```js
 const messages = {
@@ -147,7 +147,7 @@ context.handlebars.registerHelper(
 );
 ```
 
-## Time Zone and Range
+## Time zone and range
 
 You can display the selected dashboard, browser's time zone, and time ranges in Grafana.
 
@@ -157,7 +157,7 @@ You can display the selected dashboard, browser's time zone, and time ranges in 
 
 Use the following for the **Content**
 
-````
+````html
 <h1>Dashboard {{tz}}</h1>
 <h2>Browser {{browser}}</h2>
 
@@ -166,11 +166,11 @@ Use the following for the **Content**
 ```
 ````
 
-### JavaScript Code
+### JavaScript code
 
-Use the following for the **JavaScript->Before Content Rendering**
+Use the following for the **JavaScript > Before Content Rendering**
 
-```
+```js
 const dashboardTimeZone = context.panelData.timeZone
 const dashboardTimeRange = context.panelData.timeRange
 
@@ -206,9 +206,9 @@ Use the following for the **Content**:
 </table>
 ```
 
-### JavaScript Code
+### JavaScript code
 
-Use the following for the **JavaScript->Before Content Rendering**:
+Use the following for the **JavaScript > Before Content Rendering**:
 
 ```js
 const scrollWindow = () => {
@@ -275,9 +275,9 @@ Use the following for the **Content**:
 <div>{{#each (unique data "hostname.keyword")}}{{this}}; {{/each}}</div>
 ```
 
-### JavaScript Code
+### JavaScript code
 
-Use the following for the **JavaScript->Before Content Rendering**:
+Use the following for the **JavaScript > Before Content Rendering**:
 
 ```js
 context.handlebars.registerHelper("unique", (context, key) => {
@@ -285,11 +285,11 @@ context.handlebars.registerHelper("unique", (context, key) => {
 });
 ```
 
-## Dashboard Variables
+## Dashboard variables
 
 You can use the `context.grafana.replaceVariables` function to replace dashboard variables in the JavaScript code.
 
-```
+```js
 const bonjour = context.grafana.replaceVariables("${variable}");
 console.log(bonjour.toUpperCase())
 ```
@@ -313,9 +313,9 @@ Into the **Content**:
 </form>
 ```
 
-### JavaScript Code
+### JavaScript code
 
-Into the **JavaScript->After Content Ready**
+Into the **JavaScript > After Content Ready**
 
 ```js
 /**
@@ -360,8 +360,6 @@ return () => {
 
 The community member [havedill](https://github.com/havedill) [asked](https://github.com/VolkovLabs/business-text/issues/255) how to parse a JSON data format in the case when the transformation **Convert field type** is not available.
 
-We believe the solution might be helpful for many, so here is how you can do it.
-
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/json-parsing.png" class="border" alt="." >}}
 
 ### JSON example
@@ -388,7 +386,7 @@ context.handlebars.registerHelper("parse", (context) => JSON.parse(context));
 
 ## Anonymizer
 
-Anonymizer is the tool we created for internal purposes of converting real production data into dummy values in order to have our dashboards demo-ready. Anonymizer is another great example of how embedded JavaScript can simplify tedious and repetitive tasks.
+Anonymizer converts real production data into dummy values in order to have your dashboards demo-ready. Anonymizer is another great example of how embedded JavaScript can simplify tedious and repetitive tasks.
 
 You can find all you need in this [blog post](https://volkovlabs.io/blog/anonymizer-20240302/).
 

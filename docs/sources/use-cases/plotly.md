@@ -11,7 +11,7 @@ weight: 9
 
 # Plotly
 
-Thanks to our community member [Josiah Solomon](https://github.com/yosiasz) for the provided solution.
+Thanks to community member [Josiah Solomon](https://github.com/yosiasz) for the provided solution.
 
 Use the following external Plotly's chart library:
 
@@ -39,7 +39,7 @@ Into the **Content** or **Default Content**:
 Plug-in libraries may change their versions and the code in the example may not work or cause an error.
 {{< /admonition >}}
 
-Into the **JavaScript**->**After Content Ready**:
+Into the **JavaScript > After Content Ready**:
 
 ```js
 const unpack = (rows, key) => {

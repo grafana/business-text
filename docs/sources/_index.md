@@ -35,7 +35,7 @@ By working with the Business Text plugin you construct a text visualization temp
 - Dynamic Text panel 2.X and 3.X require **Grafana 8.5** or **Grafana 9**.
 - Dynamic Text panel 1.X requires **Grafana 7**.
 
-## Getting Started
+## Getting started
 
 You can install the Business Text panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or using the Grafana command line tool.
 
@@ -70,7 +70,7 @@ The video reviews the major latest release including the data flow, predefined h
 
 {{< youtube id="UVMysEjouNo" >}}
 
-We have many other tutorials that you can find helpful. You can review all related to this plugin tutorials [here](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/tutorials/).
+Review all the other helpful [tutorials related to this plugin](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/tutorials/).
 
 ## Documentation
 

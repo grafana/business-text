@@ -19,7 +19,7 @@ weight: 11
 Plug-in libraries may change their versions and the code in the example may not work or cause an error.
 {{< /admonition >}}
 
-Use the following for the **JavaScript->Before Content Rendering**:
+Use the following for the **JavaScript > Before Content Rendering**:
 
 ```js
 console.log('Loading TensorFlow...');

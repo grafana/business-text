@@ -1,5 +1,5 @@
 ---
-title: Grafana Events
+title: Grafana events
 description: Learn how to subscribe to Grafana application events and respond to user interactions using the event bus.
 keywords:
   - business text
@@ -12,7 +12,7 @@ labels:
 weight: 200
 ---
 
-# Grafana Events
+# Grafana events
 
 {{< admonition type="note" >}}
 The Business Text panel supports the event bus starting from version 4.0.0.
@@ -20,9 +20,9 @@ The Business Text panel supports the event bus starting from version 4.0.0.
 
 Grafana uses an event bus to publish application events to notify different parts of Grafana when the user interacts with it. The Business Text panel can respond to these interactions by subscribing to one or more events.
 
-## Predefined Events
+## Predefined events
 
-A full list of events is available in our [Grafana Crash Course](https://volkovlabs.io/grafana/developer/eventbus/).
+A full list of events is available in the [Grafana Crash Course](https://volkovlabs.io/grafana/developer/eventbus/).
 
 ## Subscribe to events
 

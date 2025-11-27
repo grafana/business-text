@@ -1,5 +1,5 @@
 ---
-title: Standard Options
+title: Standard options
 description: Learn how to configure standard options like units and decimals for fields using overrides in the Business Text panel.
 keywords:
   - business text
@@ -11,7 +11,7 @@ labels:
 weight: 300
 ---
 
-# Standard Options
+# Standard options
 
 {{< admonition type="note" >}}
 The Business Text panel supports the **Standard options** and **Overrides** starting from version 5.0.0.
