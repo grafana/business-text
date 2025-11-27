@@ -52,4 +52,4 @@ Use the **All rows** or **All data** template to execute the template only once.
 | [Plotly](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/plotly/)         | Open Source Graphing Libraries                                                                |
 | [Tailwind CSS](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/tailwind/) | A utility-first CSS framework                                                                 |
 | [TensorFlow](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/tensorflow/) | Library for machine learning in JavaScript                                                    |
-| [Youtube Video](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/youtube/) | YouTube player component                                                                      |
+| [YouTube Video](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/youtube/) | YouTube player component                                                                      |

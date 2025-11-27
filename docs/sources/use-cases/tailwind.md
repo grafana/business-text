@@ -25,7 +25,7 @@ Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload 
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/tailwind-file-example.png" class="border" alt="A Tailwind script uploaded to the Docker container." >}}
 
-## Content
+### Content
 
 ```html
 <div class="bg-gray-100 min-h-64 flex items-center justify-center">
@@ -43,7 +43,7 @@ Create a `tailwind.js` file with the code from `cdn.tailwindcss.com` and upload 
 </div>
 ```
 
-## After Content Ready
+### After Content Ready
 
 Use the following for the **JavaScript > After Content Ready**:
 
@@ -72,7 +72,7 @@ function loadTailwindFromCDN() {
 export default loadTailwindFromCDN;
 ```
 
-## Content
+### Content
 
 ```html
 <div class="bg-gray-100 min-h-64 flex items-center justify-center">
@@ -90,7 +90,7 @@ export default loadTailwindFromCDN;
 </div>
 ```
 
-## After Content Ready
+### After Content Ready
 
 Use the following for the **JavaScript > After Content Ready**:
 
