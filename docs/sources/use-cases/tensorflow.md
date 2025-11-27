@@ -1,0 +1,36 @@
+---
+title: Tensorflow
+description: Learn how to integrate TensorFlow.js for machine learning capabilities in the Business Text panel.
+labels:
+  products:
+    - cloud
+    - enterprise
+    - oss
+weight: 11
+---
+
+# TensorFlow
+
+[TensorFlow.js](https://www.tensorflow.org/js) is a library for machine learning in JavaScript.
+
+## Before Content Rendering
+
+{{< admonition type="warning" >}}
+Plug-in libraries may change their versions and the code in the example may not work or cause an error.
+{{< /admonition >}}
+
+Use the following for the **JavaScript > Before Content Rendering**:
+
+```js
+console.log('Loading TensorFlow...');
+import("https://cdnjs.cloudflare.com/ajax/libs/tensorflow/4.22.0/tf.fesm.min.js").then(tf => {
+  console.log('Done loading TensorFlow');
+  console.log('Check if TensorFlow if ready');
+
+  tf.ready().then(() => {
+    console.log('TensorFlow is ready');
+    console.log('TensorFlow version: ', tf.version);
+    console.log('TensorFlow backend: ', tf.getBackend());
+  }
+})
+```

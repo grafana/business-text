@@ -47,11 +47,11 @@ grafana cli plugins install marcusolsson-dynamictext-panel
 
 | Section                                                               | Description                                                   |
 | --------------------------------------------------------------------- | ------------------------------------------------------------- |
-| [Rendering](https://volkovlabs.io/plugins/business-text/content/)     | Explains how to create a visualization template for your data |
-| [Recipes](https://volkovlabs.io/plugins/business-text/recipes/)       | Useful snippets that you can use in your templates            |
-| [Features](https://volkovlabs.io/plugins/business-text/features/)     | Demonstrates panel features.templates                         |
-| [Tutorials](https://volkovlabs.io/plugins/business-text/tutorials/)   | Easy to follow tutorials                                      |
-| [Release Notes](https://volkovlabs.io/plugins/business-text/release/) | Stay up to date with the latest features and updates          |
+| [Rendering](hhttps://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/rendering/)     | Explains how to create a visualization template for your data |
+| [Recipes](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/rendering/recipes/)       | Useful snippets that you can use in your templates            |
+| [Features](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/features/)     | Demonstrates panel features.templates                         |
+| [Tutorials](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/tutorials/)   | Easy to follow tutorials                                      |
+| [Release Notes](https://grafana.com/docs/plugins/mmarcusolsson-dynamictext-panel/latest/release/) | Stay up to date with the latest features and updates          |
 
 
 ## License
