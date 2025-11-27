@@ -210,9 +210,6 @@ Use the following for the **Content**:
 
 Use the following for the **JavaScript->Before Content Rendering**:
 
-<details>
-  <summary>JavaScript for autoscrolling</summary>
-
 ```js
 const scrollWindow = () => {
   parentWindow =
@@ -265,8 +262,6 @@ $(() => {
   scrollWindow();
 });
 ```
-
-</details>
 
 ## Unique values
 
@@ -322,9 +317,6 @@ Into the **Content**:
 
 Into the **JavaScript->After Content Ready**
 
-<details>
-  <summary>JavaScript to submit REST request</summary>
-
 ```js
 /**
  * Form Element
@@ -363,8 +355,6 @@ return () => {
   form.removeEventListener("submit", handleSubmit);
 };
 ```
-
-</details>
 
 ## JSON parsing
 

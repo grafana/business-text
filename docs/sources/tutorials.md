@@ -61,8 +61,6 @@ Learn how to create a custom Datepicker to set time range in Grafana 11 this [bl
 Integrate the D3.js library to unlock advanced visualization capabilities.
 Learn how to extend visualization capabilities with D3.js in this [blog post](https://volkovlabs.io/blog/dynamic-text-d3-community-20240121/).
 
-<BlogPost id="dynamic-text-d3-community-20240121" />
-
 {{< admonition type="note" >}}
 External library support was added to expand the plugin’s versatility.
 {{< /admonition >}}
