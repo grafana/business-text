@@ -16,6 +16,10 @@
       {
         "name": "Documentation",
         "url": "https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/"
+      },
+      {
+        "name": "Repository",
+        "url": "https://github.com/grafana/business-text/"
       }
     ],
     "logos": {
