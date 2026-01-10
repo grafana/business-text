@@ -5,7 +5,7 @@ services:
       service: grafana
 
   grafana-dev:
-    image: ghcr.io/volkovlabs/app:latest
+    image: ghcr.io/volkovlabs/app:latest@sha256:7255f71881b7aa94198da4760a3c74fbbc5f6d16b592ec55f69c40c4e479b7be
     entrypoint: /run.sh
     ports:
       - 3000:3000/tcp
@@ -20,7 +20,7 @@ services:
       - dev
 
   grafana-main:
-    image: grafana/grafana:main
+    image: grafana/grafana:main@sha256:8fb297ea49e1e66a2e15ef1e784fee1121ce91494c85e4d96384cd9b8d9b821f
     ports:
       - 3000:3000/tcp
     environment:
@@ -34,7 +34,7 @@ services:
       - main
 
   grafana-dep:
-    image: grafana/grafana:11.0.0
+    image: grafana/grafana:11.0.0@sha256:0dc5a246ab16bb2c38a349fb588174e832b4c6c2db0981d0c3e6cd774ba66a54
     ports:
       - 3000:3000/tcp
     environment:
