@@ -41,7 +41,7 @@ Below you can find some examples to illustrate further.
 
 ### Every row
 
-For example, your data source returns a four-column table as follows. To mimic this in the following example, the [Business Input data source](https://volkovlabs.io/plugins/business-input/) is used.
+For example, your data source returns a four-column table as follows. To mimic this in the following example, the [Business Input data source](https://grafana.com/docs/plugins/marcusolsson-static-datasource/<PLUGINS_VERSION>/) is used.
 
 ```md
 | app  | description                  | cluster | tier     |
@@ -65,7 +65,7 @@ Link: <a href="https://{{cluster}}.example.com/{{app}}">https://{{cluster}}.exam
 
 ### All rows
 
-For example, your data source returns a table with multiple rows as follows. To mimic this in the following example, the [Business Input data source](https://volkovlabs.io/plugins/business-input/) is used.
+For example, your data source returns a table with multiple rows as follows. To mimic this in the following example, the [Business Input data source](https://grafana.com/docs/plugins/marcusolsson-static-datasource/<PLUGINS_VERSION>/) is used.
 
 ```md
 | title | author        | year |

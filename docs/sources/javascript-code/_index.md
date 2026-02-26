@@ -388,8 +388,6 @@ context.handlebars.registerHelper("parse", (context) => JSON.parse(context));
 
 Anonymizer converts real production data into dummy values in order to have your dashboards demo-ready. Anonymizer is another great example of how embedded JavaScript can simplify tedious and repetitive tasks.
 
-You can find all you need in this [blog post](https://volkovlabs.io/blog/anonymizer-20240302/).
-
-If you are a visual style learner, you can watch the video. It covers the same ground.
+You can find all you need in this video:
 
 {{< youtube id="FMSEGGFbJy0" >}}
