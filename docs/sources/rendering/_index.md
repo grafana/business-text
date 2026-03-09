@@ -41,7 +41,7 @@ Below you can find some examples to illustrate further.
 
 ### Every row
 
-For example, your data source returns a four-column table as follows. To mimic this in the following example, the [Business Input data source](https://grafana.com/docs/plugins/marcusolsson-static-datasource/<PLUGINS_VERSION>/) is used.
+For example, assume your data source returns a four-column table. In the following example, we use the [Business Input data source](https://grafana.com/docs/plugins/marcusolsson-static-datasource/<PLUGINS_VERSION>/) to replicate this behavior.
 
 ```md
 | app  | description                  | cluster | tier     |
