@@ -16,6 +16,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Added `@grafana/i18n` dependency.
 - Added `.eslintcache` to `.gitignore`.
 - Added coverage report workflow that posts Jest coverage summary to PRs.
+- Added PR file changes workflow that posts a file change summary to PRs.
 
 ### Changed
 

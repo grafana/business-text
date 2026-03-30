@@ -1,0 +1,77 @@
+name: PR File Changes
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  file-changes:
+    name: File Changes Summary
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed
+        uses: tj-actions/changed-files@ed68ef82c095e0d48ec87eccea555d944a631a4c # v46
+
+      - name: Post comment
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const added = process.env.ADDED.split(' ').filter(Boolean);
+            const modified = process.env.MODIFIED.split(' ').filter(Boolean);
+            const removed = process.env.REMOVED.split(' ').filter(Boolean);
+            const renamed = process.env.RENAMED.split(' ').filter(Boolean);
+
+            const section = (title, icon, files) => {
+              if (files.length === 0) return '';
+              const list = files.map((f) => `- \`${f}\``).join('\n');
+              return `### ${icon} ${title} (${files.length})\n\n${list}\n`;
+            };
+
+            const body = [
+              '## File Changes',
+              '',
+              `**${added.length + modified.length + removed.length + renamed.length}** files changed`,
+              '',
+              section('Added', '+', added),
+              section('Modified', '~', modified),
+              section('Removed', '-', removed),
+              section('Renamed', '>', renamed),
+            ].filter(Boolean).join('\n');
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const marker = '## File Changes';
+            const existing = comments.find((c) => c.body?.startsWith(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+        env:
+          ADDED: ${{ steps.changed.outputs.added_files }}
+          MODIFIED: ${{ steps.changed.outputs.modified_files }}
+          REMOVED: ${{ steps.changed.outputs.deleted_files }}
+          RENAMED: ${{ steps.changed.outputs.renamed_files }}
