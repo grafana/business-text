@@ -186,7 +186,7 @@ export const TextPanel: React.FC<Props> = ({ content }) => {
 | `@grafana/data`, `@grafana/ui`, `@grafana/runtime` | Grafana plugin SDK                          |
 | `@volkovlabs/components`                           | AutosizeCodeEditor, CodeParametersBuilder   |
 | `@grafana/scenes`                                  | Dashboard scene integration                 |
-| `react-beautiful-dnd`                              | Drag-and-drop in editors                    |
+| `@hello-pangea/dnd`                                | Drag-and-drop in editors                    |
 
 ### ESLint
 

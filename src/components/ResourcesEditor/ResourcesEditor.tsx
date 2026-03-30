@@ -1,14 +1,7 @@
 import { StandardEditorProps } from '@grafana/data';
 import { Button, Collapse, Icon, InlineField, InlineFieldRow, Input, Stack, useStyles2 } from '@grafana/ui';
+import { DragDropContext, Draggable, DraggingStyle, Droppable, DropResult, NotDraggingStyle } from '@hello-pangea/dnd';
 import React, { useCallback, useId, useState } from 'react';
-import {
-  DragDropContext,
-  Draggable,
-  DraggingStyle,
-  Droppable,
-  DropResult,
-  NotDraggingStyle,
-} from 'react-beautiful-dnd';
 import { v4 as uuidv4 } from 'uuid';
 
 import { TEST_IDS } from '../../constants';
@@ -149,7 +142,11 @@ export const ResourcesEditor: React.FC<Props> = ({ value, onChange }) => {
                                 }}
                                 data-testid={TEST_IDS.resourcesEditor.buttonRemove}
                               />
-                              <div className={styles.dragHandle} onClick={(event) => event.stopPropagation()} {...provided.dragHandleProps}>
+                              <div
+                                className={styles.dragHandle}
+                                onClick={(event) => event.stopPropagation()}
+                                {...provided.dragHandleProps}
+                              >
                                 <Icon name="draggabledots" className={styles.dragIcon} />
                               </div>
                             </Stack>
