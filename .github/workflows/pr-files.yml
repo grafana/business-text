@@ -29,17 +29,30 @@ jobs:
             const modified = process.env.MODIFIED.split(' ').filter(Boolean);
             const removed = process.env.REMOVED.split(' ').filter(Boolean);
             const renamed = process.env.RENAMED.split(' ').filter(Boolean);
+            const total = added.length + modified.length + removed.length + renamed.length;
 
             const section = (title, icon, files) => {
               if (files.length === 0) return '';
-              const list = files.map((f) => `- \`${f}\``).join('\n');
-              return `### ${icon} ${title} (${files.length})\n\n${list}\n`;
+              const list = files.map((f) => `\`${f}\``).join('\n');
+              return [
+                `<details>`,
+                `<summary><strong>${icon} ${title} (${files.length})</strong></summary>`,
+                '',
+                list,
+                '',
+                `</details>`,
+                '',
+              ].join('\n');
             };
 
             const body = [
               '## File Changes',
               '',
-              `**${added.length + modified.length + removed.length + renamed.length}** files changed`,
+              `**${total}** files changed: ` +
+                `**${added.length}** added, ` +
+                `**${modified.length}** modified, ` +
+                `**${removed.length}** removed, ` +
+                `**${renamed.length}** renamed`,
               '',
               section('Added', '+', added),
               section('Modified', '~', modified),
