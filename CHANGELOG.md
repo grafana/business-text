@@ -1,6 +1,22 @@
 # Changelog
 
-All notable changes to the **Business Text Panel** (formerly Dynamic Text Plugin) for Grafana will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+All notable changes to the **Business Text Panel** (formerly Dynamic Text Plugin) for Grafana
+will be documented in this file.
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+
+- Added `AGENTS.md` with build/lint/test commands, code style guidelines, and policies for agentic coding agents.
+- Added `.markdownlint.yaml` configuration.
+- Added `mise.toml` pinning Node to 24.14.0.
+
+### Changed
+
+- Bumped minimum Node version from `>=20` to `>=24` in `package.json` and `.nvmrc`.
+- Pinned Playwright Docker image to `v1.58.2-noble`.
+- Added explicit ports, environment variables, volumes, and healthcheck to base Grafana service in `docker-compose.yaml`.
 
 ## [6.2.0] - 2025-10-28
 
@@ -233,7 +249,10 @@ All notable changes to the **Business Text Panel** (formerly Dynamic Text Plugin
 
 - Increased test coverage and updated to `testing-library/react` ([#177](https://github.com/VolkovLabs/business-text/issues/177)).
 - Migrated to Plugin Tools 1.5.2 ([#183](https://github.com/VolkovLabs/business-text/issues/183)).
-- Updated to Grafana 10.0.0 ([#166](https://github.com/VolkovLabs/business-text/issues/166), [#178](https://github.com/VolkovLabs/business-text/issues/178), [#183](https://github.com/VolkovLabs/business-text/issues/183)).
+- Updated to Grafana 10.0.0
+  ([#166](https://github.com/VolkovLabs/business-text/issues/166),
+  [#178](https://github.com/VolkovLabs/business-text/issues/178),
+  [#183](https://github.com/VolkovLabs/business-text/issues/183)).
 - Updated to Node 18 and npm ([#183](https://github.com/VolkovLabs/business-text/issues/183)).
 - Removed Grafana 8.5 support ([#183](https://github.com/VolkovLabs/business-text/issues/183)).
 
@@ -254,7 +273,8 @@ All notable changes to the **Business Text Panel** (formerly Dynamic Text Plugin
 
 ### Breaking Changes
 
-- Default Content and JavaScript editors are hidden unless modified. Select required editors (including new Styles) from the list to display them.
+- Default Content and JavaScript editors are hidden unless modified.
+  Select required editors (including new Styles) from the list to display them.
 
 ### Added
 
@@ -331,7 +351,9 @@ All notable changes to the **Business Text Panel** (formerly Dynamic Text Plugin
 
 ### Added
 
-- Added option to render templates per row or as a single template, useful for creating tables from query results ([#53](https://github.com/VolkovLabs/business-text/issues/53)) (Thanks @andykingking).
+- Added option to render templates per row or as a single template, useful for creating tables
+  from query results ([#53](https://github.com/VolkovLabs/business-text/issues/53))
+  (Thanks @andykingking).
 
 ### Bug Fixes
 
