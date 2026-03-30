@@ -236,6 +236,8 @@ files, and server dirs are excluded from linting.
   Do not commit as part of completing a task.
 - **NEVER push unless the user explicitly asks.**
   Do not push as part of completing a task.
+  Never chain `git commit && git push` in one command.
+  Always wait for the user to explicitly ask to push.
 - **Prefer subagents** for research, code exploration,
   and multi-step work. Use the Task tool with
   `explore` or `general` agents rather than running
