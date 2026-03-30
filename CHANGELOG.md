@@ -14,6 +14,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Added `cspell.config.json` for spell checking.
 - Added `mise.toml` pinning Node to 24.14.0.
 - Added `@grafana/i18n` dependency.
+- Added `.eslintcache` to `.gitignore`.
 
 ### Changed
 
