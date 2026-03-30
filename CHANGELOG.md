@@ -48,6 +48,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Updated `packageManager` to `npm@11.12.1`.
 - Removed `grafana-main` and `grafana-dep` services from `docker-compose.yaml`.
 - Removed `e2e` profile from the `playwright` service in `docker-compose.yaml`.
+- Simplified `docker-compose.yaml` environment variables and normalized
+  env syntax to map format.
+- Set default home dashboard path in dev Grafana service.
 
 ### Fixed
 
@@ -57,6 +60,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fixed markdown lint issues in `README.md` and `CHANGELOG.md`.
 - Fixed Playwright E2E test "Should add default text panel" that timed out
   due to `addPanel()` selector mismatch with current Grafana versions.
+- Fixed volume paths in scaffolded docker-compose service (`../` to `./`).
+- Fixed `test:e2e:docker` script to use correct service name (`playwright`).
 
 ## [6.2.0] - 2025-10-28
 
