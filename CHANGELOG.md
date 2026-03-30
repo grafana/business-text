@@ -8,30 +8,31 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Added
 
-- Added `AGENTS.md` with build/lint/test commands, code style guidelines, and policies for agentic coding agents.
+- Added `AGENTS.md` with build/lint/test commands, code style guidelines,
+  and policies for agentic coding agents.
 - Added `.markdownlint.yaml` configuration.
-- Added `mise.toml` pinning Node to 24.14.0.
 - Added `cspell.config.json` for spell checking.
+- Added `mise.toml` pinning Node to 24.14.0.
+- Added `@grafana/i18n` dependency.
 
 ### Changed
 
-- Updated Grafana plugin tooling scaffolding (`.config/`) with rspack bundler support, new Dockerfile,
-  eslint flat config, and supervisord.
-- Bumped dependencies including `@grafana/plugin-e2e`, `@playwright/test`, `eslint`, `webpack`,
-  `typescript`, and others.
-- Added `@grafana/i18n` dependency.
+- Updated Grafana plugin tooling scaffolding (`.config/`) with rspack bundler
+  support, new Dockerfile, eslint flat config, and supervisord.
+- Bumped dependencies: `@grafana/plugin-e2e`, `@playwright/test`, `eslint`,
+  `webpack`, `typescript`, and others.
 - Pinned `@emotion/css` to `11.10.6`.
-- Added `packageManager` field to `package.json`.
-- Bumped minimum Node version from `>=20` to `>=24` in `package.json` and `.nvmrc`.
+- Bumped minimum Node version from `>=20` to `>=24`.
 - Pinned Playwright Docker image to `v1.58.2-noble`.
-- Added explicit ports, environment variables, volumes, and healthcheck to base Grafana service in `docker-compose.yaml`.
-- Fixed markdown lint issues in `README.md` and `CHANGELOG.md`.
+- Added explicit ports, environment variables, volumes, and healthcheck
+  to base Grafana service in `docker-compose.yaml`.
 
 ### Fixed
 
 - Fixed typo in `test/utils/text.ts` (`RowbText` -> `Row Text`).
 - Renamed `CutomEditor.test.tsx` to `CustomEditor.test.tsx`.
 - Fixed typos in `README.md` documentation table URLs.
+- Fixed markdown lint issues in `README.md` and `CHANGELOG.md`.
 
 ## [6.2.0] - 2025-10-28
 
