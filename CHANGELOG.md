@@ -15,6 +15,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+- Updated Grafana plugin tooling scaffolding (`.config/`) with rspack bundler support, new Dockerfile,
+  eslint flat config, and supervisord.
+- Bumped dependencies including `@grafana/plugin-e2e`, `@playwright/test`, `eslint`, `webpack`,
+  `typescript`, and others.
+- Added `@grafana/i18n` dependency.
+- Pinned `@emotion/css` to `11.10.6`.
+- Added `packageManager` field to `package.json`.
 - Bumped minimum Node version from `>=20` to `>=24` in `package.json` and `.nvmrc`.
 - Pinned Playwright Docker image to `v1.58.2-noble`.
 - Added explicit ports, environment variables, volumes, and healthcheck to base Grafana service in `docker-compose.yaml`.
