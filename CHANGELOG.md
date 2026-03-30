@@ -22,6 +22,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   support, new Dockerfile, eslint flat config, and supervisord.
 - Bumped dependencies: `@grafana/plugin-e2e`, `@playwright/test`, `eslint`,
   `webpack`, `typescript`, and others.
+- Updated all packages to latest compatible versions within semver range.
 - Pinned `@emotion/css` to `11.10.6`.
 - Pinned CI/CD workflows to `ci-cd-workflows/v7.0`.
 - Updated Grafana dependency range to `>=12.3 <13.0`.
