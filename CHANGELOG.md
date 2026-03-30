@@ -28,6 +28,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Upgraded `@grafana/scenes` from 6.47.1 to 7.1.8.
 - Upgraded `uuid` from 11.1.0 to 13.0.0; removed `@types/uuid` (v13 ships its own types).
 - Removed `@types/highlight.js` (`highlight.js` ships its own types).
+- Upgraded `glob` from 11.1.0 to 13.0.6.
 - Replaced `react-beautiful-dnd` (deprecated) with `@hello-pangea/dnd` for
   React 19 compatibility.
 - Pinned `@emotion/css` to `11.10.6`.
