@@ -12,7 +12,7 @@ jobs:
     name: Jest Coverage
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout PR branch
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: Setup Node
@@ -24,8 +24,87 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Coverage report
-        uses: ArtiomTr/jest-coverage-report-action@7f750dd50f5585533321eb7ebc482b936b49a5d4 # v2
+      - name: Run tests with coverage (PR)
+        run: npx jest --ci --coverage --coverageReporters=json-summary --maxWorkers=4
+        continue-on-error: true
+
+      - name: Save PR coverage
+        run: cp coverage/coverage-summary.json /tmp/pr-coverage.json
+
+      - name: Checkout base branch
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          test-script: npx jest --ci --coverage --maxWorkers=4
-          annotations: none
+          ref: ${{ github.event.pull_request.base.ref }}
+          clean: false
+
+      - name: Install dependencies (base)
+        run: npm ci
+
+      - name: Run tests with coverage (base)
+        run: npx jest --ci --coverage --coverageReporters=json-summary --maxWorkers=4
+        continue-on-error: true
+
+      - name: Save base coverage
+        run: cp coverage/coverage-summary.json /tmp/base-coverage.json
+
+      - name: Compare coverage and comment
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const fs = require('fs');
+
+            const pr = JSON.parse(fs.readFileSync('/tmp/pr-coverage.json', 'utf8'));
+            const base = JSON.parse(fs.readFileSync('/tmp/base-coverage.json', 'utf8'));
+
+            const metrics = ['statements', 'branches', 'functions', 'lines'];
+            const rows = metrics.map((m) => {
+              const basePct = base.total[m].pct;
+              const prPct = pr.total[m].pct;
+              const diff = (prPct - basePct).toFixed(2);
+              const icon = diff > 0 ? '+' : diff < 0 ? '' : '';
+              return `| ${m} | ${basePct}% | ${prPct}% | ${icon}${diff}% |`;
+            });
+
+            const body = [
+              '## Coverage Report',
+              '',
+              '| Metric | Base | PR | Diff |',
+              '| --- | --- | --- | --- |',
+              ...rows,
+              '',
+            ].join('\n');
+
+            // Find and update existing comment or create new one
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const marker = '## Coverage Report';
+            const existing = comments.find((c) => c.body?.startsWith(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+            // Fail if any metric decreased
+            const decreased = metrics.filter(
+              (m) => pr.total[m].pct < base.total[m].pct
+            );
+            if (decreased.length > 0) {
+              core.setFailed(
+                `Coverage decreased for: ${decreased.join(', ')}`
+              );
+            }
