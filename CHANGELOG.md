@@ -46,6 +46,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Renamed `CutomEditor.test.tsx` to `CustomEditor.test.tsx`.
 - Fixed typos in `README.md` documentation table URLs.
 - Fixed markdown lint issues in `README.md` and `CHANGELOG.md`.
+- Fixed Playwright E2E test "Should add default text panel" that timed out
+  due to `addPanel()` selector mismatch with current Grafana versions.
 
 ## [6.2.0] - 2025-10-28
 

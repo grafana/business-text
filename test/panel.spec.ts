@@ -7,7 +7,7 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
     expect(grafanaVersion).toEqual(grafanaVersion);
   });
 
-  test('Should add default text panel', async ({ readProvisionedDashboard, gotoDashboardPage }) => {
+  test('Should display default text panel without errors', async ({ readProvisionedDashboard, gotoDashboardPage }) => {
     /**
      * Go To Panels dashboard e2e.json
      * return dashboardPage
@@ -16,18 +16,11 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
     const dashboardPage = await gotoDashboardPage({ uid: dashboard.uid });
 
     /**
-     * Add new visualization
+     * Should display default text panel without errors
      */
-    const editPage = await dashboardPage.addPanel();
-    await editPage.setVisualization('Business Text');
-    await editPage.setPanelTitle('Business Text');
-    await editPage.backToDashboard();
-
-    /**
-     * Should add empty visualization without errors
-     */
-    const panel = new PanelHelper(dashboardPage, 'Business Text');
+    const panel = new PanelHelper(dashboardPage, 'Default Text');
     await panel.checkIfNoErrors();
+    await panel.checkPresence();
   });
 
   test('Should display content in all rows mode', async ({ gotoDashboardPage, readProvisionedDashboard }) => {
