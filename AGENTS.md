@@ -254,6 +254,11 @@ Run `npx markdownlint-cli` on any `.md` file you create or modify
 (including `AGENTS.md`, `README.md`, `CHANGELOG.md`) and fix all reported
 issues before committing.
 
+Run `npx cspell@6.13.3 -c cspell.config.json` on any `.md`
+file you create or modify and fix all reported issues before
+committing. Add new words to `cspell.config.json` if they
+are legitimate.
+
 ## Branching Policy
 
 - **Never commit directly to `main`**. Always create a new branch for changes.
