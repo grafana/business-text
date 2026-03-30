@@ -39,6 +39,15 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Pinned Playwright Docker image to `v1.58.2-noble`.
 - Added explicit ports, environment variables, volumes, and healthcheck
   to base Grafana service in `docker-compose.yaml`.
+- Bumped `@grafana/data`, `@grafana/i18n`, `@grafana/runtime`, `@grafana/schema`,
+  and `@grafana/ui` to 12.4.2.
+- Bumped `@volkovlabs/components` from 4.4.0 to 4.6.0.
+- Bumped `@grafana/plugin-e2e` to 3.4.10 and `@playwright/test` to 1.58.2.
+- Bumped `dayjs`, `handlebars`, `markdown-it`, `semver`, and `@types/semver`
+  to latest patch versions.
+- Updated `packageManager` to `npm@11.12.1`.
+- Removed `grafana-main` and `grafana-dep` services from `docker-compose.yaml`.
+- Removed `e2e` profile from the `playwright` service in `docker-compose.yaml`.
 
 ### Fixed
 

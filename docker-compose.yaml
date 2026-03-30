@@ -40,34 +40,12 @@ services:
       - ./provisioning:/etc/grafana/provisioning
     profiles:
       - dev
-
-  grafana-main:
-    image: grafana/grafana:main
-    ports:
-      - 3000:3000/tcp
-    environment:
-      - GF_DEFAULT_APP_MODE=development
-      - GF_USERS_DEFAULT_THEME=light
-      - GF_INSTALL_PLUGINS=marcusolsson-static-datasource,volkovlabs-rss-datasource,yesoreyeram-infinity-datasource
-    volumes:
-      - ./dist:/var/lib/grafana/plugins/marcusolsson-dynamictext-panel
-      - ./provisioning:/etc/grafana/provisioning
-    profiles:
-      - main
-
-  grafana-dep:
-    image: grafana/grafana:11.0.0
-    ports:
-      - 3000:3000/tcp
-    environment:
-      - GF_DEFAULT_APP_MODE=development
-      - GF_USERS_DEFAULT_THEME=light
-      - GF_INSTALL_PLUGINS=volkovlabs-rss-datasource,marcusolsson-static-datasource,yesoreyeram-infinity-datasource
-    volumes:
-      - ./dist:/var/lib/grafana/plugins/marcusolsson-dynamictext-panel
-      - ./provisioning:/etc/grafana/provisioning
-    profiles:
-      - dependency
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000/api/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
 
   playwright:
     build:
@@ -82,5 +60,4 @@ services:
       grafana:
         condition: service_healthy
     profiles:
-      - e2e
       - playwright
