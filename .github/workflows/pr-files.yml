@@ -25,22 +25,65 @@ jobs:
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
         with:
           script: |
-            const added = process.env.ADDED.split(' ').filter(Boolean);
-            const modified = process.env.MODIFIED.split(' ').filter(Boolean);
-            const removed = process.env.REMOVED.split(' ').filter(Boolean);
-            const renamed = process.env.RENAMED.split(' ').filter(Boolean);
-            const total = added.length + modified.length + removed.length + renamed.length;
+            const all = process.env.ALL_FILES.split(' ').filter(Boolean);
+            const statuses = {};
+            for (const f of process.env.ADDED.split(' ').filter(Boolean)) statuses[f] = 'added';
+            for (const f of process.env.MODIFIED.split(' ').filter(Boolean)) statuses[f] = 'modified';
+            for (const f of process.env.REMOVED.split(' ').filter(Boolean)) statuses[f] = 'removed';
+            for (const f of process.env.RENAMED.split(' ').filter(Boolean)) statuses[f] = 'renamed';
 
-            const section = (title, icon, files) => {
+            const areas = [
+              { name: 'Source', test: (f) => f.startsWith('src/') && !f.includes('.test.') && !f.includes('__mocks__') },
+              { name: 'Tests', test: (f) => f.includes('.test.') || f.includes('.spec.') || f.startsWith('test/') || f.includes('__mocks__') },
+              { name: 'CI/CD', test: (f) => f.startsWith('.github/') },
+              { name: 'Config', test: (f) =>
+                f.startsWith('.config/') ||
+                f.startsWith('provisioning/') ||
+                ['.gitignore', '.markdownlint.yaml', '.nvmrc', '.prettierrc.js',
+                 'cspell.config.json', 'docker-compose.yaml', 'eslint.config.mjs',
+                 'jest.config.js', 'jest-setup.js', 'mise.toml',
+                 'package.json', 'package-lock.json',
+                 'playwright.config.ts', 'tsconfig.json', 'webpack.config.ts',
+                ].includes(f)
+              },
+              { name: 'Docs', test: (f) => f.endsWith('.md') || f.startsWith('docs/') },
+            ];
+
+            const grouped = {};
+            const uncategorized = [];
+            for (const area of areas) grouped[area.name] = [];
+
+            for (const f of all) {
+              let matched = false;
+              for (const area of areas) {
+                if (area.test(f)) {
+                  grouped[area.name].push(f);
+                  matched = true;
+                  break;
+                }
+              }
+              if (!matched) uncategorized.push(f);
+            }
+
+            const statusIcon = (s) => {
+              if (s === 'added') return '+';
+              if (s === 'removed') return '-';
+              if (s === 'renamed') return '>';
+              return '~';
+            };
+
+            const section = (title, files) => {
               if (files.length === 0) return '';
-              const list = files.map((f) => `\`${f}\``).join('\n');
+              const list = files
+                .map((f) => `\`[${statusIcon(statuses[f])}]\` \`${f}\``)
+                .join('\n');
               return [
-                `<details>`,
-                `<summary><strong>${icon} ${title} (${files.length})</strong></summary>`,
+                '<details>',
+                `<summary><strong>${title} (${files.length})</strong></summary>`,
                 '',
                 list,
                 '',
-                `</details>`,
+                '</details>',
                 '',
               ].join('\n');
             };
@@ -48,16 +91,10 @@ jobs:
             const body = [
               '## File Changes',
               '',
-              `**${total}** files changed: ` +
-                `**${added.length}** added, ` +
-                `**${modified.length}** modified, ` +
-                `**${removed.length}** removed, ` +
-                `**${renamed.length}** renamed`,
+              `**${all.length}** files changed`,
               '',
-              section('Added', '+', added),
-              section('Modified', '~', modified),
-              section('Removed', '-', removed),
-              section('Renamed', '>', renamed),
+              ...areas.map((a) => section(a.name, grouped[a.name])),
+              section('Other', uncategorized),
             ].filter(Boolean).join('\n');
 
             const { data: comments } = await github.rest.issues.listComments({
@@ -84,6 +121,7 @@ jobs:
               });
             }
         env:
+          ALL_FILES: ${{ steps.changed.outputs.all_changed_files }}
           ADDED: ${{ steps.changed.outputs.added_files }}
           MODIFIED: ${{ steps.changed.outputs.modified_files }}
           REMOVED: ${{ steps.changed.outputs.deleted_files }}
