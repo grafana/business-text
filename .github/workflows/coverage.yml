@@ -58,3 +58,25 @@ jobs:
         with:
           json-summary-compare-path: /tmp/base-coverage/coverage-summary.json
           file-coverage-mode: all
+
+  coverage-detail:
+    name: Jest Coverage Detail
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Coverage report
+        uses: ArtiomTr/jest-coverage-report-action@7f750dd50f5585533321eb7ebc482b936b49a5d4 # v2
+        with:
+          test-script: npx jest --ci --coverage --maxWorkers=4
+          annotations: none
