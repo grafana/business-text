@@ -231,6 +231,7 @@ files, and server dirs are excluded from linting.
   to `cspell.config.json` if they are legitimate.
 - **Always update `CHANGELOG.md`** when committing any
   change. Include the changelog update in the same commit.
+  Run `npx markdownlint-cli` on it before committing.
 - **NEVER commit unless the user explicitly asks.**
   Do not commit as part of completing a task.
 - **NEVER push unless the user explicitly asks.**
@@ -248,6 +249,10 @@ modifies code, documentation, dependencies, or configuration must have a
 corresponding entry in the changelog under the current unreleased version
 section. Add entries as part of the same commit or as a follow-up commit
 before pushing.
+
+Run `npx markdownlint-cli` on any `.md` file you create or modify
+(including `AGENTS.md`, `README.md`, `CHANGELOG.md`) and fix all reported
+issues before committing.
 
 ## Branching Policy
 

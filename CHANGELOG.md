@@ -22,6 +22,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Bumped dependencies: `@grafana/plugin-e2e`, `@playwright/test`, `eslint`,
   `webpack`, `typescript`, and others.
 - Pinned `@emotion/css` to `11.10.6`.
+- Pinned CI/CD workflows to `ci-cd-workflows/v7.0`.
+- Updated Grafana dependency range to `>=12.3 <13.0`.
+- Enabled Grafana dev and React 19 preview image testing in CI.
 - Bumped minimum Node version from `>=20` to `>=24`.
 - Pinned Playwright Docker image to `v1.58.2-noble`.
 - Added explicit ports, environment variables, volumes, and healthcheck
