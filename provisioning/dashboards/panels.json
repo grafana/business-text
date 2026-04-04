@@ -201,7 +201,7 @@
           {
             "id": "1a363455-fd81-4afd-993b-beb062fe29ac",
             "name": "Index",
-            "url": "https://volkovlabs.io/index.html"
+            "url": "https://grafana.com/docs/grafana/latest/"
           }
         ],
         "defaultContent": "The query didn't return any results.",
@@ -406,7 +406,7 @@
           {
             "id": "1a363455-fd81-4afd-993b-beb062fe29ac",
             "name": "Index",
-            "url": "https://volkovlabs.io/${pages}.html"
+            "url": "https://grafana.com/docs/grafana/latest/${pages}"
           }
         ],
         "defaultContent": "The query didn't return any results.",
@@ -1493,8 +1493,8 @@
       },
       {
         "current": {
-          "text": "index",
-          "value": "index"
+          "text": "dashboards",
+          "value": "dashboards"
         },
         "description": "",
         "label": "pages",
@@ -1502,21 +1502,21 @@
         "options": [
           {
             "selected": true,
-            "text": "index",
-            "value": "index"
+            "text": "dashboards",
+            "value": "dashboards"
           },
           {
             "selected": false,
-            "text": "main",
-            "value": "main"
+            "text": "alerting",
+            "value": "alerting"
           },
           {
             "selected": false,
-            "text": "test",
-            "value": "test"
+            "text": "explore",
+            "value": "explore"
           }
         ],
-        "query": "index, main, test",
+        "query": "dashboards, alerting, explore",
         "type": "custom"
       },
       {
