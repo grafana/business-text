@@ -7,18 +7,13 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
     expect(grafanaVersion).toEqual(grafanaVersion);
   });
 
-  test('Should add default text panel', async ({ readProvisionedDashboard, gotoDashboardPage, page }) => {
+  test('Should add default text panel', async ({ readProvisionedDashboard, gotoDashboardPage }) => {
     /**
      * Go To Panels dashboard e2e.json
      * return dashboardPage
      */
     const dashboard = await readProvisionedDashboard({ fileName: 'e2e.json' });
     const dashboardPage = await gotoDashboardPage({ uid: dashboard.uid });
-
-    /**
-     * Wait for dashboard to fully load before editing
-     */
-    await page.waitForLoadState('networkidle');
 
     /**
      * Add new visualization

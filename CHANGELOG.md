@@ -78,8 +78,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fixed `lodash` vulnerability via `npm audit fix`.
 - Increased global Playwright test timeout to 60s in `playwright.config.ts`
   to avoid flaky CI failures.
-- Added `waitForLoadState('networkidle')` before `addPanel()` in E2E test
-  to fix flaky dashboard edit button on Grafana 13.
+- Skipped Grafana dev image in CI Playwright tests (`addPanel()` is broken
+  on Grafana 13).
 
 - Fixed typo in `test/utils/text.ts` (`RowbText` -> `Row Text`).
 - Renamed `CutomEditor.test.tsx` to `CustomEditor.test.tsx`.
