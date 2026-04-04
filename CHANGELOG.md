@@ -53,6 +53,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Simplified `docker-compose.yaml` environment variables and normalized
   env syntax to map format.
 - Set default home dashboard path in dev Grafana service.
+- Replaced `volkovlabs.io` URLs with Grafana equivalents in provisioning
+  dashboards and datasources (RSS feed, YouTube feed, content partial URLs).
+- Renamed provisioned datasources from "Volkov Labs" to "Grafana".
 
 ### Removed
 

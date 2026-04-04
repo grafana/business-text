@@ -214,6 +214,10 @@ files, and server dirs are excluded from linting.
 
 ## Critical Rules
 
+- **Do not use `volkovlabs.io` URLs** anywhere in the
+  codebase. This project was forked from Volkov Labs
+  and all references should point to Grafana equivalents
+  (e.g., `grafana.com`).
 - **Never modify anything inside `.config/`** —
   managed by Grafana plugin tooling.
 - **Never change `id` or `type`** in `src/plugin.json`.
@@ -233,8 +237,10 @@ files, and server dirs are excluded from linting.
 "**/*.{ts,tsx,js,go,md,mdx,yml,yaml,json,scss,css}"`
   and fix any issues before committing. Add new words
   to `cspell.config.json` if they are legitimate.
-- **Always update `CHANGELOG.md`** when committing any
-  change. Include the changelog update in the same commit.
+- **Always update `CHANGELOG.md` before committing.**
+  Every commit must include the corresponding changelog
+  entry. Do not commit code changes without first updating
+  the changelog in the same commit.
   Run `npx markdownlint-cli` on it before committing.
 - **NEVER commit unless the user explicitly asks.**
   Do not commit as part of completing a task.
@@ -242,6 +248,10 @@ files, and server dirs are excluded from linting.
   Do not push as part of completing a task.
   Never chain `git commit && git push` in one command.
   Always wait for the user to explicitly ask to push.
+- **After committing, update the PR summary** if a PR
+  exists for the current branch. Use `gh pr edit` to
+  update the title and body with well-formatted text
+  that reflects all changes across the entire branch.
 - **Prefer subagents** for research, code exploration,
   and multi-step work. Use the Task tool with
   `explore` or `general` agents rather than running
