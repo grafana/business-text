@@ -56,9 +56,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Replaced `volkovlabs.io` URLs with Grafana equivalents in provisioning
   dashboards and datasources (RSS feed, YouTube feed, content partial URLs).
 - Renamed provisioned datasources from "Volkov Labs" to "Grafana".
+- Inlined `@volkovlabs/components` (`AutosizeCodeEditor`, `CodeParameterItem`,
+  `CodeParametersBuilder`) into `src/` to remove Volkov Labs dependency.
 
 ### Removed
 
+- Removed `@volkovlabs/components` dependency (inlined into source).
+- Removed `@volkovlabs/eslint-config` dependency.
 - Removed unused `@types/lodash` from devDependencies.
 - Removed unused `@babel/preset-typescript` from devDependencies.
 - Removed unused `@babel/register` from devDependencies.

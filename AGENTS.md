@@ -184,14 +184,13 @@ export const TextPanel: React.FC<Props> = ({ content }) => {
 | `handlebars`                                       | Template engine for dynamic content         |
 | `markdown-it` + `highlight.js`                     | Markdown rendering with syntax highlighting |
 | `@grafana/data`, `@grafana/ui`, `@grafana/runtime` | Grafana plugin SDK                          |
-| `@volkovlabs/components`                           | AutosizeCodeEditor, CodeParametersBuilder   |
 | `@grafana/scenes`                                  | Dashboard scene integration                 |
 | `@hello-pangea/dnd`                                | Drag-and-drop in editors                    |
 
 ### ESLint
 
-Flat config (ESLint 9) extending `@grafana/eslint-config/flat.js`,
-`@volkovlabs/eslint-config`, and `eslint-config-prettier`. Custom rule:
+Flat config (ESLint 9) extending `@grafana/eslint-config/flat.js`
+and `eslint-config-prettier`. Custom rule:
 `@typescript-eslint/no-empty-object-type: off`. Test files, mocks, config
 files, and server dirs are excluded from linting.
 

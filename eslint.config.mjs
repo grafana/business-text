@@ -2,14 +2,12 @@ import tsParser from '@typescript-eslint/parser';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import prettierConfig from 'eslint-config-prettier/flat';
 import grafanaConfig from '@grafana/eslint-config/flat.js';
-import eslintConfig from '@volkovlabs/eslint-config';
 
 /**
  * Config
  */
 export default defineConfig(
   ...grafanaConfig,
-  eslintConfig,
   prettierConfig,
   {
     languageOptions: {

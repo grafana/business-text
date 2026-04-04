@@ -23,6 +23,15 @@ export const TEST_IDS = {
     newItem: 'data-testid resources-editor new-item',
     newItemName: 'data-testid resources-editor new-item-name',
   },
+  codeEditor: {
+    copyButton: 'data-testid code-editor copy-button',
+    copyPasteText: 'data-testid code-editor copy-paste-text',
+    modal: 'data-testid code-editor modal-window',
+    miniMapButton: 'data-testid code-editor mini-map-button',
+    modalButton: (action: string) => `data-testid code-editor modal-button-${action}`,
+    pasteButton: 'data-testid code-editor paste-button',
+    wrapButton: 'data-testid code-editor wrap-button',
+  },
   partialsEditor: {
     buttonAddNew: 'data-testid partials-editor button-add-new',
     buttonRemove: 'data-testid partials-editor button-remove',

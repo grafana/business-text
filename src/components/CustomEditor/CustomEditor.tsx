@@ -6,7 +6,7 @@ import {
   CodeEditorSuggestionItemKind,
   useTheme2,
 } from '@grafana/ui';
-import { AutosizeCodeEditor } from '@volkovlabs/components';
+import { AutosizeCodeEditor } from '../AutosizeCodeEditor';
 /**
  * Monaco
  */

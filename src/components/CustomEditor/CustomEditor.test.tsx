@@ -1,6 +1,6 @@
 import { getTemplateSrv } from '@grafana/runtime';
 import { CodeEditorSuggestionItemKind } from '@grafana/ui';
-import { AutosizeCodeEditor } from '@volkovlabs/components';
+import { AutosizeCodeEditor } from '../AutosizeCodeEditor';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
@@ -22,10 +22,10 @@ jest.mock('@grafana/ui', () => ({
 }));
 
 /**
- * Mock @volkovlabs/components
+ * Mock AutosizeCodeEditor
  */
-jest.mock('@volkovlabs/components', () => ({
-  ...jest.requireActual('@volkovlabs/components'),
+jest.mock('../AutosizeCodeEditor', () => ({
+  ...jest.requireActual('../AutosizeCodeEditor'),
   AutosizeCodeEditor: jest.fn().mockImplementation(() => null),
 }));
 
