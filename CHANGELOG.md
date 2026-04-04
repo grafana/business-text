@@ -9,7 +9,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Added
 
 - Added `AGENTS.md` with build/lint/test commands, code style guidelines,
-  and policies for agentic coding agents.
+  and policies for agentic coding agents. Includes CI/CD SHA pinning
+  policy for `grafana/plugin-ci-workflows`.
 - Added `.markdownlint.yaml` configuration.
 - Added `cspell.config.json` for spell checking.
 - Added `mise.toml` pinning Node to 24.14.0.
@@ -32,7 +33,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Replaced `react-beautiful-dnd` (deprecated) with `@hello-pangea/dnd` for
   React 19 compatibility.
 - Pinned `@emotion/css` to `11.10.6`.
-- Pinned CI/CD workflows to SHA for `ci-cd-workflows/v7.0`.
+- Pinned CI/CD workflows to `ci-cd-workflows/v7.0` tag.
 - Pinned `vitest-coverage-report-action` to latest SHA.
 - Updated Grafana dependency range to `>=12.3 <13.0`.
 - Enabled Grafana dev and React 19 preview image testing in CI.

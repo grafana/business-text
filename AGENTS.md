@@ -207,6 +207,10 @@ files, and server dirs are excluded from linting.
 - **CI** (`.github/workflows/push.yml`): Runs on push to `main` and all PRs. Uses `grafana/plugin-ci-workflows`.
 - **CD** (`.github/workflows/publish.yml`): Manual dispatch to dev/ops/prod environments.
 - The `.config/` directory is **scaffolded by Grafana** — do not edit files in it.
+- **Do NOT pin `grafana/plugin-ci-workflows` to a commit SHA.** Grafana's CI
+  enforces tagged releases only (e.g., `@ci-cd-workflows/v7.0`). SHA pinning
+  will fail the "Check for release channel" job. All other GitHub Actions
+  should be pinned to SHAs.
 
 ## Critical Rules
 
