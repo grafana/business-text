@@ -16,6 +16,11 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
     const dashboardPage = await gotoDashboardPage({ uid: dashboard.uid });
 
     /**
+     * Wait for dashboard to fully load before editing
+     */
+    await dashboardPage.page.waitForLoadState('networkidle');
+
+    /**
      * Add new visualization
      */
     const editPage = await dashboardPage.addPanel();
