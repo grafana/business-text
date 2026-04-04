@@ -76,7 +76,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Fixed
 
 - Fixed `lodash` vulnerability via `npm audit fix`.
-- Increased timeout for "Should add default text panel" E2E test to 60s
+- Increased global Playwright test timeout to 60s in `playwright.config.ts`
   to avoid flaky CI failures.
 
 - Fixed typo in `test/utils/text.ts` (`RowbText` -> `Row Text`).
