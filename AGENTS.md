@@ -248,7 +248,7 @@ files, and server dirs are excluded from linting.
   Do not push as part of completing a task.
   Never chain `git commit && git push` in one command.
   Always wait for the user to explicitly ask to push.
-- **After committing, update the PR summary** if a PR
+- **After pushing, update the PR summary** if a PR
   exists for the current branch. Use `gh pr edit` to
   update the title and body with well-formatted text
   that reflects all changes across the entire branch.
