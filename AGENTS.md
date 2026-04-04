@@ -251,10 +251,12 @@ files, and server dirs are excluded from linting.
   Do not push as part of completing a task.
   Never chain `git commit && git push` in one command.
   Always wait for the user to explicitly ask to push.
-- **After pushing, update the PR summary** if a PR
-  exists for the current branch. Use `gh pr edit` to
-  update the title and body with well-formatted text
-  that reflects all changes across the entire branch.
+- **After pushing, always update the PR summary** if a
+  PR exists for the current branch. Treat push and PR
+  update as an atomic pair — never stop between them.
+  Use `gh pr edit` to update the title and body with
+  well-formatted text that reflects all changes across
+  the entire branch.
 - **Prefer subagents** for research, code exploration,
   and multi-step work. Use the Task tool with
   `explore` or `general` agents rather than running
