@@ -59,6 +59,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Inlined `@volkovlabs/components` (`AutosizeCodeEditor`, `CodeParameterItem`,
   `CodeParametersBuilder`) into `src/` to remove Volkov Labs dependency.
 - Aligned `eslint.config.mjs` with Grafana scaffolded flat config pattern.
+- Added `movepane` to cspell dictionary (Grafana icon name).
 
 ### Removed
 

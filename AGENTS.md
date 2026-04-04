@@ -236,6 +236,10 @@ files, and server dirs are excluded from linting.
 "**/*.{ts,tsx,js,go,md,mdx,yml,yaml,json,scss,css}"`
   and fix any issues before committing. Add new words
   to `cspell.config.json` if they are legitimate.
+- **Always run spellcheck before committing.** Run
+  `npx cspell@6.13.3 -c cspell.config.json` on all
+  changed files and fix any issues. Add legitimate
+  words to `cspell.config.json`.
 - **Always update `CHANGELOG.md` before committing.**
   Every commit must include the corresponding changelog
   entry. Do not commit code changes without first updating
