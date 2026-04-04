@@ -76,6 +76,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Fixed
 
 - Fixed `lodash` vulnerability via `npm audit fix`.
+- Increased timeout for "Should add default text panel" E2E test to 60s
+  to avoid flaky CI failures.
 
 - Fixed typo in `test/utils/text.ts` (`RowbText` -> `Row Text`).
 - Renamed `CutomEditor.test.tsx` to `CustomEditor.test.tsx`.

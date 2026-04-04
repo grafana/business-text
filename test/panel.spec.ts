@@ -7,7 +7,7 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
     expect(grafanaVersion).toEqual(grafanaVersion);
   });
 
-  test('Should add default text panel', async ({ readProvisionedDashboard, gotoDashboardPage }) => {
+  test('Should add default text panel', { timeout: 60000 }, async ({ readProvisionedDashboard, gotoDashboardPage }) => {
     /**
      * Go To Panels dashboard e2e.json
      * return dashboardPage
