@@ -55,7 +55,7 @@ jobs:
           cp /tmp/pr-coverage/coverage-summary.json coverage/coverage-summary.json
 
       - name: Coverage report
-        uses: davelosert/vitest-coverage-report-action@2500dafcee7dd64f85ab689c0b83798a8359770e # v2
+        uses: davelosert/vitest-coverage-report-action@d63aa97db4c0319f304f1787689de1ca548365cf # v2
         with:
           json-summary-compare-path: /tmp/base-coverage/coverage-summary.json
           file-coverage-mode: all
