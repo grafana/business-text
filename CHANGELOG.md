@@ -25,26 +25,27 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Bumped dependencies: `@grafana/plugin-e2e`, `@playwright/test`, `eslint`,
   `webpack`, `typescript`, and others.
 - Updated all packages to latest compatible versions within semver range.
-- Upgraded `@grafana/scenes` from 6.47.1 to 7.1.8.
+- Upgraded `@grafana/scenes` from 6.47.1 to 7.3.8.
 - Upgraded `uuid` from 11.1.0 to 13.0.0; removed `@types/uuid` (v13 ships its own types).
 - Removed `@types/highlight.js` (`highlight.js` ships its own types).
 - Upgraded `glob` from 11.1.0 to 13.0.6.
 - Replaced `react-beautiful-dnd` (deprecated) with `@hello-pangea/dnd` for
   React 19 compatibility.
 - Pinned `@emotion/css` to `11.10.6`.
-- Pinned CI/CD workflows to `ci-cd-workflows/v7.0`.
+- Pinned CI/CD workflows to SHA for `ci-cd-workflows/v7.0`.
+- Pinned `vitest-coverage-report-action` to latest SHA.
 - Updated Grafana dependency range to `>=12.3 <13.0`.
 - Enabled Grafana dev and React 19 preview image testing in CI.
 - Bumped minimum Node version from `>=20` to `>=24`.
-- Pinned Playwright Docker image to `v1.58.2-noble`.
+- Pinned Playwright Docker image to `v1.59.1-noble`.
 - Added explicit ports, environment variables, volumes, and healthcheck
   to base Grafana service in `docker-compose.yaml`.
 - Bumped `@grafana/data`, `@grafana/i18n`, `@grafana/runtime`, `@grafana/schema`,
   and `@grafana/ui` to 12.4.2.
 - Bumped `@volkovlabs/components` from 4.4.0 to 4.6.0.
-- Bumped `@grafana/plugin-e2e` to 3.4.10 and `@playwright/test` to 1.58.2.
-- Bumped `dayjs`, `handlebars`, `markdown-it`, `semver`, and `@types/semver`
-  to latest patch versions.
+- Bumped `@grafana/plugin-e2e` to 3.4.11 and `@playwright/test` to 1.59.1.
+- Bumped `dayjs`, `handlebars`, `markdown-it`, `semver`, `sass`,
+  `@swc/helpers`, `@types/node`, and `@types/semver` to latest patch versions.
 - Updated `packageManager` to `npm@11.12.1`.
 - Removed `grafana-main` and `grafana-dep` services from `docker-compose.yaml`.
 - Removed `e2e` profile from the `playwright` service in `docker-compose.yaml`.
@@ -52,7 +53,18 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   env syntax to map format.
 - Set default home dashboard path in dev Grafana service.
 
+### Removed
+
+- Removed unused `@types/lodash` from devDependencies.
+- Removed unused `@babel/preset-typescript` from devDependencies.
+- Removed unused `@babel/register` from devDependencies.
+- Removed unused `tsconfig-paths` from devDependencies.
+- Removed duplicate `semver` entry from devDependencies (kept in dependencies).
+- Moved `@types/markdown-it` from dependencies to devDependencies.
+
 ### Fixed
+
+- Fixed `lodash` vulnerability via `npm audit fix`.
 
 - Fixed typo in `test/utils/text.ts` (`RowbText` -> `Row Text`).
 - Renamed `CutomEditor.test.tsx` to `CustomEditor.test.tsx`.
