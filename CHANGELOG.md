@@ -23,7 +23,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Deduplicated rules in `AGENTS.md` and removed pinned cspell version.
 - Switched from `markdownlint-cli` to `markdownlint-cli2`.
-- Added `markdownlint-cli2` as a devDependency.
+- Added `markdownlint-cli2` and `cspell` as devDependencies.
 - Updated Grafana plugin tooling scaffolding (`.config/`) with rspack bundler
   support, new Dockerfile, eslint flat config, and supervisord.
 - Bumped dependencies: `@grafana/plugin-e2e`, `@playwright/test`, `eslint`,
