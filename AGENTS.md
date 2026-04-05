@@ -227,7 +227,7 @@ files, and server dirs are excluded from linting.
 - Use `@grafana/plugin-e2e` for E2E tests.
 - Grafana API docs:
   <https://grafana.com/developers/plugin-tools/llms.txt>
-- **Always run `npx markdownlint-cli`** on any `.md`
+- **Always run `npx markdownlint-cli2`** on any `.md`
   file you create or modify (including `AGENTS.md`,
   `README.md`, `CHANGELOG.md`) and fix all reported
   issues before committing.
