@@ -49,7 +49,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Bumped `dayjs`, `handlebars`, `markdown-it`, `semver`, `sass`,
   `@swc/helpers`, `@types/node`, and `@types/semver` to latest patch versions.
 - Updated `packageManager` to `npm@11.12.1`.
-- Removed `grafana-main` and `grafana-dep` services from `docker-compose.yaml`.
+- Removed `grafana-main`, `grafana-dep`, and `grafana-dev` services from
+  `docker-compose.yaml`.
+- Simplified `start` script to use `docker compose up` directly.
 - Removed `e2e` profile from the `playwright` service in `docker-compose.yaml`.
 - Simplified `docker-compose.yaml` environment variables and normalized
   env syntax to map format.
