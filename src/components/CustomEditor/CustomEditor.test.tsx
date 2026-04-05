@@ -1,8 +1,9 @@
 import { getTemplateSrv } from '@grafana/runtime';
 import { CodeEditorSuggestionItemKind } from '@grafana/ui';
-import { AutosizeCodeEditor } from '../AutosizeCodeEditor';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+
+import { AutosizeCodeEditor } from '../AutosizeCodeEditor';
 
 import {
   AFTER_RENDER_EDITOR_SUGGESTIONS,

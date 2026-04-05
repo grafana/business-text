@@ -1,4 +1,4 @@
- 
+/* eslint-disable no-console */
 
 /**
  * Create Execution Code with error handling
