@@ -21,6 +21,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+- Increased Playwright workers from 1 to 4 for parallel E2E test execution.
+- Reduced Playwright retries from 6 to 2.
+- Optimized `test/Dockerfile` layer caching by copying `package*.json` before source.
 - Deduplicated rules in `AGENTS.md` and removed pinned cspell version.
 - Switched from `markdownlint-cli` to `markdownlint-cli2`.
 - Added `markdownlint-cli2` and `cspell` as devDependencies.
