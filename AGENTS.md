@@ -231,20 +231,14 @@ files, and server dirs are excluded from linting.
   file you create or modify (including `AGENTS.md`,
   `README.md`, `CHANGELOG.md`) and fix all reported
   issues before committing.
-- **Always run cspell** after making changes:
-  `npx cspell@6.13.3 -c cspell.config.json
-"**/*.{ts,tsx,js,go,md,mdx,yml,yaml,json,scss,css}"`
-  and fix any issues before committing. Add new words
+- **Always run cspell before committing.** Run
+  `npx cspell -c cspell.config.json` on all
+  changed files and fix any issues. Add new words
   to `cspell.config.json` if they are legitimate.
-- **Always run spellcheck before committing.** Run
-  `npx cspell@6.13.3 -c cspell.config.json` on all
-  changed files and fix any issues. Add legitimate
-  words to `cspell.config.json`.
 - **Always update `CHANGELOG.md` before committing.**
   Every commit must include the corresponding changelog
   entry. Do not commit code changes without first updating
   the changelog in the same commit.
-  Run `npx markdownlint-cli` on it before committing.
 - **NEVER commit unless the user explicitly asks.**
   Do not commit as part of completing a task.
 - **NEVER push unless the user explicitly asks.**
@@ -257,6 +251,7 @@ files, and server dirs are excluded from linting.
   Use `gh pr edit` to update the title and body with
   well-formatted text that reflects all changes across
   the entire branch.
+- **Do not add a `Co-Authored-By` line** to commit messages.
 - **Prefer subagents** for research, code exploration,
   and multi-step work. Use the Task tool with
   `explore` or `general` agents rather than running
@@ -265,20 +260,9 @@ files, and server dirs are excluded from linting.
 
 ## Changelog Policy
 
-**Always update `CHANGELOG.md` when making changes.** Every commit that
-modifies code, documentation, dependencies, or configuration must have a
-corresponding entry in the changelog under the current unreleased version
-section. Add entries as part of the same commit or as a follow-up commit
-before pushing.
-
-Run `npx markdownlint-cli` on any `.md` file you create or modify
-(including `AGENTS.md`, `README.md`, `CHANGELOG.md`) and fix all reported
-issues before committing.
-
-Run `npx cspell@6.13.3 -c cspell.config.json` on any `.md`
-file you create or modify and fix all reported issues before
-committing. Add new words to `cspell.config.json` if they
-are legitimate.
+Add entries under the current `[Unreleased]` section in `CHANGELOG.md`.
+Categorize under `### Added`, `### Changed`, `### Removed`, or
+`### Fixed` as appropriate.
 
 ## Branching Policy
 

@@ -21,6 +21,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+- Deduplicated rules in `AGENTS.md` and removed pinned cspell version.
 - Updated Grafana plugin tooling scaffolding (`.config/`) with rspack bundler
   support, new Dockerfile, eslint flat config, and supervisord.
 - Bumped dependencies: `@grafana/plugin-e2e`, `@playwright/test`, `eslint`,
