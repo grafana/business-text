@@ -54,7 +54,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   env syntax to map format.
 - Set default home dashboard path in dev Grafana service.
 - Replaced `volkovlabs.io` URLs with Grafana equivalents in provisioning
-  dashboards and datasources (RSS feed, YouTube feed, content partial URLs).
+  dashboards, datasources, and documentation (RSS feed, YouTube feed,
+  content partial URLs, variables, and event bus references).
 - Renamed provisioned datasources from "Volkov Labs" to "Grafana".
 - Inlined `@volkovlabs/components` (`AutosizeCodeEditor`, `CodeParameterItem`,
   `CodeParametersBuilder`) into `src/` to remove Volkov Labs dependency.
@@ -87,6 +88,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fixed markdown lint issues in `README.md` and `CHANGELOG.md`.
 - Fixed volume paths in scaffolded docker-compose service (`../` to `./`).
 - Fixed `test:e2e:docker` script to use correct service name (`playwright`).
+- Restored `eslint-disable no-console` in `code.ts` after accidental removal.
+- Fixed trailing whitespace in `global.d.ts` and `helper-date.d.ts`.
+- Fixed import ordering in `CustomEditor.test.tsx`.
+- Added error handling for clipboard operations in `AutosizeCodeEditor`
+  toolbar to prevent unhandled promise rejections.
 
 ## [6.2.0] - 2025-10-28
 
