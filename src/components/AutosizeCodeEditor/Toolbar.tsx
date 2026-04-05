@@ -118,6 +118,8 @@ export const Toolbar: React.FC<Props> = ({
           onClick={() => {
             navigator.clipboard.writeText(editorValue).then(() => {
               setFeedbackMessage('Copied!');
+            }).catch(() => {
+              setFeedbackMessage('Copy failed');
             });
           }}
           data-testid={TEST_IDS.codeEditor.copyButton}
@@ -130,23 +132,27 @@ export const Toolbar: React.FC<Props> = ({
           iconSize="lg"
           onClick={async () => {
             if (monacoEditor) {
-              const selection = monacoEditor.getSelection();
-              const clipboardText = await navigator.clipboard.readText();
-              const range = {
-                startLineNumber: selection?.startLineNumber || 1,
-                startColumn: selection?.startColumn || 1,
-                endLineNumber: selection?.endLineNumber || 1,
-                endColumn: selection?.endColumn || 1,
-              };
-              monacoEditor.executeEdits('clipboard', [
-                {
-                  range,
-                  text: clipboardText,
-                  forceMoveMarkers: false,
-                },
-              ]);
-              monacoEditor.focus();
-              setFeedbackMessage('Pasted!');
+              try {
+                const selection = monacoEditor.getSelection();
+                const clipboardText = await navigator.clipboard.readText();
+                const range = {
+                  startLineNumber: selection?.startLineNumber || 1,
+                  startColumn: selection?.startColumn || 1,
+                  endLineNumber: selection?.endLineNumber || 1,
+                  endColumn: selection?.endColumn || 1,
+                };
+                monacoEditor.executeEdits('clipboard', [
+                  {
+                    range,
+                    text: clipboardText,
+                    forceMoveMarkers: false,
+                  },
+                ]);
+                monacoEditor.focus();
+                setFeedbackMessage('Pasted!');
+              } catch {
+                setFeedbackMessage('Paste failed');
+              }
             }
           }}
           data-testid={TEST_IDS.codeEditor.pasteButton}
