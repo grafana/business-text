@@ -1,8 +1,9 @@
+import { DragDropContext, DropResult } from '@hello-pangea/dnd';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { DragDropContext, DropResult } from '@hello-pangea/dnd';
 
 import { TEST_IDS } from '../../constants';
+
 import { ContentPartialsEditor } from './ContentPartialsEditor';
 
 /**

@@ -1,5 +1,12 @@
 import { cx } from '@emotion/css';
-import { CodeEditorMonacoOptions, InlineField, InlineFieldRow, PageToolbar, ToolbarButton, useStyles2 } from '@grafana/ui';
+import {
+  CodeEditorMonacoOptions,
+  InlineField,
+  InlineFieldRow,
+  PageToolbar,
+  ToolbarButton,
+  useStyles2,
+} from '@grafana/ui';
 import type * as monacoType from 'monaco-editor/esm/vs/editor/editor.api';
 import React, { useCallback, useEffect, useState } from 'react';
 
