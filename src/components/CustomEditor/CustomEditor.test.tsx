@@ -3,8 +3,6 @@ import { CodeEditorSuggestionItemKind } from '@grafana/ui';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-import { AutosizeCodeEditor } from '../AutosizeCodeEditor';
-
 import {
   AFTER_RENDER_EDITOR_SUGGESTIONS,
   CodeLanguage,
@@ -12,7 +10,9 @@ import {
   HELPERS_EDITOR_SUGGESTIONS,
   TEST_IDS,
 } from '../../constants';
-import { CustomEditor, HelpersEditor, StylesEditor, TextEditor, AfterRenderEditor } from './CustomEditor';
+
+import { AutosizeCodeEditor } from '../AutosizeCodeEditor';
+import { AfterRenderEditor, CustomEditor, HelpersEditor, StylesEditor, TextEditor } from './CustomEditor';
 
 /**
  * Mock @grafana/ui

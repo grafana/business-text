@@ -1,9 +1,10 @@
-import { css, cx } from '@emotion/css';
+import { cx } from '@emotion/css';
 import { CodeEditorMonacoOptions, InlineField, InlineFieldRow, PageToolbar, ToolbarButton, useStyles2 } from '@grafana/ui';
 import type * as monacoType from 'monaco-editor/esm/vs/editor/editor.api';
 import React, { useCallback, useEffect, useState } from 'react';
 
 import { TEST_IDS } from '../../constants';
+
 import { getStyles } from './AutosizeCodeEditor.styles';
 
 /**
@@ -12,46 +13,64 @@ import { getStyles } from './AutosizeCodeEditor.styles';
 interface Props {
   /**
    * Monaco editor instance
+   *
+   * @type {monacoType.editor.IStandaloneCodeEditor | null}
    */
   monacoEditor: monacoType.editor.IStandaloneCodeEditor | null;
 
   /**
    * Set modal open state
+   *
+   * @type {(isOpen: boolean) => void}
    */
   setIsOpen: (isOpen: boolean) => void;
 
   /**
    * Current editor value
+   *
+   * @type {string}
    */
   editorValue: string;
 
   /**
    * Whether this toolbar is inside the modal
+   *
+   * @type {boolean}
    */
   isModal?: boolean;
 
   /**
    * Set monaco options
+   *
+   * @type {(options: CodeEditorMonacoOptions) => void}
    */
   setCurrentMonacoOptions: (options: CodeEditorMonacoOptions) => void;
 
   /**
    * Current monaco options
+   *
+   * @type {CodeEditorMonacoOptions | undefined}
    */
   currentMonacoOptions: CodeEditorMonacoOptions | undefined;
 
   /**
    * Whether mini map is shown
+   *
+   * @type {boolean | undefined}
    */
   isShowMiniMap: boolean | undefined;
 
   /**
    * Set mini map visibility
+   *
+   * @type {(show: boolean | ((prev: boolean) => boolean)) => void}
    */
   setIsShowMiniMap: (show: boolean | ((prev: boolean) => boolean)) => void;
 
   /**
    * Whether editor is read-only
+   *
+   * @type {boolean}
    */
   readOnly?: boolean;
 }
@@ -195,13 +214,7 @@ export const Toolbar: React.FC<Props> = ({
         <InlineField
           className={cx(
             styles.copyPasteText,
-            feedbackMessage
-              ? css`
-                  width: 45px;
-                `
-              : css`
-                  width: 10px;
-                `
+            feedbackMessage ? styles.copyPasteTextActive : styles.copyPasteTextIdle
           )}
           data-testid={TEST_IDS.codeEditor.copyPasteText}
         >

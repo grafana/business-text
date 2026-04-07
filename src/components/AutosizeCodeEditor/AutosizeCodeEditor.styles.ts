@@ -53,4 +53,10 @@ export const getStyles = (theme: GrafanaTheme2) => ({
     left: 0;
     opacity: 1;
   `,
+  copyPasteTextActive: css`
+    width: 45px;
+  `,
+  copyPasteTextIdle: css`
+    width: 10px;
+  `,
 });
