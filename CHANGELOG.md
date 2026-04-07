@@ -59,7 +59,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Bumped `@grafana/data`, `@grafana/i18n`, `@grafana/runtime`, `@grafana/schema`,
   and `@grafana/ui` to 12.4.2.
 - Bumped `@volkovlabs/components` from 4.4.0 to 4.6.0.
-- Bumped `@grafana/plugin-e2e` to 3.4.11 and `@playwright/test` to 1.59.1.
+- Bumped `@grafana/plugin-e2e` to 3.4.12 and `@playwright/test` to 1.59.1.
+- Bumped `@grafana/scenes` to 7.3.10.
+- Bumped `@swc/core` to 1.15.24.
+- Bumped `@typescript-eslint/eslint-plugin` and `@typescript-eslint/parser` to 8.58.0.
 - Bumped `dayjs`, `handlebars`, `markdown-it`, `semver`, `sass`,
   `@swc/helpers`, `@types/node`, and `@types/semver` to latest patch versions.
 - Updated `packageManager` to `npm@11.12.1`.
@@ -115,6 +118,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   (moved sibling imports to group 3 with blank line separators).
 - Replaced deprecated `npm install --only=dev` with `npm ci` in
   `test/Dockerfile`.
+- Fixed `showMiniMap` prop not syncing to state after initial render in
+  `AutosizeCodeEditor`. Removed unnecessary type casts on `setIsShowMiniMap`.
+- Fixed import grouping in `AutosizeCodeEditor.tsx`, `Toolbar.tsx`, and
+  `CustomEditor.test.tsx` (separated internal and sibling import groups).
+- Moved inline `css` literals in `Toolbar.tsx` to `AutosizeCodeEditor.styles.ts`.
+- Added missing `@type` tags to `Toolbar` Props interface and
+  `code-parameters-builder.ts` properties.
 - Added error handling for clipboard operations in `AutosizeCodeEditor`
   toolbar to prevent unhandled promise rejections.
 
