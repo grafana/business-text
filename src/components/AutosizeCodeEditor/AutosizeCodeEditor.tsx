@@ -1,6 +1,6 @@
 import { CodeEditor, CodeEditorMonacoOptions, Modal, useStyles2 } from '@grafana/ui';
 import type * as monacoType from 'monaco-editor/esm/vs/editor/editor.api';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { TEST_IDS } from '../../constants';
 
@@ -91,6 +91,7 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
   const [inlineEditor, setInlineEditor] = useState<monacoType.editor.IStandaloneCodeEditor | null>(null);
   const [modalEditor, setModalEditor] = useState<monacoType.editor.IStandaloneCodeEditor | null>(null);
   const [editorHeight, setEditorHeight] = useState(calculateHeight(value, minHeight, maxHeight));
+  const revealTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   /**
    * Set end-of-line to LF if escaping
@@ -133,8 +134,9 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
             column: position.column,
           });
           editor.focus();
-          setTimeout(() => {
+          revealTimerRef.current = setTimeout(() => {
             editor.revealLineInCenter(position.lineNumber);
+            revealTimerRef.current = null;
           }, 0);
         }
       }
@@ -151,9 +153,8 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
     (newValue: string) => {
       const result = isEscaping ? newValue.replaceAll('\n', '\\n') : newValue;
       onChange?.(result);
-      setEditorHeight(calculateHeight(newValue, minHeight, maxHeight));
     },
-    [maxHeight, minHeight, onChange, isEscaping]
+    [onChange, isEscaping]
   );
 
   /**
@@ -166,6 +167,17 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
     },
     [onBlur, isEscaping]
   );
+
+  /**
+   * Clean up reveal timer on unmount
+   */
+  useEffect(() => {
+    return () => {
+      if (revealTimerRef.current) {
+        clearTimeout(revealTimerRef.current);
+      }
+    };
+  }, []);
 
   /**
    * Sync mini map visibility with prop changes
@@ -184,9 +196,16 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
   }, [value, minHeight, maxHeight]);
 
   /**
+   * Dismiss modal handler
+   */
+  const onDismissModal = useCallback(() => {
+    setIsModalOpen(false);
+  }, []);
+
+  /**
    * Display value
    */
-  const displayValue = isEscaping ? value.replaceAll('\\n', '\n') : value;
+  const displayValue = useMemo(() => (isEscaping ? value.replaceAll('\\n', '\n') : value), [value, isEscaping]);
 
   return (
     <>
@@ -213,7 +232,7 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
       <Modal
         title="Code editor"
         isOpen={isModalOpen}
-        onDismiss={() => setIsModalOpen(false)}
+        onDismiss={onDismissModal}
         className={styles.modal}
         contentClassName={styles.modalBody}
         closeOnEscape={true}
