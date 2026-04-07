@@ -50,6 +50,7 @@ src/
 │   ├── TextPanel/             # Main panel component
 │   ├── Text/                  # Content renderer
 │   ├── Row/                   # Per-row renderer
+│   ├── AutosizeCodeEditor/    # Monaco editor with autosize and toolbar
 │   ├── CustomEditor/          # Base code editor
 │   ├── ContentPartialsEditor/ # Partials management
 │   └── ResourcesEditor/      # External resources management
