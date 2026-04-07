@@ -8,125 +8,120 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Added
 
-- Added `AGENTS.md` with build/lint/test commands, code style guidelines,
-  and policies for agentic coding agents. Includes CI/CD SHA pinning
-  policy for `grafana/plugin-ci-workflows`.
-- Added `.markdownlint.yaml` configuration.
-- Added `cspell.config.json` for spell checking.
-- Added `mise.toml` pinning Node to 24.14.0.
-- Added `@grafana/i18n` dependency.
-- Added `.eslintcache` to `.gitignore`.
+#### Source
+
+- Inlined `@volkovlabs/components` (`AutosizeCodeEditor`, `CodeParameterItem`,
+  `CodeParametersBuilder`) into `src/` to remove Volkov Labs dependency.
+- Added unit tests for `AutosizeCodeEditor` (21 tests) and `Toolbar` (25 tests).
+- Added error handling for clipboard operations in `AutosizeCodeEditor` toolbar.
+
+#### CI/CD
+
 - Added coverage report workflow that posts Jest coverage summary to PRs.
 - Added PR file changes workflow that posts a file change summary to PRs.
-- Added unit tests for `AutosizeCodeEditor` (21 tests) and `Toolbar` (25 tests).
+
+#### Documentation
+
+- Added `AGENTS.md` with build/lint/test commands, code style guidelines,
+  CI/CD policies, Architecture, Migration Pattern, PR Summary Policy,
+  and Branching Policy sections.
 - Added `CLAUDE.md` with `<include>AGENTS.md</include>` directive.
+- Added `.markdownlint.yaml` and `cspell.config.json` for doc tooling.
+- Added `mise.toml` pinning Node to 24.14.0.
 
 ### Changed
 
-- Increased Playwright workers from 1 to 4 for parallel E2E test execution.
-- Reduced Playwright retries from 6 to 2.
-- Optimized `test/Dockerfile` layer caching by copying `package*.json` before source.
-- Expanded `AGENTS.md` with Architecture, Migration Pattern, PR Summary Policy,
-  and Branching Policy sections sourced from sibling plugin projects.
-- Added pre-commit quality gates (typecheck, lint), git hygiene rules, and
-  TypeScript improvements (named exports, `as any` guidance, `const enum`) to `AGENTS.md`.
-- Deduplicated rules in `AGENTS.md` and removed pinned cspell version.
-- Switched from `markdownlint-cli` to `markdownlint-cli2`.
-- Added `markdownlint-cli2` and `cspell` as devDependencies.
-- Updated Grafana plugin tooling scaffolding (`.config/`) with rspack bundler
-  support, new Dockerfile, eslint flat config, and supervisord.
-- Bumped dependencies: `@grafana/plugin-e2e`, `@playwright/test`, `eslint`,
-  `webpack`, `typescript`, and others.
-- Updated all packages to latest compatible versions within semver range.
-- Upgraded `@grafana/scenes` from 6.47.1 to 7.3.8.
-- Upgraded `uuid` from 11.1.0 to 13.0.0; removed `@types/uuid` (v13 ships its own types).
-- Removed `@types/highlight.js` (`highlight.js` ships its own types).
-- Upgraded `glob` from 11.1.0 to 13.0.6.
-- Replaced `react-beautiful-dnd` (deprecated) with `@hello-pangea/dnd` for
-  React 19 compatibility.
-- Pinned `@emotion/css` to `11.10.6`.
-- Pinned CI/CD workflows to `ci-cd-workflows/v7.0` tag.
-- Bumped `vitest-coverage-report-action` to v2.9.3 for security dependency updates.
-- Updated Grafana dependency range to `>=12.3 <13.0`.
-- Bumped `actions/checkout` to v6, `actions/setup-node` to v6,
-  `tj-actions/changed-files` to v47 in CI workflows.
-- Removed redundant `coverage-detail` job from `coverage.yml`.
-- Enabled Grafana dev and React 19 preview image testing in CI.
-- Bumped minimum Node version from `>=20` to `>=24`.
-- Pinned Playwright Docker image to `v1.59.1-noble`.
-- Added explicit ports, environment variables, volumes, and healthcheck
-  to base Grafana service in `docker-compose.yaml`.
-- Bumped `@grafana/data`, `@grafana/i18n`, `@grafana/runtime`, `@grafana/schema`,
-  and `@grafana/ui` to 12.4.2.
-- Bumped `@volkovlabs/components` from 4.4.0 to 4.6.0.
+#### Dependencies
+
+- Bumped Grafana SDK (`@grafana/data`, `@grafana/i18n`, `@grafana/runtime`,
+  `@grafana/schema`, `@grafana/ui`) to 12.4.2.
+- Bumped `@grafana/scenes` from 6.47.1 to 7.3.10.
 - Bumped `@grafana/plugin-e2e` to 3.4.12 and `@playwright/test` to 1.59.1.
-- Bumped `@grafana/scenes` to 7.3.10.
-- Bumped `@swc/core` to 1.15.24.
 - Bumped `@typescript-eslint/eslint-plugin` and `@typescript-eslint/parser` to 8.58.0.
+- Bumped `@swc/core` to 1.15.24.
 - Bumped `dayjs`, `handlebars`, `markdown-it`, `semver`, `sass`,
   `@swc/helpers`, `@types/node`, and `@types/semver` to latest patch versions.
+- Upgraded `uuid` from 11.1.0 to 13.0.0; removed `@types/uuid` (ships own types).
+- Upgraded `glob` from 11.1.0 to 13.0.6.
+- Replaced `react-beautiful-dnd` (deprecated) with `@hello-pangea/dnd`
+  for React 19 compatibility.
+- Removed `@types/highlight.js` (`highlight.js` ships its own types).
+- Pinned `@emotion/css` to `11.10.6`.
+- Bumped minimum Node version from `>=20` to `>=24`.
 - Updated `packageManager` to `npm@11.12.1`.
-- Removed `grafana-main`, `grafana-dep`, and `grafana-dev` services from
-  `docker-compose.yaml`.
-- Simplified `start` script to use `docker compose up` directly.
-- Removed `e2e` profile from the `playwright` service in `docker-compose.yaml`.
-- Simplified `docker-compose.yaml` environment variables and normalized
-  env syntax to map format.
-- Set default home dashboard path in dev Grafana service.
-- Replaced `volkovlabs.io` URLs with Grafana equivalents in provisioning
-  dashboards, datasources, and documentation (RSS feed, YouTube feed,
-  content partial URLs, variables, and event bus references).
-- Renamed provisioned datasources from "Volkov Labs" to "Grafana".
-- Inlined `@volkovlabs/components` (`AutosizeCodeEditor`, `CodeParameterItem`,
-  `CodeParametersBuilder`) into `src/` to remove Volkov Labs dependency.
-- Aligned `eslint.config.mjs` with Grafana scaffolded flat config pattern.
-- Added `movepane` to cspell dictionary (Grafana icon name).
+- Added `markdownlint-cli2`, `cspell`, and `@grafana/i18n` as dependencies.
+
+#### CI/CD
+
+- Pinned CI/CD workflows to `ci-cd-workflows/v7.0` tag.
+- Bumped `actions/checkout` to v6, `actions/setup-node` to v6,
+  `tj-actions/changed-files` to v47.
+- Bumped `vitest-coverage-report-action` to v2.9.3 (security dependency updates).
+- Removed redundant `coverage-detail` job from `coverage.yml`.
+- Scoped workflow permissions to job level for zizmor compliance.
+- Enabled React 19 preview image testing in CI.
+- Updated Grafana dependency range to `>=12.3 <13.0`.
+
+#### Source
+
 - Wrapped inline `Toolbar` click handlers in `useCallback` hooks.
-- Scoped GitHub Actions workflow permissions to job level for zizmor compliance.
+- Aligned `eslint.config.mjs` with Grafana scaffolded flat config pattern.
+- Replaced `volkovlabs.io` URLs with Grafana equivalents in provisioning
+  dashboards, datasources, and documentation.
+- Renamed provisioned datasources from "Volkov Labs" to "Grafana".
+
+#### Docker / E2E
+
+- Increased Playwright workers from 1 to 4; reduced retries from 6 to 2.
+- Pinned Playwright Docker image to `v1.59.1-noble`.
+- Optimized `test/Dockerfile` layer caching by copying `package*.json` first.
+- Simplified `docker-compose.yaml`: removed extra services, normalized env
+  syntax, added healthcheck, set default home dashboard path.
+
+#### Tooling
+
+- Updated Grafana plugin tooling scaffolding (`.config/`) with rspack bundler
+  support, new Dockerfile, eslint flat config, and supervisord.
+- Switched from `markdownlint-cli` to `markdownlint-cli2`.
 
 ### Removed
 
 - Removed `@volkovlabs/components` dependency (inlined into source).
 - Removed `@volkovlabs/eslint-config` dependency.
-- Removed unused eslint-disable directives after eslint config cleanup.
-- Removed unused `@types/lodash` from devDependencies.
-- Removed unused `@babel/preset-typescript` from devDependencies.
-- Removed unused `@babel/register` from devDependencies.
-- Removed unused `tsconfig-paths` from devDependencies.
+- Removed unused devDependencies: `@types/lodash`, `@babel/preset-typescript`,
+  `@babel/register`, `tsconfig-paths`.
 - Removed duplicate `semver` entry from devDependencies (kept in dependencies).
+- Removed unused eslint-disable directives.
 - Moved `@types/markdown-it` from dependencies to devDependencies.
 
 ### Fixed
 
-- Fixed `lodash` vulnerability via `npm audit fix`.
-- Increased global Playwright test timeout to 60s in `playwright.config.ts`
-  to avoid flaky CI failures.
-- Skipped Grafana dev image in CI Playwright tests (`addPanel()` is broken
-  on Grafana 13).
+#### Source
 
-- Fixed typo in `test/utils/text.ts` (`RowbText` -> `Row Text`).
-- Renamed `CutomEditor.test.tsx` to `CustomEditor.test.tsx`.
-- Fixed typos in `README.md` documentation table URLs.
-- Fixed markdown lint issues in `README.md` and `CHANGELOG.md`.
-- Fixed volume paths in scaffolded docker-compose service (`../` to `./`).
-- Fixed `test:e2e:docker` script to use correct service name (`playwright`).
+- Fixed `showMiniMap` prop not syncing to state after initial render in
+  `AutosizeCodeEditor`; removed unnecessary type casts on `setIsShowMiniMap`.
+- Fixed import grouping in `AutosizeCodeEditor.tsx`, `Toolbar.tsx`,
+  `CustomEditor.tsx`, `CustomEditor.test.tsx`, and `code-parameters.ts`.
+- Moved inline `css` literals in `Toolbar.tsx` to `AutosizeCodeEditor.styles.ts`.
+- Added missing `@type` tags to `Toolbar` Props and `code-parameters-builder.ts`.
 - Restored `eslint-disable no-console` in `code.ts` after accidental removal.
 - Fixed trailing whitespace in `global.d.ts`, `helper-date.d.ts`,
   `code-parameters.ts`, and `html.ts`.
-- Fixed import ordering in `CustomEditor.test.tsx`.
-- Fixed import grouping in `CustomEditor.tsx` and `code-parameters.ts`
-  (moved sibling imports to group 3 with blank line separators).
-- Replaced deprecated `npm install --only=dev` with `npm ci` in
-  `test/Dockerfile`.
-- Fixed `showMiniMap` prop not syncing to state after initial render in
-  `AutosizeCodeEditor`. Removed unnecessary type casts on `setIsShowMiniMap`.
-- Fixed import grouping in `AutosizeCodeEditor.tsx`, `Toolbar.tsx`, and
-  `CustomEditor.test.tsx` (separated internal and sibling import groups).
-- Moved inline `css` literals in `Toolbar.tsx` to `AutosizeCodeEditor.styles.ts`.
-- Added missing `@type` tags to `Toolbar` Props interface and
-  `code-parameters-builder.ts` properties.
-- Added error handling for clipboard operations in `AutosizeCodeEditor`
-  toolbar to prevent unhandled promise rejections.
+- Renamed `CutomEditor.test.tsx` to `CustomEditor.test.tsx`.
+
+#### CI/CD
+
+- Replaced deprecated `npm install --only=dev` with `npm ci` in `test/Dockerfile`.
+- Increased global Playwright timeout to 60s to avoid flaky CI failures.
+- Skipped Grafana dev image in CI (`addPanel()` broken on Grafana 13).
+- Fixed volume paths in scaffolded docker-compose service (`../` to `./`).
+- Fixed `test:e2e:docker` script to use correct service name (`playwright`).
+- Fixed `lodash` vulnerability via `npm audit fix`.
+
+#### Documentation
+
+- Fixed typos in `test/utils/text.ts`, `README.md`, and documentation URLs.
+- Fixed markdown lint issues in `README.md` and `CHANGELOG.md`.
 
 ## [6.2.0] - 2025-10-28
 
