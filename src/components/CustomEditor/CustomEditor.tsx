@@ -6,10 +6,6 @@ import {
   CodeEditorSuggestionItemKind,
   useTheme2,
 } from '@grafana/ui';
-import { AutosizeCodeEditor } from '../AutosizeCodeEditor';
-/**
- * Monaco
- */
 import type * as monacoType from 'monaco-editor/esm/vs/editor/editor.api';
 import React, { useCallback, useMemo } from 'react';
 
@@ -21,6 +17,8 @@ import {
   HELPERS_EDITOR_SUGGESTIONS,
   TEST_IDS,
 } from '../../constants';
+
+import { AutosizeCodeEditor } from '../AutosizeCodeEditor';
 
 /**
  * Properties

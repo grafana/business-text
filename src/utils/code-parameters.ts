@@ -11,9 +11,10 @@ import {
 import { LocationService } from '@grafana/runtime';
 import { TimeZone } from '@grafana/schema';
 import { CodeEditorSuggestionItemKind } from '@grafana/ui';
-import { CodeParameterItem, CodeParametersBuilder } from './code-parameters-builder';
 import handlebars from 'handlebars';
 import MarkdownIt from 'markdown-it';
+
+import { CodeParameterItem, CodeParametersBuilder } from './code-parameters-builder';
 
 /**
  * Render Code Parameters
