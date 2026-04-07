@@ -85,7 +85,7 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
    * State
    */
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isShowMiniMap, setIsShowMiniMap] = useState(showMiniMap);
+  const [isShowMiniMap, setIsShowMiniMap] = useState<boolean>(showMiniMap ?? false);
   const [currentMonacoOptions, setCurrentMonacoOptions] = useState<CodeEditorMonacoOptions | undefined>(monacoOptions);
   const [inlineEditor, setInlineEditor] = useState<monacoType.editor.IStandaloneCodeEditor | null>(null);
   const [modalEditor, setModalEditor] = useState<monacoType.editor.IStandaloneCodeEditor | null>(null);
@@ -167,6 +167,15 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
   );
 
   /**
+   * Sync mini map visibility with prop changes
+   */
+  useEffect(() => {
+    if (showMiniMap !== undefined) {
+      setIsShowMiniMap(showMiniMap);
+    }
+  }, [showMiniMap]);
+
+  /**
    * Update height on value change
    */
   useEffect(() => {
@@ -185,7 +194,7 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
         setIsOpen={setIsModalOpen}
         monacoEditor={inlineEditor}
         isShowMiniMap={isShowMiniMap}
-        setIsShowMiniMap={setIsShowMiniMap as (show: boolean | ((prev: boolean) => boolean)) => void}
+        setIsShowMiniMap={setIsShowMiniMap}
         currentMonacoOptions={currentMonacoOptions}
         setCurrentMonacoOptions={setCurrentMonacoOptions}
         readOnly={rest.readOnly}
@@ -216,7 +225,7 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
             setIsOpen={setIsModalOpen}
             isShowMiniMap={isShowMiniMap}
             monacoEditor={modalEditor}
-            setIsShowMiniMap={setIsShowMiniMap as (show: boolean | ((prev: boolean) => boolean)) => void}
+            setIsShowMiniMap={setIsShowMiniMap}
             currentMonacoOptions={currentMonacoOptions}
             setCurrentMonacoOptions={setCurrentMonacoOptions}
             readOnly={rest.readOnly}
