@@ -225,7 +225,7 @@ When removing or renaming panel options, update `src/migration.ts`:
 - Use spread destructuring to extract legacy options:
   `const { legacyField, ...actualOptions } = panel.options`.
 - Use `semver.lt()` for version-gated migrations.
-- Use `Array.isArray` / type checks for format changes.
+- Use `Array.isArray` / type checks for format changes when needed.
 - Add corresponding tests in `migration.test.ts`.
 
 ### ESLint

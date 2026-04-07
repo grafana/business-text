@@ -30,6 +30,10 @@ export class CodeParameterItem<TValue = unknown> {
    */
   value: TValue = {} as TValue;
 
+  /**
+   * @param detail - Description of the parameter
+   * @param kind - Suggestion item kind
+   */
   constructor(
     public detail: string,
     public kind: CodeEditorSuggestionItemKind = CodeEditorSuggestionItemKind.Property
@@ -53,6 +57,8 @@ export type PayloadForGroup<TGroup extends CodeParameterGroup> = {
 export class CodeParametersBuilder<TGroup extends CodeParameterGroup> {
   /**
    * Built suggestions based on config
+   *
+   * @type {CodeEditorSuggestionItem[]}
    */
   suggestions: CodeEditorSuggestionItem[] = [];
 

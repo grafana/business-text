@@ -86,13 +86,18 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Removed
 
+#### Dependencies
+
 - Removed `@volkovlabs/components` dependency (inlined into source).
 - Removed `@volkovlabs/eslint-config` dependency.
 - Removed unused devDependencies: `@types/lodash`, `@babel/preset-typescript`,
   `@babel/register`, `tsconfig-paths`.
 - Removed duplicate `semver` entry from devDependencies (kept in dependencies).
-- Removed unused eslint-disable directives.
 - Moved `@types/markdown-it` from dependencies to devDependencies.
+
+#### Source
+
+- Removed unused eslint-disable directives.
 
 ### Fixed
 
