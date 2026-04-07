@@ -24,6 +24,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Increased Playwright workers from 1 to 4 for parallel E2E test execution.
 - Reduced Playwright retries from 6 to 2.
 - Optimized `test/Dockerfile` layer caching by copying `package*.json` before source.
+- Expanded `AGENTS.md` with Architecture, Migration Pattern, PR Summary Policy,
+  and Branching Policy sections sourced from sibling plugin projects.
+- Added pre-commit quality gates (typecheck, lint), git hygiene rules, and
+  TypeScript improvements (named exports, `as any` guidance, `const enum`) to `AGENTS.md`.
 - Deduplicated rules in `AGENTS.md` and removed pinned cspell version.
 - Switched from `markdownlint-cli` to `markdownlint-cli2`.
 - Added `markdownlint-cli2` and `cspell` as devDependencies.
@@ -40,8 +44,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   React 19 compatibility.
 - Pinned `@emotion/css` to `11.10.6`.
 - Pinned CI/CD workflows to `ci-cd-workflows/v7.0` tag.
-- Pinned `vitest-coverage-report-action` to latest SHA.
+- Bumped `vitest-coverage-report-action` to v2.9.3 for security dependency updates.
 - Updated Grafana dependency range to `>=12.3 <13.0`.
+- Bumped `actions/checkout` to v6, `actions/setup-node` to v6,
+  `tj-actions/changed-files` to v47 in CI workflows.
+- Removed redundant `coverage-detail` job from `coverage.yml`.
 - Enabled Grafana dev and React 19 preview image testing in CI.
 - Bumped minimum Node version from `>=20` to `>=24`.
 - Pinned Playwright Docker image to `v1.59.1-noble`.

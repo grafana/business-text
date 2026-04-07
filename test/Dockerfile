@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Install dependencies first for better layer caching
 COPY package*.json ./
-RUN npm install --only=dev
+RUN npm ci
 
 # Install browsers
 RUN npx playwright install --with-deps chromium
