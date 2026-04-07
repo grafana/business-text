@@ -18,6 +18,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Added `.eslintcache` to `.gitignore`.
 - Added coverage report workflow that posts Jest coverage summary to PRs.
 - Added PR file changes workflow that posts a file change summary to PRs.
+- Added unit tests for `AutosizeCodeEditor` (21 tests) and `Toolbar` (25 tests).
 
 ### Changed
 
@@ -76,6 +77,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
   `CodeParametersBuilder`) into `src/` to remove Volkov Labs dependency.
 - Aligned `eslint.config.mjs` with Grafana scaffolded flat config pattern.
 - Added `movepane` to cspell dictionary (Grafana icon name).
+- Wrapped inline `Toolbar` click handlers in `useCallback` hooks.
 
 ### Removed
 
