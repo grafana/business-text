@@ -65,7 +65,8 @@
     "volkovlabs",
     "wojtekmaj",
     "xlink",
-    "yesoreyeram"
+    "yesoreyeram",
+    "zizmor"
   ],
   "ignorePaths": [".config/**", "coverage/**", "dist/**", "docs/**", "node_modules/**", "NOTICES.md", "provisioning/**"]
 }

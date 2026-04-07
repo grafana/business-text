@@ -13,6 +13,8 @@ export interface CodeParameterGroup {
 
   /**
    * Items
+   *
+   * @type {Record<string, CodeParameterGroup | CodeParameterItem>}
    */
   items: Record<string, CodeParameterGroup | CodeParameterItem>;
 }
@@ -23,6 +25,8 @@ export interface CodeParameterGroup {
 export class CodeParameterItem<TValue = unknown> {
   /**
    * Specify for type validation
+   *
+   * @type {TValue}
    */
   value: TValue = {} as TValue;
 
