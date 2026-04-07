@@ -6,6 +6,9 @@
 ## Build / Lint / Test Commands
 
 ```bash
+# Install
+npm install                    # Install dependencies (use npm ci in CI)
+
 # Build
 npm run build                  # Production webpack build
 npm run dev                    # Dev build with watch mode
@@ -59,6 +62,23 @@ test/                          # Playwright E2E tests
 provisioning/                  # Grafana provisioning for local dev
 ```
 
+## Architecture
+
+No backend component. Uses webpack via `.config/` for bundling and SWC
+for transpilation.
+
+1. **Entry point** — `src/module.ts` exports a `PanelPlugin<PanelOptions>`
+   using the builder pattern to register custom editors and field config.
+2. **Migration** — `setMigrationHandler(getMigratedOptions)` runs on load
+   to upgrade deprecated options via `src/migration.ts`.
+3. **Rendering** — `TextPanel` receives panel props, resolves external
+   resources (CSS/JS), and delegates to `Text` / `Row` components.
+4. **Templating** — Content is processed through Handlebars (with custom
+   helpers) and/or markdown-it with highlight.js for syntax highlighting.
+5. **Editors** — Custom option editors (`TextEditor`, `HelpersEditor`,
+   `StylesEditor`, `ResourcesEditor`, `ContentPartialsEditor`,
+   `AfterRenderEditor`) are registered via `addCustomEditor()`.
+
 ## Code Style Guidelines
 
 ### Formatting (Prettier)
@@ -72,7 +92,8 @@ provisioning/                  # Grafana provisioning for local dev
 
 ### Imports
 
-Three groups separated by blank lines, each group alphabetized:
+Three groups separated by blank lines, each group alphabetized.
+Destructured members sorted alphabetically within braces:
 
 1. **External packages** — `@emotion/css`, `@grafana/*`, `react`, `handlebars`, etc.
 2. **Internal absolute imports** — relative paths from `src/` (`../../constants`, `../../types`)
@@ -108,15 +129,20 @@ import { getStyles } from './TextPanel.styles';
 
 ### TypeScript
 
+- **Named exports only** — no default exports anywhere.
 - Use **enums** (not string unions) for option types (`RenderMode`, `EditorType`, `ResourceType`).
-- Use **interfaces** for component props and options objects.
+  Use `const enum` for internal-only enums; regular `enum` when values are iterated at runtime.
+- Use **interfaces** for object shapes and component props; use `type` for unions and intersections.
 - Prefer explicit generics: `useState<RowItem[]>([])`, `useState<boolean>(false)`.
+- Avoid `as any` in production code; acceptable in test mocks and partial objects.
+  Use `as never` for Grafana API type escapes. Prefer `unknown` or proper generics over `any`.
 - Path alias `@/*` maps to `src/*` (configured in `tsconfig.json`).
 - `@typescript-eslint/no-empty-object-type` is disabled.
 
 ### React Components
 
 - **Functional components only** using `React.FC<Props>` with arrow functions.
+- Props destructured in the function signature, not inside the body.
 - Styles via `@emotion/css` + Grafana's `useStyles2(getStyles)` pattern.
 - Style functions: `(theme: GrafanaTheme2) => ({ className: css\`...\` })`.
 - Wrap callbacks in `useCallback` with explicit dependency arrays.
@@ -176,6 +202,8 @@ export const TextPanel: React.FC<Props> = ({ content }) => {
 - Assert with `screen.getByTestId(TEST_IDS.xxx.yyy)`.
 - Clean up in `beforeEach`/`afterAll` with `jest.clearAllMocks()` / `jest.resetAllMocks()`.
 - Use `act()` + `render()` for components with async side effects.
+- Jest sets `process.env.TZ = 'UTC'` globally (`jest.config.js`) so tests
+  run consistently regardless of local timezone.
 
 ### Key Dependencies
 
@@ -186,6 +214,18 @@ export const TextPanel: React.FC<Props> = ({ content }) => {
 | `@grafana/data`, `@grafana/ui`, `@grafana/runtime` | Grafana plugin SDK                          |
 | `@grafana/scenes`                                  | Dashboard scene integration                 |
 | `@hello-pangea/dnd`                                | Drag-and-drop in editors                    |
+
+### Migration Pattern
+
+When removing or renaming panel options, update `src/migration.ts`:
+
+- Define deprecated fields in the `OutdatedPanelOptions` interface with
+  JSDoc noting the removal version.
+- Use spread destructuring to extract legacy options:
+  `const { legacyField, ...actualOptions } = panel.options`.
+- Use `semver.lt()` for version-gated migrations.
+- Use `Array.isArray` / type checks for format changes.
+- Add corresponding tests in `migration.test.ts`.
 
 ### ESLint
 
@@ -203,8 +243,15 @@ files, and server dirs are excluded from linting.
 
 ### CI/CD
 
-- **CI** (`.github/workflows/push.yml`): Runs on push to `main` and all PRs. Uses `grafana/plugin-ci-workflows`.
+- **CI** (`.github/workflows/push.yml`): Runs on push to `main` and all PRs.
+  Uses `grafana/plugin-ci-workflows`. E2E tests run via Docker Compose against
+  Grafana `>=12.3 <13.0`. The dev image is skipped but the React 19 preview
+  image is included (`run-playwright-with-skip-grafana-react-19-preview-image: false`).
 - **CD** (`.github/workflows/publish.yml`): Manual dispatch to dev/ops/prod environments.
+- **Coverage** (`.github/workflows/coverage.yml`): Compares PR test coverage against
+  base branch and posts a coverage comparison comment on the PR.
+- **PR Files** (`.github/workflows/pr-files.yml`): Posts a categorized file changes
+  summary comment on PRs (Source, Tests, CI/CD, Config, Docs).
 - The `.config/` directory is **scaffolded by Grafana** — do not edit files in it.
 - **Do NOT pin `grafana/plugin-ci-workflows` to a commit SHA.** Grafana's CI
   enforces tagged releases only (e.g., `@ci-cd-workflows/v7.0`). SHA pinning
@@ -227,14 +274,19 @@ files, and server dirs are excluded from linting.
 - Use `@grafana/plugin-e2e` for E2E tests.
 - Grafana API docs:
   <https://grafana.com/developers/plugin-tools/llms.txt>
+- **Always run `npm run typecheck`** when `src/` files
+  are changed and fix any type errors before committing.
+- **Always run `npm run lint`** before committing changes
+  to `src/`. Fix errors with `npm run lint:fix` and
+  verify no errors remain.
 - **Always run `npx markdownlint-cli2`** on any `.md`
   file you create or modify (including `AGENTS.md`,
   `README.md`, `CHANGELOG.md`) and fix all reported
   issues before committing.
 - **Always run cspell before committing.** Run
-  `npx cspell -c cspell.config.json` on all
-  changed files and fix any issues. Add new words
-  to `cspell.config.json` if they are legitimate.
+  `npx cspell -c cspell.config.json "**/*.{ts,tsx,js,md,yml,yaml,json}"`
+  and fix any issues. Add new words to
+  `cspell.config.json` if they are legitimate.
 - **Always update `CHANGELOG.md` before committing.**
   Every commit must include the corresponding changelog
   entry. Do not commit code changes without first updating
@@ -252,6 +304,9 @@ files, and server dirs are excluded from linting.
   well-formatted text that reflects all changes across
   the entire branch.
 - **Do not add a `Co-Authored-By` line** to commit messages.
+- **Never add "Generated with Claude" or similar
+  attribution lines** to PR summaries, commit messages,
+  or any other output.
 - **Prefer subagents** for research, code exploration,
   and multi-step work. Use the Task tool with
   `explore` or `general` agents rather than running
@@ -261,8 +316,8 @@ files, and server dirs are excluded from linting.
 ## Changelog Policy
 
 Add entries under the current `[Unreleased]` section in `CHANGELOG.md`.
-Categorize under `### Added`, `### Changed`, `### Removed`, or
-`### Fixed` as appropriate.
+Categorize under `### Added`, `### Changed`, `### Removed`,
+`### Fixed`, or `### Project Updates` as appropriate.
 
 ## Branching Policy
 
@@ -272,3 +327,22 @@ Categorize under `### Added`, `### Changed`, `### Removed`, or
   changes.
 - **Always create pull requests as drafts**
   (`gh pr create --draft`).
+- When checking out a branch or `main`, always
+  `git fetch` and `git pull` to ensure you have
+  the latest changes.
+- **Always run `git status`** before constructing
+  `git add` commands. Only add files that are unstaged
+  or untracked — do not add files that are already
+  staged or deleted.
+
+## PR Summary Policy
+
+- **Wrap PR summary lines at 120 characters** — use the
+  full width, do not wrap shorter than necessary.
+- **Use categories in PR summaries** to organize changes.
+  Group bullet points under headings like `### Added`,
+  `### Fixed`, `### Changed`, `### Removed`,
+  `### Dependencies`, `### CI/CD`, `### Documentation`,
+  `### AGENTS.md`, `### Tooling`, etc.
+- Always include a `## Test plan` section with a
+  checklist of manual or automated verification steps.
