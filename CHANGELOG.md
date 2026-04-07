@@ -107,6 +107,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fixed trailing whitespace in `global.d.ts`, `helper-date.d.ts`,
   `code-parameters.ts`, and `html.ts`.
 - Fixed import ordering in `CustomEditor.test.tsx`.
+- Fixed import grouping in `CustomEditor.tsx` and `code-parameters.ts`
+  (moved sibling imports to group 3 with blank line separators).
+- Replaced deprecated `npm install --only=dev` with `npm ci` in
+  `test/Dockerfile`.
 - Added error handling for clipboard operations in `AutosizeCodeEditor`
   toolbar to prevent unhandled promise rejections.
 
