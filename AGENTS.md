@@ -56,6 +56,7 @@ src/
 │   └── ResourcesEditor/      # External resources management
 ├── constants/                 # Shared constants and test IDs
 ├── hooks/                     # Custom React hooks
+├── img/                       # Plugin icons and images
 ├── types/                     # TypeScript interfaces and enums
 └── utils/                     # Pure utility functions
 test/                          # Playwright E2E tests
@@ -137,7 +138,6 @@ import { getStyles } from './TextPanel.styles';
 - Prefer explicit generics: `useState<RowItem[]>([])`, `useState<boolean>(false)`.
 - Avoid `as any` in production code; acceptable in test mocks and partial objects.
   Use `as never` for Grafana API type escapes. Prefer `unknown` or proper generics over `any`.
-- Path alias `@/*` maps to `src/*` (configured in `tsconfig.json`).
 - `@typescript-eslint/no-empty-object-type` is disabled.
 
 ### React Components
@@ -237,10 +237,14 @@ files, and server dirs are excluded from linting.
 
 ### Additional Rules
 
-- `no-console` and `no-debugger` are errors
+- `no-console` and `no-debugger` are errors (note: the inherited
+  `@grafana/eslint-config` allows `console.error`, `console.log`,
+  `console.warn`, and `console.info`)
 - `@typescript-eslint/no-deprecated` is a warning — avoid
   using deprecated APIs
-- Unused variables are errors (except rest siblings)
+- `@typescript-eslint/no-unused-vars` is off (inherited from
+  `@grafana/eslint-config`) — rely on IDE/TypeScript to catch
+  unused variables
 
 ### CI/CD
 
