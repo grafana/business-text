@@ -105,10 +105,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Fixed `showMiniMap` prop not syncing to state after initial render in
   `AutosizeCodeEditor`; removed unnecessary type casts on `setIsShowMiniMap`.
-- Fixed import grouping in `AutosizeCodeEditor.tsx`, `Toolbar.tsx`,
-  `CustomEditor.tsx`, `CustomEditor.test.tsx`, and `code-parameters.ts`.
+- Wrapped `onDismiss` in `useCallback` and memoized `displayValue` with
+  `useMemo` in `AutosizeCodeEditor`.
+- Added cleanup for `setTimeout` in modal editor mount to prevent firing
+  after unmount.
+- Removed duplicate height calculation from `onValueChange` (handled by
+  `useEffect`).
+- Fixed import grouping and ordering in `AutosizeCodeEditor.tsx`, `Toolbar.tsx`,
+  `CustomEditor.tsx`, `CustomEditor.test.tsx`, `ContentPartialsEditor.test.tsx`,
+  `ResourcesEditor.test.tsx`, and `code-parameters.ts`.
+- Fixed `@grafana/ui` import line exceeding 120-character print width in
+  `Toolbar.tsx`.
 - Moved inline `css` literals in `Toolbar.tsx` to `AutosizeCodeEditor.styles.ts`.
-- Added missing `@type` tags to `Toolbar` Props and `code-parameters-builder.ts`.
+- Added missing `@type` and `@param` tags to `Toolbar` Props,
+  `code-parameters-builder.ts` properties, and constructor.
 - Restored `eslint-disable no-console` in `code.ts` after accidental removal.
 - Fixed trailing whitespace in `global.d.ts`, `helper-date.d.ts`,
   `code-parameters.ts`, and `html.ts`.
