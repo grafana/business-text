@@ -1,7 +1,7 @@
 import { css, cx } from '@emotion/css';
 import { CodeEditorMonacoOptions, InlineField, InlineFieldRow, PageToolbar, ToolbarButton, useStyles2 } from '@grafana/ui';
 import type * as monacoType from 'monaco-editor/esm/vs/editor/editor.api';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { TEST_IDS } from '../../constants';
 import { getStyles } from './AutosizeCodeEditor.styles';
@@ -93,6 +93,71 @@ export const Toolbar: React.FC<Props> = ({
     return;
   }, [feedbackMessage]);
 
+  /**
+   * Toggle modal
+   */
+  const onToggleModal = useCallback(() => {
+    setIsOpen(!isModal);
+  }, [isModal, setIsOpen]);
+
+  /**
+   * Copy code to clipboard
+   */
+  const onCopy = useCallback(() => {
+    navigator.clipboard
+      .writeText(editorValue)
+      .then(() => {
+        setFeedbackMessage('Copied!');
+      })
+      .catch(() => {
+        setFeedbackMessage('Copy failed');
+      });
+  }, [editorValue]);
+
+  /**
+   * Paste code from clipboard
+   */
+  const onPaste = useCallback(async () => {
+    if (monacoEditor) {
+      try {
+        const selection = monacoEditor.getSelection();
+        const clipboardText = await navigator.clipboard.readText();
+        const range = {
+          startLineNumber: selection?.startLineNumber || 1,
+          startColumn: selection?.startColumn || 1,
+          endLineNumber: selection?.endLineNumber || 1,
+          endColumn: selection?.endColumn || 1,
+        };
+        monacoEditor.executeEdits('clipboard', [
+          {
+            range,
+            text: clipboardText,
+            forceMoveMarkers: false,
+          },
+        ]);
+        monacoEditor.focus();
+        setFeedbackMessage('Pasted!');
+      } catch {
+        setFeedbackMessage('Paste failed');
+      }
+    }
+  }, [monacoEditor]);
+
+  /**
+   * Toggle word wrap
+   */
+  const onToggleWrap = useCallback(() => {
+    const wordWrap = currentMonacoOptions?.wordWrap === 'on' ? 'off' : 'on';
+    setCurrentMonacoOptions({ ...currentMonacoOptions, wordWrap });
+  }, [currentMonacoOptions, setCurrentMonacoOptions]);
+
+  /**
+   * Toggle mini map
+   */
+  const onToggleMiniMap = useCallback(() => {
+    setIsShowMiniMap((prev: boolean) => !prev);
+  }, [setIsShowMiniMap]);
+
   return (
     <PageToolbar
       buttonOverflowAlignment="right"
@@ -104,7 +169,7 @@ export const Toolbar: React.FC<Props> = ({
           tooltip={isModal ? 'Collapse code editor' : 'Expand code editor'}
           icon={isModal ? 'compress-arrows' : 'expand-arrows-alt'}
           iconSize="lg"
-          onClick={() => setIsOpen(!isModal)}
+          onClick={onToggleModal}
           data-testid={TEST_IDS.codeEditor.modalButton(isModal ? 'modal-close' : 'modal-open')}
         />,
       ]}
@@ -115,13 +180,7 @@ export const Toolbar: React.FC<Props> = ({
           tooltip="Copy code"
           icon="file-blank"
           iconSize="lg"
-          onClick={() => {
-            navigator.clipboard.writeText(editorValue).then(() => {
-              setFeedbackMessage('Copied!');
-            }).catch(() => {
-              setFeedbackMessage('Copy failed');
-            });
-          }}
+          onClick={onCopy}
           data-testid={TEST_IDS.codeEditor.copyButton}
         />
         <ToolbarButton
@@ -130,31 +189,7 @@ export const Toolbar: React.FC<Props> = ({
           tooltip={readOnly ? 'Cannot edit in read-only mode' : 'Paste code'}
           icon="file-alt"
           iconSize="lg"
-          onClick={async () => {
-            if (monacoEditor) {
-              try {
-                const selection = monacoEditor.getSelection();
-                const clipboardText = await navigator.clipboard.readText();
-                const range = {
-                  startLineNumber: selection?.startLineNumber || 1,
-                  startColumn: selection?.startColumn || 1,
-                  endLineNumber: selection?.endLineNumber || 1,
-                  endColumn: selection?.endColumn || 1,
-                };
-                monacoEditor.executeEdits('clipboard', [
-                  {
-                    range,
-                    text: clipboardText,
-                    forceMoveMarkers: false,
-                  },
-                ]);
-                monacoEditor.focus();
-                setFeedbackMessage('Pasted!');
-              } catch {
-                setFeedbackMessage('Paste failed');
-              }
-            }
-          }}
+          onClick={onPaste}
           data-testid={TEST_IDS.codeEditor.pasteButton}
         />
         <InlineField
@@ -178,10 +213,7 @@ export const Toolbar: React.FC<Props> = ({
         icon="wrap-text"
         iconSize="lg"
         variant={currentMonacoOptions?.wordWrap === 'on' ? 'active' : 'default'}
-        onClick={() => {
-          const wordWrap = currentMonacoOptions?.wordWrap === 'on' ? 'off' : 'on';
-          setCurrentMonacoOptions({ ...currentMonacoOptions, wordWrap });
-        }}
+        onClick={onToggleWrap}
         data-testid={TEST_IDS.codeEditor.wrapButton}
       />
       {editorValue && editorValue.length > 100 && (
@@ -190,9 +222,7 @@ export const Toolbar: React.FC<Props> = ({
           icon="gf-movepane-right"
           iconSize="lg"
           variant={isShowMiniMap ? 'active' : 'default'}
-          onClick={() => {
-            setIsShowMiniMap((prev: boolean) => !prev);
-          }}
+          onClick={onToggleMiniMap}
           data-testid={TEST_IDS.codeEditor.miniMapButton}
         />
       )}
