@@ -11,10 +11,10 @@ import {
 import { LocationService } from '@grafana/runtime';
 import { TimeZone } from '@grafana/schema';
 import { CodeEditorSuggestionItemKind } from '@grafana/ui';
-import { CodeParameterItem, CodeParametersBuilder } from '@volkovlabs/components';
 import handlebars from 'handlebars';
-// eslint-disable-next-line @typescript-eslint/naming-convention
 import MarkdownIt from 'markdown-it';
+
+import { CodeParameterItem, CodeParametersBuilder } from './code-parameters-builder';
 
 /**
  * Render Code Parameters

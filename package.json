@@ -87,7 +87,6 @@
     "@grafana/schema": "^12.4.2",
     "@grafana/ui": "^12.4.2",
     "@hello-pangea/dnd": "^18.0.1",
-    "@volkovlabs/components": "^4.4.0",
     "dayjs": "^1.11.20",
     "handlebars": "^4.7.9",
     "helper-date": "^1.0.1",

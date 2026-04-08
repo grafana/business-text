@@ -8,6 +8,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Added
 
+#### Source
+
+- Inlined `@volkovlabs/components` (`AutosizeCodeEditor`, `CodeParameterItem`,
+  `CodeParametersBuilder`) into `src/` to remove Volkov Labs dependency.
+- Added unit tests for `AutosizeCodeEditor` (21 tests) and `Toolbar` (25 tests).
+- Added error handling for clipboard operations in `AutosizeCodeEditor` toolbar.
+
 #### CI/CD
 
 - Added coverage report workflow that posts Jest coverage summary to PRs.
@@ -57,6 +64,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 #### Source
 
+- Wrapped inline `Toolbar` click handlers in `useCallback` hooks.
 - Aligned `eslint.config.mjs` with Grafana scaffolded flat config pattern.
 - Replaced `volkovlabs.io` URLs with Grafana equivalents in provisioning
   dashboards, datasources, and documentation.
@@ -80,6 +88,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 #### Dependencies
 
+- Removed `@volkovlabs/components` dependency (inlined into source).
 - Removed `@volkovlabs/eslint-config` dependency.
 - Removed unused devDependencies: `@types/lodash`, `@babel/preset-typescript`,
   `@babel/register`, `tsconfig-paths`.
@@ -94,8 +103,22 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 #### Source
 
-- Fixed import grouping and ordering in `CustomEditor.tsx`, `CustomEditor.test.tsx`,
-  `ContentPartialsEditor.test.tsx`, `ResourcesEditor.test.tsx`, and `code-parameters.ts`.
+- Fixed `showMiniMap` prop not syncing to state after initial render in
+  `AutosizeCodeEditor`; removed unnecessary type casts on `setIsShowMiniMap`.
+- Wrapped `onDismiss` in `useCallback` and memoized `displayValue` with
+  `useMemo` in `AutosizeCodeEditor`.
+- Added cleanup for `setTimeout` in modal editor mount to prevent firing
+  after unmount.
+- Removed duplicate height calculation from `onValueChange` (handled by
+  `useEffect`).
+- Fixed import grouping and ordering in `AutosizeCodeEditor.tsx`, `Toolbar.tsx`,
+  `CustomEditor.tsx`, `CustomEditor.test.tsx`, `ContentPartialsEditor.test.tsx`,
+  `ResourcesEditor.test.tsx`, and `code-parameters.ts`.
+- Fixed `@grafana/ui` import line exceeding 120-character print width in
+  `Toolbar.tsx`.
+- Moved inline `css` literals in `Toolbar.tsx` to `AutosizeCodeEditor.styles.ts`.
+- Added missing `@type` and `@param` tags to `Toolbar` Props,
+  `code-parameters-builder.ts` properties, and constructor.
 - Restored `eslint-disable no-console` in `code.ts` after accidental removal.
 - Fixed trailing whitespace in `global.d.ts`, `helper-date.d.ts`,
   `code-parameters.ts`, and `html.ts`.
