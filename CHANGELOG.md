@@ -1,6 +1,119 @@
 # Changelog
 
-All notable changes to the **Business Text Panel** (formerly Dynamic Text Plugin) for Grafana will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+All notable changes to the **Business Text Panel** (formerly Dynamic Text Plugin) for Grafana
+will be documented in this file.
+This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+
+#### CI/CD
+
+- Added coverage report workflow that posts Jest coverage summary to PRs.
+- Added PR file changes workflow that posts a file change summary to PRs.
+
+#### Documentation
+
+- Added `AGENTS.md` with build/lint/test commands, code style guidelines,
+  CI/CD policies, Architecture, Migration Pattern, PR Summary Policy,
+  and Branching Policy sections.
+- Added `CLAUDE.md` with `<include>AGENTS.md</include>` directive.
+- Added `.markdownlint.yaml` and `cspell.config.json` for doc tooling.
+- Added `mise.toml` pinning Node to 24.14.0.
+
+### Changed
+
+#### Dependencies
+
+- Bumped Grafana SDK (`@grafana/data`, `@grafana/i18n`, `@grafana/runtime`,
+  `@grafana/schema`, `@grafana/ui`) to 12.4.2.
+- Bumped `@grafana/scenes` from 6.47.1 to 7.3.10.
+- Bumped `@grafana/plugin-e2e` to 3.4.12 and `@playwright/test` to 1.59.1.
+- Bumped `@typescript-eslint/eslint-plugin` and `@typescript-eslint/parser` to 8.58.0.
+- Bumped `@swc/core` to 1.15.24.
+- Bumped `dayjs`, `handlebars`, `markdown-it`, `semver`, `sass`,
+  `@swc/helpers`, `@types/node`, and `@types/semver` to latest patch versions.
+- Upgraded `uuid` from 11.1.0 to 13.0.0; removed `@types/uuid` (ships own types).
+- Upgraded `glob` from 11.1.0 to 13.0.6.
+- Replaced `react-beautiful-dnd` (deprecated) with `@hello-pangea/dnd`
+  for React 19 compatibility.
+- Removed `@types/highlight.js` (`highlight.js` ships its own types).
+- Pinned `@emotion/css` to `11.10.6`.
+- Bumped minimum Node version from `>=20` to `>=24`.
+- Updated `packageManager` to `npm@11.12.1`.
+- Added `markdownlint-cli2`, `cspell`, and `@grafana/i18n` as dependencies.
+
+#### CI/CD
+
+- Pinned CI/CD workflows to `ci-cd-workflows/v7.0` tag.
+- Bumped `actions/checkout` to v6, `actions/setup-node` to v6,
+  `tj-actions/changed-files` to v47.
+- Bumped `vitest-coverage-report-action` to v2.9.3 (security dependency updates).
+- Removed redundant `coverage-detail` job from `coverage.yml`.
+- Scoped workflow permissions to job level for zizmor compliance.
+- Enabled React 19 preview image testing in CI.
+- Updated Grafana dependency range to `>=12.3 <13.0`.
+
+#### Source
+
+- Aligned `eslint.config.mjs` with Grafana scaffolded flat config pattern.
+- Replaced `volkovlabs.io` URLs with Grafana equivalents in provisioning
+  dashboards, datasources, and documentation.
+- Renamed provisioned datasources from "Volkov Labs" to "Grafana".
+
+#### Docker / E2E
+
+- Increased Playwright workers from 1 to 4; reduced retries from 6 to 2.
+- Pinned Playwright Docker image to `v1.59.1-noble`.
+- Optimized `test/Dockerfile` layer caching by copying `package*.json` first.
+- Simplified `docker-compose.yaml`: removed extra services, normalized env
+  syntax, added healthcheck, set default home dashboard path.
+
+#### Tooling
+
+- Updated Grafana plugin tooling scaffolding (`.config/`) with rspack bundler
+  support, new Dockerfile, eslint flat config, and supervisord.
+- Switched from `markdownlint-cli` to `markdownlint-cli2`.
+
+### Removed
+
+#### Dependencies
+
+- Removed `@volkovlabs/eslint-config` dependency.
+- Removed unused devDependencies: `@types/lodash`, `@babel/preset-typescript`,
+  `@babel/register`, `tsconfig-paths`.
+- Removed duplicate `semver` entry from devDependencies (kept in dependencies).
+- Moved `@types/markdown-it` from dependencies to devDependencies.
+
+#### Source
+
+- Removed unused eslint-disable directives.
+
+### Fixed
+
+#### Source
+
+- Fixed import grouping and ordering in `CustomEditor.tsx`, `CustomEditor.test.tsx`,
+  `ContentPartialsEditor.test.tsx`, `ResourcesEditor.test.tsx`, and `code-parameters.ts`.
+- Restored `eslint-disable no-console` in `code.ts` after accidental removal.
+- Fixed trailing whitespace in `global.d.ts`, `helper-date.d.ts`,
+  `code-parameters.ts`, and `html.ts`.
+- Renamed `CutomEditor.test.tsx` to `CustomEditor.test.tsx`.
+
+#### CI/CD
+
+- Replaced deprecated `npm install --only=dev` with `npm ci` in `test/Dockerfile`.
+- Increased global Playwright timeout to 60s to avoid flaky CI failures.
+- Skipped Grafana dev image in CI (`addPanel()` broken on Grafana 13).
+- Fixed volume paths in scaffolded docker-compose service (`../` to `./`).
+- Fixed `test:e2e:docker` script to use correct service name (`playwright`).
+- Fixed `lodash` vulnerability via `npm audit fix`.
+
+#### Documentation
+
+- Fixed typos in `test/utils/text.ts`, `README.md`, and documentation URLs.
+- Fixed markdown lint issues in `README.md` and `CHANGELOG.md`.
 
 ## [6.2.0] - 2025-10-28
 
@@ -233,7 +346,10 @@ All notable changes to the **Business Text Panel** (formerly Dynamic Text Plugin
 
 - Increased test coverage and updated to `testing-library/react` ([#177](https://github.com/VolkovLabs/business-text/issues/177)).
 - Migrated to Plugin Tools 1.5.2 ([#183](https://github.com/VolkovLabs/business-text/issues/183)).
-- Updated to Grafana 10.0.0 ([#166](https://github.com/VolkovLabs/business-text/issues/166), [#178](https://github.com/VolkovLabs/business-text/issues/178), [#183](https://github.com/VolkovLabs/business-text/issues/183)).
+- Updated to Grafana 10.0.0
+  ([#166](https://github.com/VolkovLabs/business-text/issues/166),
+  [#178](https://github.com/VolkovLabs/business-text/issues/178),
+  [#183](https://github.com/VolkovLabs/business-text/issues/183)).
 - Updated to Node 18 and npm ([#183](https://github.com/VolkovLabs/business-text/issues/183)).
 - Removed Grafana 8.5 support ([#183](https://github.com/VolkovLabs/business-text/issues/183)).
 
@@ -254,7 +370,8 @@ All notable changes to the **Business Text Panel** (formerly Dynamic Text Plugin
 
 ### Breaking Changes
 
-- Default Content and JavaScript editors are hidden unless modified. Select required editors (including new Styles) from the list to display them.
+- Default Content and JavaScript editors are hidden unless modified.
+  Select required editors (including new Styles) from the list to display them.
 
 ### Added
 
@@ -331,7 +448,9 @@ All notable changes to the **Business Text Panel** (formerly Dynamic Text Plugin
 
 ### Added
 
-- Added option to render templates per row or as a single template, useful for creating tables from query results ([#53](https://github.com/VolkovLabs/business-text/issues/53)) (Thanks @andykingking).
+- Added option to render templates per row or as a single template, useful for creating tables
+  from query results ([#53](https://github.com/VolkovLabs/business-text/issues/53))
+  (Thanks @andykingking).
 
 ### Bug Fixes
 

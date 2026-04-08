@@ -59,7 +59,7 @@ class RowHelper {
   }
 
   public async checkTextContent(text: string) {
-    return expect(this.get(), this.getMsg('Check RowbText content')).toHaveText(text);
+    return expect(this.get(), this.getMsg('Check Row Text content')).toHaveText(text);
   }
 }
 
