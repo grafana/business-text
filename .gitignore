@@ -24,6 +24,9 @@ work/
 ci/
 e2e-results/
 
+# Lint cache
+.eslintcache
+
 # Editor
 .idea
 .DS_Store

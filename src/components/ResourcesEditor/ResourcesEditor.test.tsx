@@ -1,16 +1,17 @@
 import { config } from '@grafana/runtime';
+import { DragDropContext, DropResult } from '@hello-pangea/dnd';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
-import { DragDropContext, DropResult } from 'react-beautiful-dnd';
 
 import { TEST_IDS } from '../../constants';
+
 import { ResourcesEditor } from './ResourcesEditor';
 
 /**
- * Mock react-beautiful-dnd
+ * Mock @hello-pangea/dnd
  */
-jest.mock('react-beautiful-dnd', () => ({
-  ...jest.requireActual('react-beautiful-dnd'),
+jest.mock('@hello-pangea/dnd', () => ({
+  ...jest.requireActual('@hello-pangea/dnd'),
   DragDropContext: jest.fn(({ children }) => children),
   Droppable: jest.fn(({ children }) => children({})),
   Draggable: jest.fn(({ children }) =>

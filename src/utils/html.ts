@@ -14,7 +14,6 @@ import { config, locationService } from '@grafana/runtime';
 import { TimeZone } from '@grafana/schema';
 import handlebars from 'handlebars';
 import hljs from 'highlight.js';
-// eslint-disable-next-line @typescript-eslint/naming-convention
 import MarkdownIt from 'markdown-it';
 
 import { PanelOptions, PartialItemConfig, RenderMode } from '../types';

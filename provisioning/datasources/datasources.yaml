@@ -1,7 +1,7 @@
 apiVersion: 1
 
 datasources:
-  - name: Volkov Labs RSS
+  - name: Grafana Blog RSS
     type: volkovlabs-rss-datasource
     access: proxy
     isDefault: true
@@ -10,8 +10,8 @@ datasources:
     version: 1
     editable: true
     jsonData:
-      feed: https://volkovlabs.io/blog/rss.xml
-  - name: Volkov Labs YouTube
+      feed: https://grafana.com/blog/index.xml
+  - name: Grafana YouTube
     type: volkovlabs-rss-datasource
     access: proxy
     orgId: 1
@@ -19,7 +19,7 @@ datasources:
     version: 1
     editable: true
     jsonData:
-      feed: https://www.youtube.com/feeds/videos.xml?channel_id=UCQadniwbukI6ZmTN2oTTb-g
+      feed: https://www.youtube.com/feeds/videos.xml?channel_id=UCYCwgQAMG9ehfspGjIkP3Rg
   - name: Static
     type: marcusolsson-static-datasource
     access: proxy
