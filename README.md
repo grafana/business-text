@@ -67,7 +67,7 @@ grafana cli plugins install marcusolsson-dynamictext-panel
 [recipes]: https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/rendering/recipes/
 [features]: https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/features/
 [tutorials]: https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/tutorials/
-[release]: https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/release/
+[release]: https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/?tab=changelog
 
 ## License
 
