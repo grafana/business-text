@@ -7,7 +7,7 @@ keywords:
   - predefined events
   - subscribe
   - UI events
-weight: 640
+weight: 64
 labels:
   products:
     - cloud
