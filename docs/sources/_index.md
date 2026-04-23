@@ -39,8 +39,6 @@ When working with the Business Text plugin, you construct a text visualization t
 
 You can install the Business Text panel from the [Grafana Plugins catalog](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/) or using the Grafana command line tool.
 
-{{< youtube id="1qYzHfPXJF8" >}}
-
 Alternatively, use the Grafana command-line tool with the following command:
 
 ```sh
@@ -64,14 +62,6 @@ grafana cli plugins install marcusolsson-dynamictext-panel
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-text/screenshot.png" class="border" alt="The Business Text panel for Grafana." >}}
 
-## Tutorial
-
-The following video reviews the major latest release, including the data flow, predefined helpers, and numerous examples of external JavaScript libraries.
-
-{{< youtube id="UVMysEjouNo" >}}
-
-For more information, see [tutorials related to this plugin](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/tutorials/).
-
 ## Documentation
 
 | Section                  | Description                                                   |
@@ -79,7 +69,6 @@ For more information, see [tutorials related to this plugin](https://grafana.com
 | [Rendering](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/rendering/)     | Explains how to create a visualization template for your data. |
 | [Features](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/features/)     | Explains the plugin's features.                                |
 | [Use cases](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/use-cases/)    | Demonstrates interesting Community use cases.                  |
-| [Tutorials](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/tutorials/)   | Provides easy-to-follow tutorials.                             |
 | [Release notes](https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/<PLUGINS_VERSION>/release/) | Stay up to date with the latest features and updates.          |
 
 ## License

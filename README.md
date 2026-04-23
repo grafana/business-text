@@ -60,13 +60,11 @@ grafana cli plugins install marcusolsson-dynamictext-panel
 | [Rendering][rendering]   | Explains how to create a visualization template for your data |
 | [Recipes][recipes]       | Useful snippets that you can use in your templates            |
 | [Features][features]     | Demonstrates panel features                                   |
-| [Tutorials][tutorials]   | Easy to follow tutorials                                      |
 | [Release Notes][release] | Stay up to date with the latest features and updates          |
 
 [rendering]: https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/rendering/
 [recipes]: https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/rendering/recipes/
 [features]: https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/features/
-[tutorials]: https://grafana.com/docs/plugins/marcusolsson-dynamictext-panel/latest/tutorials/
 [release]: https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/?tab=changelog
 
 ## License
