@@ -15,8 +15,6 @@ weight: 20
 
 The Business Text panel supports the integration of JavaScript code snippets that can add Handlebars helpers and event handlers.
 
-{{< youtube id="lJqk5Gobec4" >}}
-
 ## Parameters
 
 {{< admonition type="note" >}}
@@ -387,7 +385,3 @@ context.handlebars.registerHelper("parse", (context) => JSON.parse(context));
 ## Anonymizer
 
 Anonymizer converts real production data into dummy values in order to have your dashboards demo-ready. Anonymizer is another great example of how embedded JavaScript can simplify tedious and repetitive tasks.
-
-You can find all you need in this video:
-
-{{< youtube id="FMSEGGFbJy0" >}}
