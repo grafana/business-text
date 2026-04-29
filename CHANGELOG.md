@@ -16,9 +16,8 @@ This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.
 ### Project Updates
 
 - Updated CI/CD workflows.
-- Added `markdownlint` and `spellcheck` npm scripts.
 - Updated development scripts and tooling.
-- Added `AGENTS.md` and development tooling configuration.
+- Updated development documentation.
 
 ## [6.2.0] - 2025-10-28
 
