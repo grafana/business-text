@@ -284,13 +284,9 @@ files, and server dirs are excluded from linting.
 - **Always run `npm run lint`** before committing changes
   to `src/`. Fix errors with `npm run lint:fix` and
   verify no errors remain.
-- **Always run `npx markdownlint-cli2`** on any `.md`
-  file you create or modify (including `AGENTS.md`,
-  `README.md`, `CHANGELOG.md`) and fix all reported
-  issues before committing.
-- **Always run cspell before committing.** Run
-  `npx cspell -c cspell.config.json "**/*.{ts,tsx,js,md,yml,yaml,json}"`
-  and fix any issues. Add new words to
+- **Always run `npm run markdownlint`** on any `.md` file you create or modify (including `AGENTS.md`,
+  `README.md`, `CHANGELOG.md`) and fix all reported issues before committing.
+- **Always run `npm run spellcheck`** before committing. Fix any issues and add new words to
   `cspell.config.json` if they are legitimate.
 - **Always update `CHANGELOG.md` before committing.**
   Every commit must include the corresponding changelog

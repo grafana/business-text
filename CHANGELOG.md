@@ -1,10 +1,20 @@
 # Changelog
 
 All notable changes to the **Business Text Panel** (formerly Dynamic Text Plugin) for Grafana
-will be documented in this file.
-This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+are documented in this file.
+
+This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format and adheres to
+[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Project Updates
+
+- Updated CI/CD workflows to `v7.3.1`; added concurrency group, changelog stamping on release, and attestation
+  permissions.
+- Renamed `.markdownlint.yaml` to `.markdownlint-cli2.yaml` for proper tool discovery.
+- Added `markdownlint` and `spellcheck` npm scripts.
+- Updated `test:e2e:docker` to use `--force-recreate` and `--abort-on-container-exit`.
 
 ### Added
 
