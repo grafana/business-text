@@ -33,6 +33,8 @@ npm run test:e2e:docker        # Full Docker Compose (Grafana + tests)
 # Local Development
 npm run start                  # Start Grafana via Docker Compose (latest)
 npm run stop                   # Stop Docker containers
+npm run markdownlint             # markdownlint-cli2 on AGENTS.md, CHANGELOG.md, README.md
+npm run spellcheck               # cspell on all source files
 ```
 
 Node version: **24** (see `.nvmrc` / `mise.toml`). Minimum supported: `>=24`.
