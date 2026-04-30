@@ -31,7 +31,7 @@ npm run test:e2e:dev           # Playwright UI mode
 npm run test:e2e:docker        # Full Docker Compose (Grafana + tests)
 
 # Local Development
-npm run markdownlint             # markdownlint-cli2 on AGENTS.md, CHANGELOG.md, README.md
+npm run markdownlint             # markdownlint-cli2 on AGENTS.md, CHANGELOG.md, src/CHANGELOG.md, README.md
 npm run spellcheck               # cspell on all source files
 npm run start                  # Start Grafana via Docker Compose (latest)
 npm run stop                   # Stop Docker containers
@@ -287,7 +287,7 @@ files, and server dirs are excluded from linting.
   to `src/`. Fix errors with `npm run lint:fix` and
   verify no errors remain.
 - **Always run `npm run markdownlint`** on any `.md` file you create or modify (including `AGENTS.md`,
-  `README.md`, `CHANGELOG.md`) and fix all reported issues before committing.
+  `CHANGELOG.md`, `src/CHANGELOG.md`, and `README.md`) and fix all reported issues before committing.
 - **Always run `npm run spellcheck`** before committing. Fix any issues and add new words to
   `cspell.config.json` if they are legitimate.
 - **Always update both changelogs before committing.**
