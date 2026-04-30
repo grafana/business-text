@@ -11,6 +11,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Added `playwright-report/**` to cspell `ignorePaths` to exclude generated test artifacts from spell checking.
 - Added `playwright-report/**` to ESLint `ignores` to exclude generated test artifacts from linting.
 - Updated CI/CD workflows.
+- `publish.yml`: bump `actions/create-github-app-token` to v3.1.1; stamp and `git add` `src/CHANGELOG.md`
+  conditionally on release.
+- `coverage.yml`: add concurrency group; bump `actions/setup-node` to v6.4.0; add base-branch checkout with
+  `clean: true` and re-run setup-node; add `continue-on-error` on base coverage run; guard base coverage
+  copy with file-existence check; re-checkout PR branch and restore both coverage files; add conditional
+  compare path; switch `file-coverage-mode` to `changes-affected`; bump
+  `davelosert/vitest-coverage-report-action` to v2.11.2; add `coverage-detail` job using
+  `ArtiomTr/jest-coverage-report-action` v2.3.1.
+- `pr-files.yml`: add concurrency group; bump `tj-actions/changed-files` to v47.0.6 with `separator: '|'`;
+  bump `actions/github-script` to v9.0.0; update JS parsing to use pipe separator; add `.dockerignore` to
+  Config category; add early return when no files changed.
 - Updated development scripts and tooling.
 - Updated development documentation.
 
