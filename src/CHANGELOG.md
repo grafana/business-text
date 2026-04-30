@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Added `playwright-report/**` to cspell `ignorePaths` to exclude generated test artifacts from spell checking.
 - Added `playwright-report/**` to ESLint `ignores` to exclude generated test artifacts from linting.
+- Added `.dockerignore` to exclude `node_modules/`, `dist/`, `.git/`, coverage, and other large directories
+  from the Docker build context, speeding up playwright image builds.
 - Updated CI/CD workflows.
 - `publish.yml`: bump `actions/create-github-app-token` to v3.1.1; stamp and `git add` `src/CHANGELOG.md`
   conditionally on release.
@@ -34,6 +36,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Added `provisioning/dashboards/e2e-empty.json` (empty dashboard) and switched the `Should add default text
   panel` test to use it, avoiding tooltip interference from other panels loaded in `e2e.json`.
+- Optimised `test/Dockerfile`: removed redundant `npx playwright install --with-deps chromium` (browsers
+  already bundled in the base image); switched to `npm ci --omit=prod` to skip unused production
+  dependencies; replaced `COPY . .` with selective copies of `package.json`, `package-lock.json`,
+  `playwright.config.ts`, `tsconfig.json`, `provisioning/`, and `src/` to improve layer caching.
 
 ### Dependencies
 

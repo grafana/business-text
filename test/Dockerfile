@@ -1,18 +1,16 @@
-# Get the latest version of Playwright
 FROM mcr.microsoft.com/playwright:v1.59.1-noble
 
-# Set the work directory for the application
 WORKDIR /app
 
-# Install dependencies first for better layer caching
-COPY package*.json ./
-RUN npm ci
+# Copy manifests first so the install layer is cached until dependencies change
+COPY package.json package-lock.json ./
 
-# Install browsers
-RUN npx playwright install --with-deps chromium
+# Deterministic install; omit prod deps not needed by the test runner
+RUN npm ci --omit=prod
 
-# Copy the rest of the application
-COPY . .
+# Copy config and provisioned dashboards (provisioning/ is not volume-mounted at runtime)
+COPY playwright.config.ts tsconfig.json ./
+COPY provisioning/ provisioning/
+COPY src/ src/
 
-# Run tests
 CMD ["npm", "run", "test:e2e"]
