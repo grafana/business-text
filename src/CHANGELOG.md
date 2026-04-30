@@ -8,8 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Build / Tooling
 
-- Added `playwright-report/**` to cspell `ignorePaths` to exclude generated test artifacts from spell checking.
-- Added `playwright-report/**` to ESLint `ignores` to exclude generated test artifacts from linting.
+- Added `playwright-report/**` to cspell `ignorePaths` and ESLint `ignores` to exclude generated test artifacts.
 - `publish.yml`: bump `actions/create-github-app-token` to v3.1.1; stamp and `git add` `src/CHANGELOG.md`
   conditionally on release.
 - `coverage.yml`:
@@ -28,7 +27,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Bump `tj-actions/changed-files` to v47.0.6 with `separator: '|'`.
   - Bump `actions/github-script` to v9.0.0.
   - Update JS parsing to use pipe separator.
-  - Add `.dockerignore` to Config category.
   - Add early return when no files changed.
 
 ### Code Quality
@@ -45,8 +43,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Optimized `test/Dockerfile`:
   - Removed redundant `npx playwright install --with-deps chromium` (already bundled in base image).
   - Switched to `npm ci --omit=prod` to skip unused production dependencies.
-  - Replaced `COPY . .` with selective copies of `package.json`, `package-lock.json`,
-    `playwright.config.ts`, `tsconfig.json`, `provisioning/`, and `src/` for better layer caching.
+  - Replaced `COPY . .` with selective copies for better layer caching.
 
 ### Dependencies
 
@@ -57,4 +54,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   `@emotion/css` to 11.13.5.
 - Pinned `@grafana/data`, `@grafana/i18n`, `@grafana/runtime`, `@grafana/schema`, and `@grafana/ui` to exact version 12.4.2.
 - Upgraded `uuid` to 14.0.0 (security fix for buffer bounds validation in v3/v5/v6; v4 API unchanged).
-- Upgraded `cspell` to 10.0.0 (drops Node 20 support; no config format changes).
+- Upgraded `cspell` to 10.0.0.
