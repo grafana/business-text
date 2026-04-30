@@ -36,7 +36,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Added `provisioning/dashboards/e2e-empty.json` (empty dashboard) and switched the `Should add default text
   panel` test to use it, avoiding tooltip interference from other panels loaded in `e2e.json`.
-- Optimised `test/Dockerfile`: removed redundant `npx playwright install --with-deps chromium` (browsers
+- Optimized `test/Dockerfile`: removed redundant `npx playwright install --with-deps chromium` (browsers
   already bundled in the base image); switched to `npm ci --omit=prod` to skip unused production
   dependencies; replaced `COPY . .` with selective copies of `package.json`, `package-lock.json`,
   `playwright.config.ts`, `tsconfig.json`, `provisioning/`, and `src/` to improve layer caching.
@@ -49,3 +49,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   `terser-webpack-plugin` to 5.5.0, `webpack` to 5.106.2, `uuid` to 13.0.1,
   `@grafana/scenes` to 7.4.2, `@emotion/css` to 11.13.5.
 - Pinned `@grafana/data`, `@grafana/i18n`, `@grafana/runtime`, `@grafana/schema`, and `@grafana/ui` to exact version 12.4.2.
+- Upgraded `uuid` to 14.0.0 (security fix for buffer bounds validation in v3/v5/v6; v4 API unchanged).
+- Upgraded `cspell` to 10.0.0 (drops Node 20 support; no config format changes).
