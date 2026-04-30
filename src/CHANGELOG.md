@@ -12,15 +12,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Added `playwright-report/**` to ESLint `ignores` to exclude generated test artifacts from linting.
 - `publish.yml`: bump `actions/create-github-app-token` to v3.1.1; stamp and `git add` `src/CHANGELOG.md`
   conditionally on release.
-- `coverage.yml`: add concurrency group; bump `actions/setup-node` to v6.4.0; add base-branch checkout with
-  `clean: true` and re-run setup-node; add `continue-on-error` on base coverage run; guard base coverage
-  copy with file-existence check; re-checkout PR branch and restore both coverage files; add conditional
-  compare path; switch `file-coverage-mode` to `changes-affected`; bump
-  `davelosert/vitest-coverage-report-action` to v2.11.2; add `coverage-detail` job using
-  `ArtiomTr/jest-coverage-report-action` v2.3.1.
-- `pr-files.yml`: add concurrency group; bump `tj-actions/changed-files` to v47.0.6 with `separator: '|'`;
-  bump `actions/github-script` to v9.0.0; update JS parsing to use pipe separator; add `.dockerignore` to
-  Config category; add early return when no files changed.
+- `coverage.yml`:
+  - Add concurrency group.
+  - Bump `actions/setup-node` to v6.4.0.
+  - Add base-branch checkout with `clean: true` and re-run setup-node.
+  - Add `continue-on-error` on base coverage run.
+  - Guard base coverage copy with file-existence check.
+  - Re-checkout PR branch and restore both coverage files before reporting.
+  - Add conditional compare path (skips comparison when base has no coverage).
+  - Switch `file-coverage-mode` to `changes-affected`.
+  - Bump `davelosert/vitest-coverage-report-action` to v2.11.2.
+  - Add `coverage-detail` job using `ArtiomTr/jest-coverage-report-action` v2.3.1.
+- `pr-files.yml`:
+  - Add concurrency group.
+  - Bump `tj-actions/changed-files` to v47.0.6 with `separator: '|'`.
+  - Bump `actions/github-script` to v9.0.0.
+  - Update JS parsing to use pipe separator.
+  - Add `.dockerignore` to Config category.
+  - Add early return when no files changed.
 
 ### Code Quality
 
@@ -33,10 +42,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   from the Docker build context, speeding up playwright image builds.
 - Added `provisioning/dashboards/e2e-empty.json` (empty dashboard) and switched the `Should add default text
   panel` test to use it, avoiding tooltip interference from other panels loaded in `e2e.json`.
-- Optimized `test/Dockerfile`: removed redundant `npx playwright install --with-deps chromium` (browsers
-  already bundled in the base image); switched to `npm ci --omit=prod` to skip unused production
-  dependencies; replaced `COPY . .` with selective copies of `package.json`, `package-lock.json`,
-  `playwright.config.ts`, `tsconfig.json`, `provisioning/`, and `src/` to improve layer caching.
+- Optimized `test/Dockerfile`:
+  - Removed redundant `npx playwright install --with-deps chromium` (already bundled in base image).
+  - Switched to `npm ci --omit=prod` to skip unused production dependencies.
+  - Replaced `COPY . .` with selective copies of `package.json`, `package-lock.json`,
+    `playwright.config.ts`, `tsconfig.json`, `provisioning/`, and `src/` for better layer caching.
 
 ### Dependencies
 
