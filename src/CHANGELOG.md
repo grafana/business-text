@@ -32,6 +32,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### E2E / Docker
 
+- Added `provisioning/dashboards/e2e-empty.json` (empty dashboard) and switched the `Should add default text
+  panel` test to use it, avoiding tooltip interference from other panels loaded in `e2e.json`.
+
 ### Dependencies
 
 - Updated `@grafana/plugin-e2e` to 3.6.1 (Grafana 13 dashboard layout support, dashboard smoke testing, e2e-selectors bumps).

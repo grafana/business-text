@@ -12,7 +12,7 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
      * Go To Panels dashboard e2e.json
      * return dashboardPage
      */
-    const dashboard = await readProvisionedDashboard({ fileName: 'e2e.json' });
+    const dashboard = await readProvisionedDashboard({ fileName: 'e2e-empty.json' });
     const dashboardPage = await gotoDashboardPage({ uid: dashboard.uid });
 
     /**
