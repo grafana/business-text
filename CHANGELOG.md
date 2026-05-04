@@ -138,6 +138,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Fixed typos in `test/utils/text.ts`, `README.md`, and documentation URLs.
 - Fixed markdown lint issues in `README.md` and `CHANGELOG.md`.
 
+### Project Updates
+
+- Added `.npmrc` with `ignore-scripts=true` to disable lifecycle scripts and mitigate supply-chain attack risk.
+
 ## [6.2.0] - 2025-10-28
 
 ### Project Updates
