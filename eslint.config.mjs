@@ -33,6 +33,7 @@ export default defineConfig([
       'dist/*',
       'eslint.config.mjs',
       'jest*.js',
+      'playwright-report/**',
       'playwright.config.ts',
       'src/__mocks__/**',
       'src/**/*.test.ts*',

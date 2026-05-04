@@ -184,6 +184,7 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
    */
   useEffect(() => {
     if (showMiniMap !== undefined) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsShowMiniMap(showMiniMap);
     }
   }, [showMiniMap]);
@@ -192,6 +193,7 @@ export const AutosizeCodeEditor: React.FC<Props> = ({
    * Update height on value change
    */
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setEditorHeight(calculateHeight(value, minHeight, maxHeight));
   }, [value, minHeight, maxHeight]);
 
