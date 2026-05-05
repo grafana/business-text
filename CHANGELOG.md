@@ -13,6 +13,10 @@ This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.
 - Fixed code editor minimap setting not applying after the initial render.
 - Clipboard operations in the code editor toolbar now handle errors gracefully.
 
+### Project Updates
+
+- Removed `pr-files.yml` workflow; GitHub's native Files changed tab supersedes it.
+
 ## [6.2.0] - 2025-10-28
 
 ### Project Updates
