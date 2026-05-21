@@ -4,13 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [6.2.3] - 2026-05-21
 
 ### Build / Tooling
 
 - Added `playwright-report/**` to cspell `ignorePaths` and ESLint `ignores` to exclude generated test artifacts.
-- `publish.yml`: bump `actions/create-github-app-token` to v3.1.1; stamp and `git add` `src/CHANGELOG.md`
-  conditionally on release.
+- `publish.yml`: replace `stamp-changelog` with `check-changelog` (read-only pre-flight validation);
+  validates both `CHANGELOG.md` and `src/CHANGELOG.md` before release.
 - `coverage.yml`:
   - Add concurrency group.
   - Bump `actions/setup-node` to v6.4.0.
@@ -20,7 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Re-checkout PR branch and restore both coverage files before reporting.
   - Add conditional compare path (skips comparison when base has no coverage).
   - Switch `file-coverage-mode` to `changes-affected`.
-  - Bump `davelosert/vitest-coverage-report-action` to v2.11.2.
+  - Bump `davelosert/vitest-coverage-report-action` to v2.12.0.
   - Add `coverage-detail` job using `ArtiomTr/jest-coverage-report-action` v2.3.1.
 - `pr-files.yml`:
   - Add concurrency group.
