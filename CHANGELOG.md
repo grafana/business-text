@@ -16,10 +16,9 @@ This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.
 ### Project Updates
 
 - Removed `pr-files.yml` workflow; GitHub's native Files changed tab supersedes it.
-
-### Project Updates
-
 - Added `.npmrc` with `ignore-scripts=true` to disable lifecycle scripts and mitigate supply-chain attack risk.
+- Migrated publish workflow from auto-stamping changelog to pre-flight changelog validation.
+- Bumped `vitest-coverage-report-action` to v2.12.0.
 
 ## [6.2.0] - 2025-10-28
 
