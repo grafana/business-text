@@ -1,4 +1,4 @@
-import { AppEvents, FieldType, toDataFrame } from '@grafana/data';
+import { AppEvents, FieldType, LoadingState, toDataFrame } from '@grafana/data';
 import { act, render, screen } from '@testing-library/react';
 import React from 'react';
 
@@ -240,6 +240,85 @@ describe('Text', () => {
       await act(async () => rerender(<Text {...props} timeZone="123" />));
 
       expect(eventBus.publish).toHaveBeenCalledWith('destroy');
+    });
+  });
+
+  describe('After Render Function on re-render', () => {
+    const realFrame = () => toDataFrame({ fields: [{ name: 'text', type: FieldType.string, values: ['hello'] }] });
+
+    const baseProps = (frame: any, data: any): Props => ({
+      data,
+      frame,
+      options: {
+        ...DEFAULT_OPTIONS,
+        content: '<div data-testid="content">REAL</div>',
+        defaultContent: '<div data-testid="content">INITIAL</div>',
+        afterRender: `
+          const marker = document.createElement('span');
+          marker.setAttribute('data-testid', 'marker');
+          context.element.appendChild(marker);
+        `,
+        renderMode: RenderMode.EVERY_ROW,
+      } as any,
+      timeRange: {} as any,
+      timeZone: '',
+      replaceVariables: (str: string) => str,
+      eventBus: { publish: jest.fn(), subscribe: jest.fn(), getStream: jest.fn() } as any,
+      getUserPreference: getUserPreferenceDefault,
+      setUserPreference,
+    });
+
+    it('applies the script once when data updates without content change', async () => {
+      const frame1 = realFrame();
+      const { rerender } = await act(async () =>
+        render(<Text {...baseProps(frame1, { state: LoadingState.Done, series: [frame1] })} />)
+      );
+
+      expect(screen.getByText('REAL')).toBeInTheDocument();
+      expect(screen.getAllByTestId('marker')).toHaveLength(1);
+
+      const frame2 = realFrame();
+      await act(async () =>
+        rerender(<Text {...baseProps(frame2, { state: LoadingState.Done, series: [frame2] })} />)
+      );
+
+      expect(screen.getByText('REAL')).toBeInTheDocument();
+      expect(screen.getAllByTestId('marker')).toHaveLength(1);
+    });
+
+    it('keeps content during a loading state', async () => {
+      const frame1 = realFrame();
+      const { rerender } = await act(async () =>
+        render(<Text {...baseProps(frame1, { state: LoadingState.Done, series: [frame1] })} />)
+      );
+      expect(screen.getByText('REAL')).toBeInTheDocument();
+
+      await act(async () =>
+        rerender(<Text {...baseProps(frame1, { state: LoadingState.Loading, series: [frame1] })} />)
+      );
+
+      expect(screen.queryByText('INITIAL')).not.toBeInTheDocument();
+      expect(screen.getByText('REAL')).toBeInTheDocument();
+    });
+
+    it('applies the script once across a loading then done update', async () => {
+      const frame1 = realFrame();
+      const { rerender } = await act(async () =>
+        render(<Text {...baseProps(frame1, { state: LoadingState.Done, series: [frame1] })} />)
+      );
+      expect(screen.getAllByTestId('marker')).toHaveLength(1);
+
+      await act(async () =>
+        rerender(<Text {...baseProps(frame1, { state: LoadingState.Loading, series: [frame1] })} />)
+      );
+
+      const frame2 = realFrame();
+      await act(async () =>
+        rerender(<Text {...baseProps(frame2, { state: LoadingState.Done, series: [frame2] })} />)
+      );
+
+      expect(screen.getByText('REAL')).toBeInTheDocument();
+      expect(screen.getAllByTestId('marker')).toHaveLength(1);
     });
   });
 

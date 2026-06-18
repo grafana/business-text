@@ -136,6 +136,12 @@ export const Row: React.FC<Props> = ({
   useEffect(() => {
     let unsubscribe: unknown = null;
     if (ref.current && afterRender) {
+      /**
+       * Reset to the rendered HTML so the script runs against a clean base on every
+       * re-render (React only re-applies dangerouslySetInnerHTML when item.html changes).
+       */
+      ref.current.innerHTML = item.html;
+
       const func = createExecutionCode('context', afterRender);
 
       unsubscribe = func.call(
@@ -174,6 +180,7 @@ export const Row: React.FC<Props> = ({
     getUserPreference,
     item.data,
     item.dataFrame,
+    item.html,
     item.panelData,
     notifyError,
     notifySuccess,
