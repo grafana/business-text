@@ -21,6 +21,7 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
     const editPage = await dashboardPage.addPanel();
     await editPage.setVisualization('Business Text');
     await editPage.setPanelTitle('Business Text');
+    await editPage.datasource.set('-- Grafana --')
     await editPage.backToDashboard();
 
     /**

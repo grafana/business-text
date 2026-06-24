@@ -25,12 +25,12 @@ export default defineConfig({
   /**
    * Number of retries
    */
-  retries: 2,
+  retries: 1,
 
   /**
    * Number of workers
    */
-  workers: 4,
+  workers: 1,
 
   /**
    * Reporter to use. See https://playwright.dev/docs/test-reporters
