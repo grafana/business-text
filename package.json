@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack -c ./webpack.config.ts --env production",
     "dev": "webpack -w -c ./webpack.config.ts --env development",
-    "e2e": "playwright test -x --trace on --workers=1",
+    "e2e": "playwright test",
     "levitate": "npx @grafana/levitate@latest is-compatible --path src/module.ts --target @grafana/data,@grafana/runtime,@grafana/ui",
     "lint": "eslint --cache .",
     "lint:fix": "npm run lint -- --fix && prettier --write --list-different .",
@@ -23,8 +23,8 @@
     "test:e2e:dev": "npx playwright test --ui",
     "test:e2e:docker": "docker compose --profile playwright up --force-recreate --abort-on-container-exit --exit-code-from playwright",
     "test:e2e:debug": "npx playwright test --debug -x --trace on",
-    "test:e2e:local:chrome": "cross-env PLAYWRIGHT_CHANNEL=chrome playwright test",
-    "test:e2e:local:chrome:debug": "cross-env PLAYWRIGHT_CHANNEL=chrome playwright test --debug --trace on",
+    "test:e2e:local:chrome": "PLAYWRIGHT_CHANNEL=chrome playwright test",
+    "test:e2e:local:chrome:debug": "PLAYWRIGHT_CHANNEL=chrome playwright test --debug --trace on",
     "typecheck": "tsc --noEmit",
     "upgrade": "npm upgrade --save"
   },
