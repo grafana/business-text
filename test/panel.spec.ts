@@ -24,7 +24,6 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
     await editPage.datasource.set('-- Grafana --');
     await editPage.setVisualization('Business Text');
     await editPage.setPanelTitle('Business Text');
-    await editPage.datasource.set('-- Grafana --');
     await editPage.backToDashboard();
 
     // Refresh the dashboard because the query for the non-broken datasource hasn't run yet
