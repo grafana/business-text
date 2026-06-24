@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Build / Tooling
+
+- Added `test:e2e:install` script to install the Playwright Chromium binary via the project's pinned local CLI
+  (avoids `npx` resolving a mismatched Playwright version and works with `ignore-scripts=true`).
+- `playwright.config.ts`: added an env-gated `channel` option. Set `PLAYWRIGHT_CHANNEL=chrome` to run E2E against a
+  locally installed Google Chrome and skip the bundled Chromium download; left undefined in CI/Docker.
+
 ## [6.2.3] - 2026-05-21
 
 ### Build / Tooling
