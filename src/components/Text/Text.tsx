@@ -85,6 +85,12 @@ interface Props {
    */
   setUserPreference: <T>(key: string, data: T) => Promise<T>;
 
+  /**
+   * Render increment from Grafana's PanelProps
+   * Used to trigger onContentReady JS after renders introduced by core (e.g. variable changes)
+   *
+   * @type {number}
+   */
   renderCounter: number;
 }
 
@@ -101,7 +107,7 @@ export const Text: React.FC<Props> = ({
   data: panelData,
   getUserPreference,
   setUserPreference,
-  renderCounter
+  renderCounter,
 }) => {
   /**
    * Generated rows

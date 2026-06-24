@@ -203,11 +203,6 @@ export const Row: React.FC<Props> = ({
   ]);
 
   return (
-    <div
-      ref={ref}
-      className={className}
-      dangerouslySetInnerHTML={innerHtml}
-      data-testid={TEST_IDS.text.content}
-    />
+    <div ref={ref} className={className} dangerouslySetInnerHTML={innerHtml} data-testid={TEST_IDS.text.content} />
   );
 };

@@ -230,6 +230,53 @@ describe('Text', () => {
 
       expect(eventBus.publish).toHaveBeenCalledWith('destroy');
     });
+
+    /**
+     * Re-fire after render JS on Grafana-induced re-renders (renderCounter change)
+     */
+    it('Should re-run after render function when renderCounter changes', async () => {
+      const eventBus = {
+        publish: jest.fn(() => {}),
+      };
+      const replaceVariables = jest.fn((str: string) => str);
+
+      const props = getProps({
+        replaceVariables,
+        eventBus: eventBus as any,
+        renderCounter: 0,
+      });
+
+      const { rerender } = await act(async () => render(<Text {...props} />));
+      expect(eventBus.publish).toHaveBeenCalledTimes(1);
+
+      /**
+       * Grafana re-renders the panel (e.g. on a variable change) and increments renderCounter
+       */
+      await act(async () => rerender(<Text {...props} renderCounter={1} />));
+      expect(eventBus.publish).toHaveBeenCalledTimes(2);
+    });
+
+    /**
+     * Avoid re-running after render JS when nothing relevant changed
+     */
+    it('Should not re-run after render function when re-rendered with unchanged props', async () => {
+      const eventBus = {
+        publish: jest.fn(() => {}),
+      };
+      const replaceVariables = jest.fn((str: string) => str);
+
+      const props = getProps({
+        replaceVariables,
+        eventBus: eventBus as any,
+        renderCounter: 0,
+      });
+
+      const { rerender } = await act(async () => render(<Text {...props} />));
+      expect(eventBus.publish).toHaveBeenCalledTimes(1);
+
+      await act(async () => rerender(<Text {...props} />));
+      expect(eventBus.publish).toHaveBeenCalledTimes(1);
+    });
   });
 
   describe('Before Render Function', () => {
