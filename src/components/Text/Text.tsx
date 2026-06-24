@@ -84,6 +84,8 @@ interface Props {
    * Set User Preference
    */
   setUserPreference: <T>(key: string, data: T) => Promise<T>;
+
+  renderCounter: number;
 }
 
 /**
@@ -99,6 +101,7 @@ export const Text: React.FC<Props> = ({
   data: panelData,
   getUserPreference,
   setUserPreference,
+  renderCounter
 }) => {
   /**
    * Generated rows
@@ -344,6 +347,7 @@ export const Text: React.FC<Props> = ({
       )}
       {rows.map((row, index) => (
         <Row
+          renderCounter={renderCounter}
           key={index}
           item={row}
           className={className}

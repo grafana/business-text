@@ -79,12 +79,19 @@ export interface Props {
    * Set User Preference
    */
   setUserPreference: <T>(key: string, data: T) => Promise<T>;
+
+  /**
+   * Render increment from Grafana's PanelProps
+   * Used to trigger onContentReady JS after renders introduced by core (e.g. variable changes)
+   */
+  renderCounter: number;
 }
 
 /**
  * Row
  */
 export const Row: React.FC<Props> = ({
+  renderCounter,
   className,
   item,
   afterRender,
@@ -191,6 +198,8 @@ export const Row: React.FC<Props> = ({
     theme,
     timeRange,
     timeZone,
+    // Need to include render counter or grafana can trigger re-rendering of the panel without firing the on content ready JS
+    renderCounter,
   ]);
 
   return (
