@@ -10,7 +10,7 @@ import {
 import { getAppEvents, locationService } from '@grafana/runtime';
 import { TimeZone } from '@grafana/schema';
 import { useTheme2 } from '@grafana/ui';
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { RowItem } from 'types';
 
 import { TEST_IDS } from '../../constants';
@@ -131,6 +131,14 @@ export const Row: React.FC<Props> = ({
   const functionThis = useRef({});
 
   /**
+   * Memoize the dangerouslySetInnerHTML payload so its object reference is stable while the html
+   * is unchanged. React 19's updateProperties re-applies dangerouslySetInnerHTML on any reference
+   * change, which (with a fresh object literal each render) re-sets innerHTML on every re-render and
+   * wipes imperative DOM changes made in afterRender (e.g. on a panel hover/select re-render).
+   */
+  const innerHtml = useMemo(() => ({ __html: item.html }), [item.html]);
+
+  /**
    * Run After Render Function
    */
   useEffect(() => {
@@ -189,7 +197,7 @@ export const Row: React.FC<Props> = ({
     <div
       ref={ref}
       className={className}
-      dangerouslySetInnerHTML={{ __html: item.html }}
+      dangerouslySetInnerHTML={innerHtml}
       data-testid={TEST_IDS.text.content}
     />
   );
