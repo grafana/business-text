@@ -7,7 +7,7 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
     expect(grafanaVersion).toEqual(grafanaVersion);
   });
 
-  test('Should add default text panel', async ({ readProvisionedDashboard, gotoDashboardPage }) => {
+  test.only('Should add default text panel', async ({ readProvisionedDashboard, gotoDashboardPage }) => {
     /**
      * Go To Panels dashboard e2e.json
      * return dashboardPage
@@ -19,11 +19,16 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
      * Add new visualization
      */
     const editPage = await dashboardPage.addPanel();
+    // @todo change the default datasource from Business News to something else
+    // Set the datasource since the default throws an error
+    await editPage.datasource.set('-- Grafana --');
     await editPage.setVisualization('Business Text');
     await editPage.setPanelTitle('Business Text');
-    await editPage.datasource.set('-- Grafana --')
+    await editPage.datasource.set('-- Grafana --');
     await editPage.backToDashboard();
 
+    // Refresh the dashboard because the query for the non-broken datasource hasn't run yet
+    await dashboardPage.refreshDashboard();
     /**
      * Should add empty visualization without errors
      */
@@ -157,7 +162,6 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
   test('Should display content if some of data frames are empty', async ({
     gotoDashboardPage,
     readProvisionedDashboard,
-    page,
   }) => {
     /**
      * Go To Panels dashboard allDataMode.json
