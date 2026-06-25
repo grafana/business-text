@@ -1,12 +1,13 @@
 import { AppEvents, FieldType, toDataFrame } from '@grafana/data';
+import { getAppEvents } from '@grafana/runtime';
 import { act, render, screen } from '@testing-library/react';
 import React from 'react';
 
 import { DEFAULT_OPTIONS, TEST_IDS } from '../../constants';
+import { useDashboardRefresh } from '../../hooks';
 import { RenderMode } from '../../types';
 import { Text } from './Text';
-import { getAppEvents } from '@grafana/runtime';
-import { useDashboardRefresh } from '../../hooks';
+
 /**
  * Mock @grafana/runtime
  */
@@ -35,6 +36,29 @@ type Props = React.ComponentProps<typeof Text>;
 describe('Text', () => {
   const getUserPreferenceDefault = jest.fn();
   const setUserPreference = jest.fn();
+
+  const getProps = (overrides: Partial<Props> = {}): Props => {
+    return {
+      data: {} as any,
+      options: {
+        ...DEFAULT_OPTIONS,
+        defaultContent: '<div id="element"></div>',
+        afterRender: `
+          context.grafana.eventBus.publish('ready', context.element.querySelector('#element'));
+          `,
+        renderMode: RenderMode.EVERY_ROW,
+      },
+      timeRange: {} as any,
+      timeZone: '',
+      replaceVariables: (str: string) => str,
+      eventBus: {} as any,
+      getUserPreference: getUserPreferenceDefault,
+      setUserPreference: setUserPreference,
+      renderCounter: 0,
+      ...overrides,
+    };
+  };
+
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -43,21 +67,14 @@ describe('Text', () => {
    * Default Content
    */
   it('Should render default content when there is no dataframe', async () => {
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       options: {
         ...DEFAULT_OPTIONS,
         content: 'Test content',
         defaultContent: 'Test default content',
         renderMode: RenderMode.ALL_ROWS,
       },
-      timeRange: {} as any,
-      timeZone: '',
-      replaceVariables: (str: string) => str,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 
@@ -75,23 +92,10 @@ describe('Text', () => {
       };
       const replaceVariables = jest.fn((str: string) => str);
 
-      const props: Props = {
-        data: {} as any,
-        options: {
-          ...DEFAULT_OPTIONS,
-          defaultContent: '<div id="element"></div>',
-          afterRender: `
-          context.grafana.eventBus.publish('ready', context.element.querySelector('#element'));
-          `,
-          renderMode: RenderMode.EVERY_ROW,
-        },
-        timeRange: {} as any,
-        timeZone: '',
+      const props = getProps({
         replaceVariables,
         eventBus: eventBus as any,
-        getUserPreference: getUserPreferenceDefault,
-        setUserPreference: setUserPreference,
-      };
+      });
 
       await act(async () => render(<Text {...props} />));
 
@@ -115,8 +119,7 @@ describe('Text', () => {
 
       jest.mocked(getAppEvents).mockImplementation(() => appEvents as any); // we need only these options
 
-      const props: Props = {
-        data: {} as any,
+      const props = getProps({
         options: {
           ...DEFAULT_OPTIONS,
           defaultContent: '<div id="element"></div>',
@@ -126,13 +129,9 @@ describe('Text', () => {
           `,
           renderMode: RenderMode.EVERY_ROW,
         },
-        timeRange: {} as any,
-        timeZone: '',
         replaceVariables,
         eventBus: eventBus as any,
-        getUserPreference: getUserPreferenceDefault,
-        setUserPreference: setUserPreference,
-      };
+      });
 
       await act(async () => render(<Text {...props} />));
       expect(publish).toHaveBeenCalledTimes(2);
@@ -175,8 +174,7 @@ describe('Text', () => {
 
       jest.mocked(getAppEvents).mockImplementation(() => appEvents as any); // we need only these options
 
-      const props: Props = {
-        data: {} as any,
+      const props = getProps({
         options: {
           ...DEFAULT_OPTIONS,
           defaultContent: '<div id="element"></div>',
@@ -185,13 +183,9 @@ describe('Text', () => {
           `,
           renderMode: RenderMode.EVERY_ROW,
         },
-        timeRange: {} as any,
-        timeZone: '',
         replaceVariables,
         eventBus: eventBus as any,
-        getUserPreference: getUserPreferenceDefault,
-        setUserPreference: setUserPreference,
-      };
+      });
 
       await act(async () => render(<Text {...props} />));
 
@@ -214,8 +208,7 @@ describe('Text', () => {
       };
       const replaceVariables = jest.fn((str: string) => str);
 
-      const props: Props = {
-        data: {} as any,
+      const props = getProps({
         options: {
           ...DEFAULT_OPTIONS,
           defaultContent: '<div id="element"></div>',
@@ -224,13 +217,9 @@ describe('Text', () => {
           `,
           renderMode: RenderMode.EVERY_ROW,
         },
-        timeRange: {} as any,
-        timeZone: '',
         replaceVariables,
         eventBus: eventBus as any,
-        getUserPreference: getUserPreferenceDefault,
-        setUserPreference: setUserPreference,
-      };
+      });
 
       const { rerender } = await act(async () => render(<Text {...props} />));
 
@@ -240,6 +229,53 @@ describe('Text', () => {
       await act(async () => rerender(<Text {...props} timeZone="123" />));
 
       expect(eventBus.publish).toHaveBeenCalledWith('destroy');
+    });
+
+    /**
+     * Re-fire after render JS on Grafana-induced re-renders (renderCounter change)
+     */
+    it('Should re-run after render function when renderCounter changes', async () => {
+      const eventBus = {
+        publish: jest.fn(() => {}),
+      };
+      const replaceVariables = jest.fn((str: string) => str);
+
+      const props = getProps({
+        replaceVariables,
+        eventBus: eventBus as any,
+        renderCounter: 0,
+      });
+
+      const { rerender } = await act(async () => render(<Text {...props} />));
+      expect(eventBus.publish).toHaveBeenCalledTimes(1);
+
+      /**
+       * Grafana re-renders the panel (e.g. on a variable change) and increments renderCounter
+       */
+      await act(async () => rerender(<Text {...props} renderCounter={1} />));
+      expect(eventBus.publish).toHaveBeenCalledTimes(2);
+    });
+
+    /**
+     * Avoid re-running after render JS when nothing relevant changed
+     */
+    it('Should not re-run after render function when re-rendered with unchanged props', async () => {
+      const eventBus = {
+        publish: jest.fn(() => {}),
+      };
+      const replaceVariables = jest.fn((str: string) => str);
+
+      const props = getProps({
+        replaceVariables,
+        eventBus: eventBus as any,
+        renderCounter: 0,
+      });
+
+      const { rerender } = await act(async () => render(<Text {...props} />));
+      expect(eventBus.publish).toHaveBeenCalledTimes(1);
+
+      await act(async () => rerender(<Text {...props} />));
+      expect(eventBus.publish).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -260,8 +296,7 @@ describe('Text', () => {
 
       jest.mocked(getAppEvents).mockImplementation(() => appEvents as any); // we need only these options
 
-      const props: Props = {
-        data: {} as any,
+      const props = getProps({
         options: {
           ...DEFAULT_OPTIONS,
           defaultContent: '<div id="element"></div>',
@@ -271,13 +306,9 @@ describe('Text', () => {
           `,
           renderMode: RenderMode.EVERY_ROW,
         },
-        timeRange: {} as any,
-        timeZone: '',
         replaceVariables,
         eventBus: eventBus as any,
-        getUserPreference: getUserPreferenceDefault,
-        setUserPreference: setUserPreference,
-      };
+      });
 
       await act(async () => render(<Text {...props} />));
 
@@ -322,8 +353,7 @@ describe('Text', () => {
         return appEvents as any;
       }); // we need only these options
 
-      const props: Props = {
-        data: {} as any,
+      const props = getProps({
         options: {
           ...DEFAULT_OPTIONS,
           defaultContent: '<div id="element"></div>',
@@ -332,13 +362,9 @@ describe('Text', () => {
           `,
           renderMode: RenderMode.EVERY_ROW,
         },
-        timeRange: {} as any,
-        timeZone: '',
         replaceVariables,
         eventBus: eventBus as any,
-        getUserPreference: getUserPreferenceDefault,
-        setUserPreference: setUserPreference,
-      };
+      });
 
       await act(async () => render(<Text {...props} />));
       expect(mockRefreshDashboard).toHaveBeenCalledTimes(1);
@@ -365,8 +391,7 @@ describe('Text', () => {
       ],
     });
 
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       frame: dataFrame,
       options: {
         ...DEFAULT_OPTIONS,
@@ -375,13 +400,8 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.EVERY_ROW,
       },
-      timeRange: {} as any,
-      timeZone: '',
       replaceVariables,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 
@@ -415,8 +435,7 @@ describe('Text', () => {
       ],
     });
 
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       frame: dataFrame,
       options: {
         ...DEFAULT_OPTIONS,
@@ -425,13 +444,8 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.EVERY_ROW,
       },
-      timeRange: {} as any,
-      timeZone: '',
       replaceVariables,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 
@@ -465,8 +479,7 @@ describe('Text', () => {
       ],
     });
 
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       frame: dataFrame,
       options: {
         ...DEFAULT_OPTIONS,
@@ -476,13 +489,8 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.EVERY_ROW,
       },
-      timeRange: {} as any,
-      timeZone: '',
       replaceVariables,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 
@@ -517,8 +525,7 @@ describe('Text', () => {
       ],
     });
 
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       frame: dataFrame,
       options: {
         ...DEFAULT_OPTIONS,
@@ -528,13 +535,8 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.EVERY_ROW,
       },
-      timeRange: {} as any,
-      timeZone: '',
       replaceVariables,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 
@@ -568,8 +570,7 @@ describe('Text', () => {
       ],
     });
 
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       frame: dataFrame,
       options: {
         ...DEFAULT_OPTIONS,
@@ -584,13 +585,8 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.ALL_ROWS,
       },
-      timeRange: {} as any,
-      timeZone: '',
       replaceVariables,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 
@@ -626,8 +622,7 @@ describe('Text', () => {
       ],
     });
 
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       frame: dataFrame,
       options: {
         ...DEFAULT_OPTIONS,
@@ -637,13 +632,8 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.EVERY_ROW,
       },
-      timeRange: {} as any,
-      timeZone: '',
       replaceVariables,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 
@@ -653,7 +643,7 @@ describe('Text', () => {
   });
 
   it('Should return empty color apply if field not specified for all data mode', async () => {
-    const props: Props = {
+    const props = getProps({
       data: {
         series: [
           toDataFrame({
@@ -679,13 +669,7 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.DATA,
       },
-      timeRange: {} as any,
-      timeZone: '',
-      replaceVariables: (str: string) => str,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
     const statuses = screen.getAllByTestId('status-color');
@@ -730,8 +714,7 @@ describe('Text', () => {
       ],
     });
 
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       frame: dataFrame,
       options: {
         ...DEFAULT_OPTIONS,
@@ -740,13 +723,8 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.EVERY_ROW,
       },
-      timeRange: {} as any,
-      timeZone: '',
       replaceVariables,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
     expect(screen.getAllByTestId(TEST_IDS.text.content)[0]).toBeInTheDocument();
@@ -770,8 +748,7 @@ describe('Text', () => {
       ],
     });
 
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       frame: dataFrame,
       options: {
         ...DEFAULT_OPTIONS,
@@ -780,13 +757,8 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.EVERY_ROW,
       },
-      timeRange: {} as any,
-      timeZone: '',
       replaceVariables,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
     expect(screen.getAllByTestId(TEST_IDS.text.content)[0]).toBeInTheDocument();
@@ -799,8 +771,7 @@ describe('Text', () => {
   it('Should render content twice when there is a dataframe and every row enabled', async () => {
     const nameData: string[] = ['Erik', 'Natasha'];
     const ageData: number[] = [42, 38];
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       frame: toDataFrame({
         fields: [
           {
@@ -823,13 +794,7 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.EVERY_ROW,
       },
-      timeRange: {} as any,
-      timeZone: '',
-      replaceVariables: (str: string) => str,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 
@@ -843,8 +808,7 @@ describe('Text', () => {
    * Render all rows
    */
   it('Should render content once when there is a dataframe and all rows enabled', async () => {
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       frame: {
         fields: [],
         length: 2,
@@ -855,13 +819,7 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.ALL_ROWS,
       },
-      timeRange: {} as any,
-      timeZone: '',
-      replaceVariables: (str: string) => str,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 
@@ -872,7 +830,7 @@ describe('Text', () => {
    * Render all data
    */
   it('Should render content once when there is a dataframe and all data enabled', async () => {
-    const props: Props = {
+    const props = getProps({
       data: {
         series: [
           toDataFrame({
@@ -896,13 +854,7 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.DATA,
       },
-      timeRange: {} as any,
-      timeZone: '',
-      replaceVariables: (str: string) => str,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 
@@ -923,8 +875,7 @@ describe('Text', () => {
   {{/each}}
   `;
 
-    const props: Props = {
-      data: {} as any,
+    const props = getProps({
       frame: toDataFrame({
         fields: [
           {
@@ -948,13 +899,7 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.ALL_ROWS,
       },
-      timeRange: {} as any,
-      timeZone: '',
-      replaceVariables: (str: string) => str,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 
@@ -1001,7 +946,7 @@ describe('Text', () => {
       }),
     ];
 
-    const props: Props = {
+    const props = getProps({
       data: {
         series: frames,
       } as any,
@@ -1012,13 +957,7 @@ describe('Text', () => {
         defaultContent: 'Test default content',
         renderMode: RenderMode.DATA,
       },
-      timeRange: {} as any,
-      timeZone: '',
-      replaceVariables: (str: string) => str,
-      eventBus: {} as any,
-      getUserPreference: getUserPreferenceDefault,
-      setUserPreference: setUserPreference,
-    };
+    });
 
     await act(async () => render(<Text {...props} />));
 

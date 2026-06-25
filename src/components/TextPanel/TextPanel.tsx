@@ -28,6 +28,7 @@ export const TextPanel: React.FC<Props> = ({
   timeZone,
   eventBus,
   replaceVariables,
+  renderCounter,
 }) => {
   /**
    * States
@@ -148,6 +149,7 @@ export const TextPanel: React.FC<Props> = ({
         )}
       >
         <Text
+          renderCounter={renderCounter}
           frame={frame}
           options={options}
           timeRange={timeRange}

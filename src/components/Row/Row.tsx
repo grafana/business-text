@@ -10,7 +10,7 @@ import {
 import { getAppEvents, locationService } from '@grafana/runtime';
 import { TimeZone } from '@grafana/schema';
 import { useTheme2 } from '@grafana/ui';
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import { RowItem } from 'types';
 
 import { TEST_IDS } from '../../constants';
@@ -79,12 +79,19 @@ export interface Props {
    * Set User Preference
    */
   setUserPreference: <T>(key: string, data: T) => Promise<T>;
+
+  /**
+   * Render increment from Grafana's PanelProps
+   * Used to trigger onContentReady JS after renders introduced by core (e.g. variable changes)
+   */
+  renderCounter: number;
 }
 
 /**
  * Row
  */
 export const Row: React.FC<Props> = ({
+  renderCounter,
   className,
   item,
   afterRender,
@@ -129,6 +136,14 @@ export const Row: React.FC<Props> = ({
    * Function This
    */
   const functionThis = useRef({});
+
+  /**
+   * Memoize the dangerouslySetInnerHTML payload so its object reference is stable while the html
+   * is unchanged. React 19's updateProperties re-applies dangerouslySetInnerHTML on any reference
+   * change, which (with a fresh object literal each render) re-sets innerHTML on every re-render and
+   * wipes imperative DOM changes made in afterRender (e.g. on a panel hover/select re-render).
+   */
+  const innerHtml = useMemo(() => ({ __html: item.html }), [item.html]);
 
   /**
    * Run After Render Function
@@ -183,14 +198,11 @@ export const Row: React.FC<Props> = ({
     theme,
     timeRange,
     timeZone,
+    // Need to include render counter or grafana can trigger re-rendering of the panel without firing the on content ready JS
+    renderCounter,
   ]);
 
   return (
-    <div
-      ref={ref}
-      className={className}
-      dangerouslySetInnerHTML={{ __html: item.html }}
-      data-testid={TEST_IDS.text.content}
-    />
+    <div ref={ref} className={className} dangerouslySetInnerHTML={innerHtml} data-testid={TEST_IDS.text.content} />
   );
 };

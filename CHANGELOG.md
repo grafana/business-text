@@ -6,6 +6,13 @@ are documented in this file.
 This changelog follows the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) format and adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.3.0]
+
+### Fixed
+
+- Fixed the panel reverting to its initial HTML and losing `afterRender` (content-ready JS) changes when Grafana
+  re-renders the panel (e.g. on a variable change or panel hover/select with the new dashboard layouts on React 19).
+
 ## [6.2.3] - 2026-05-21
 
 ### Fixed
