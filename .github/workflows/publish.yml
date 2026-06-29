@@ -33,32 +33,7 @@ jobs:
         with:
           ref: ${{ github.event.inputs.branch }}
       - name: Verify CHANGELOG.md files have no [Unreleased] section
-        run: |
-          check_changelog() {
-            local file="$1"
-            UNRELEASED_LINE=$(grep -n "^## \[Unreleased\]" "$file" | head -1 | cut -d: -f1)
-            RELEASE_LINE=$(grep -n "^## \[[0-9]" "$file" | head -1 | cut -d: -f1)
-
-            # No [Unreleased] section — nothing to check
-            if [ -z "$UNRELEASED_LINE" ]; then
-              return 0
-            fi
-
-            # [Unreleased] is below the latest release — fine
-            if [ -n "$RELEASE_LINE" ] && [ "$UNRELEASED_LINE" -gt "$RELEASE_LINE" ]; then
-              return 0
-            fi
-
-            VERSION=$(jq -r '.version' package.json)
-            echo "Error: $file contains an [Unreleased] section."
-            echo "A released version is required and must match package.json (${VERSION})."
-            return 1
-          }
-
-          check_changelog CHANGELOG.md || exit 1
-          if [ -f src/CHANGELOG.md ]; then
-            check_changelog src/CHANGELOG.md || exit 1
-          fi
+        run: bash scripts/check-changelog.sh
 
   cd:
     name: CD
