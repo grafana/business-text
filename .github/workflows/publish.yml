@@ -38,7 +38,7 @@ jobs:
   cd:
     name: CD
     needs: check-changelog
-    uses: grafana/plugin-ci-workflows/.github/workflows/cd.yml@ci-cd-workflows/v8.0.1
+    uses: grafana/plugin-ci-workflows/.github/workflows/cd.yml@ci-cd-workflows/v10.1.0
     permissions:
       attestations: write
       contents: write
@@ -48,6 +48,5 @@ jobs:
       branch: ${{ github.event.inputs.branch }}
       environment: ${{ github.event.inputs.environment }}
       docs-only: ${{ fromJSON(github.event.inputs.docs-only) }}
-      attestation: true
       signature-type: community
       run-playwright: false
