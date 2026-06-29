@@ -1,10 +1,18 @@
-# Changelog
+# Developer Changelog
 
 All notable changes to this project will be documented in this file.
+This changelog is internal and developer facing, unlike the root [CHANGELOG.md](../CHANGELOG.md) which is included in the
+[catalog page](https://grafana.com/grafana/plugins/marcusolsson-dynamictext-panel/?tab=changelog) which is also
+displayed within Grafana
+([example](http://localhost:3000/plugins/marcusolsson-dynamictext-panel?page=changelog)).
+
+> Note: Run `npm run check-changelog` (or the full `npm run prerelease`) before publishing. The release workflow
+> (`check-changelog` job in [publish.yml](../.github/workflows/publish.yml)) runs the same validation and will fail if
+> changelogs are not stamped for the `package.json` version.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [6.3.0] - 2026-06-29
 
 ### Build / Tooling
 
@@ -12,6 +20,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   (avoids `npx` resolving a mismatched Playwright version and works with `ignore-scripts=true`).
 - `playwright.config.ts`: added an env-gated `channel` option. Set `PLAYWRIGHT_CHANNEL=chrome` to run E2E against a
   locally installed Google Chrome and skip the bundled Chromium download; left undefined in CI/Docker.
+- Added `check-changelog` and `prerelease` npm scripts; extracted changelog validation into `scripts/check-changelog.sh`
+  (shared by `publish.yml` and local release prep). `prerelease` also runs typecheck, lint, spellcheck, markdownlint,
+  unit tests, build, and levitate compatibility checks.
 
 ## [6.2.3] - 2026-05-21
 

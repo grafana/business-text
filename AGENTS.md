@@ -18,6 +18,10 @@ npm run lint                   # ESLint (flat config, TS-aware)
 npm run lint:fix               # ESLint with auto-fix
 npm run typecheck              # TypeScript type-check (tsc --noEmit)
 
+# Release prep
+npm run check-changelog        # Validate changelogs are stamped for package.json version
+npm run prerelease             # check-changelog + typecheck, lint, spellcheck, markdownlint, test:ci, build, levitate
+
 # Unit Tests (Jest + @testing-library/react)
 npm test                       # Watch mode, only changed files
 npm run test:ci                # CI mode with coverage (--maxWorkers 4)
