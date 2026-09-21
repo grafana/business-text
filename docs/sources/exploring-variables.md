@@ -29,9 +29,9 @@ They're your go-to for tailoring what users see.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-charts/variables-edit.png" class="border" alt="Different types of dashboard variables." >}}
 
-## Global variables
+## Built-in variables
 
-Global variables tap into Grafana-wide settings, ready to use across your dashboards.
+Built-in variables tap into Grafana-wide settings, ready to use across your dashboards.
 This is a list of the most common ones:
 
 | Variable          | Description                        |
@@ -46,7 +46,7 @@ This is a list of the most common ones:
 | `${__user.id}`    | ID of the current user             |
 | `${__user.login}` | Login handle of the current user   |
 
-For the full list, refer to [Grafana global variable documentation](https://grafana.com/docs/grafana/<GRAFANA_VERSION>/visualizations/dashboards/variables/add-template-variables/#global-variables).
+For the full list, refer to [[Grafana built-in variable documentation](https://grafana.com/docs/grafana/<GRAFANA_VERSION>/visualizations/dashboards/variables/built-in-variables).
 
 ## Environment variables
 
