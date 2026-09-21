@@ -1,10 +1,10 @@
 ---
 title: Exploring variables
-description: Learn how dashboard, global, and environment variables work in Grafana, how they differ, and where to find more examples.
+description: Learn how dashboard, built-in, and environment variables work in Grafana, how they differ, and where to find more examples.
 keywords:
   - variables
   - dashboard variables
-  - global variables
+  - built-in variables
   - environment variables
   - dashboards
 weight: 68
@@ -17,7 +17,7 @@ labels:
 
 # Exploring variables
 
-Variables in Grafana come in three types: dashboard, global, and environment.
+Variables in Grafana come in three types: dashboard, built-in, and environment.
 This page breaks them down and shows how they fit into your Grafana deployment.
 
 {{< figure src="/media/docs/grafana/panels-visualizations/business-charts/variables.png" class="border" alt="Three layers of variables in Grafana." >}}
