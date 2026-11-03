@@ -12,6 +12,18 @@ displayed within Grafana
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.3.1] - 2026-11-03
+
+### Build / Tooling
+
+- Bumped `plugin-ci-workflows` CI and CD to `ci-cd-workflows/v12.0.1`; removed the
+  `run-playwright-with-skip-grafana-react-19-preview-image` input that v12 does not declare.
+- Bumped `@grafana/plugin-e2e` to `3.15.4` and `@playwright/test` to `1.60.0` (and `test/Dockerfile` to match).
+- Added a `setVisualization` E2E helper that closes the Grafana 12.4+ visualization picker before selecting a
+  visualization.
+- Pinned runtime dependencies to exact versions and bumped `markdownlint-cli2` to `0.24.0`.
+- Security: bumped `handlebars` to `4.7.10` and `markdown-it` to `14.3.3`, and ran `npm audit fix`.
+
 ## [6.3.0] - 2026-06-29
 
 ### Build / Tooling

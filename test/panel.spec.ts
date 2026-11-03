@@ -1,5 +1,5 @@
 import { test, expect } from '@grafana/plugin-e2e';
-import { PanelHelper } from './utils';
+import { PanelHelper, setVisualization } from './utils';
 
 test.describe('Volkovlabs Dynamictext Panel', () => {
   test('Check grafana version', async ({ grafanaVersion }) => {
@@ -7,7 +7,7 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
     expect(grafanaVersion).toEqual(grafanaVersion);
   });
 
-  test('Should add default text panel', async ({ readProvisionedDashboard, gotoDashboardPage }) => {
+  test('Should add default text panel', async ({ readProvisionedDashboard, gotoDashboardPage, selectors }) => {
     /**
      * Go To Panels dashboard e2e.json
      * return dashboardPage
@@ -22,7 +22,7 @@ test.describe('Volkovlabs Dynamictext Panel', () => {
     // @todo change the default datasource from Business News to something else
     // Set the datasource since the default throws an error
     await editPage.datasource.set('-- Grafana --');
-    await editPage.setVisualization('Business Text');
+    await setVisualization(editPage, selectors, 'Business Text');
     await editPage.setPanelTitle('Business Text');
     await editPage.backToDashboard();
 
