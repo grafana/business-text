@@ -83,7 +83,7 @@ jobs:
           fi
 
       - name: Coverage report
-        uses: davelosert/vitest-coverage-report-action@02f3c2e641286b7fa308cd3e430783103ce6103b # v2.12.0
+        uses: davelosert/vitest-coverage-report-action@74c2d9210b4fc44c84d8213f61d7ec99837b7aa0 # v2.13.2
         with:
           json-summary-path: coverage/coverage-summary.json
           json-summary-compare-path: ${{ steps.base-coverage.outputs.exists == 'true' && '/tmp/base-coverage/coverage-summary.json' || '' }}
